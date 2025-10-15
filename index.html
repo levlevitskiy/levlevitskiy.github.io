@@ -1,26 +1,124 @@
-﻿
- <!doctype html>
-  <html>
-    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	   <link rel="shortcut icon" href="favicon.ico" type="image/icon"/>
-      <title>Моя личная страничка</title>
-    </head>
-    <body bgcolor="#FFFACD"> 
-      <left><h1>Лев Левицкий </h1></left>
-      <left><img alt="Это я" width="15%" src="me.jpg"></left>
-      <br/>
-      <h2><u>Контакты:</u></h2>
-      Страничка <a href=https://vk.com/levlevitskiy>vkontakte</a>
-      <br/>
-      <a href=https://github.com/levlevitskiy>GitHub</a>
-      <br/>
-	  <br/>
-	  <p>Если кликнуть <a href="https://levlevitskiy.github.io/">сюда</a>, страничка обновится</p>
-	  <br/>
-	  <h2>О себе:</h2>
-	  Студент 1 курса НИУ ВШЭ, образовательная программа "История". Люблю творчество импрессионистов и постимпрессионистов, музыку БГ и Дэвида Боуи, книги Харуки Мураками. А 
-немного умею кодить на HTML.	  
-	  <p style="color:PURPLE">Спасибо за просмотр! :)</p>
-    </body>
-  </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Лев Левицкий — продакт-менеджер, автор и ментор по карьере в IT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Лев Левицкий — продакт-менеджер и ментор по карьере в IT. Выпускник НИУ ВШЭ (Высшей школы экономики). Блог, менторство, Telegram-канал.">
+  <meta name="keywords" content="Лев Левицкий, ВШЭ, НИУ ВШЭ, Высшая школа экономики, HSE, Higher School of Economics, продакт-менеджер, менторство, карьера в IT, product manager, PM, Telegram-канал">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Лев Левицкий",
+    "jobTitle": "Senior Product Manager",
+    "alumniOf": "НИУ ВШЭ",
+    "url": "https://levlevitskiy.github.io",
+    "image": "https://levlevitskiy.github.io/avatar.jpg",
+    "sameAs": [
+      "https://t.me/levlevitsky_channel",
+      "https://github.com/levlevitskiy"
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#0b0b10; --fg:#e9ecf1; --muted:#a8b0bd; --card:#13131a; --acc:#7aa2ff; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif}
+    a{color:var(--acc);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:900px;margin:0 auto;padding:40px 20px}
+    header{display:flex;align-items:center;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+    .avatar{width:88px;height:88px;border-radius:18px;object-fit:cover;border:1px solid #222;background:#222}
+    h1{font-size:28px;letter-spacing:.2px;margin:0}
+    .tagline{color:var(--muted);margin-top:6px}
+    .cta{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:18px 0 26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:14px;border:1px solid #243047;background:#0f1522;font-size:17px;font-weight:600;transition:background .2s ease}
+    .btn:hover{background:#182640}
+    .btn strong{margin-left:8px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:10px 0 34px}
+    .card{background:var(--card);border:1px solid #1b1f2a;border-radius:16px;padding:16px}
+    footer{margin-top:28px;color:var(--muted);font-size:14px}
+    .sr{position:absolute;left:-9999px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img class="avatar" src="avatar.jpg" alt="Лев Левицкий — Senior Product Manager, ментор и автор блога о продакт-менеджменте">
+      <div>
+        <h1>Лев Левицкий — продакт-менеджер в IT и ментор</h1>
+        <p class="tagline">Senior Product Manager в MedTech. Блог о продакт-менеджменте, карьере в IT, финансах и медиа.</p>
+      </div>
+    </header>
+
+    <nav class="cta" aria-label="Основные ссылки">
+      <a class="btn" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener"><span>📣</span><strong>Подписаться на Telegram-канал</strong></a>
+    </nav>
+
+    <section class="card" aria-labelledby="about">
+      <h2 id="about">Коротко обо мне</h2>
+      <p>Мне 26. Живу и работаю в Москве. Senior Product Manager в MedTech с 4+ годами опыта. Перешёл в продакты из гуманитарной сферы и знаю, как сделать сложный карьерный поворот. Провёл 150+ консультаций и помог 70+ специалистам ускорить развитие и доход. Выпускник НИУ ВШЭ.</p>
+    </section>
+
+    <h2 style="margin-top:40px;">Избранные материалы из блога</h2>
+    <section class="grid" aria-labelledby="blog">
+      <h2 id="blog" class="sr">Блог и лучшие посты</h2>
+      <article class="card">
+        <h3><a href="https://t.me/levlevitsky_channel/1166" target="_blank" rel="noopener">Фреймворк STAR. Как описывать продуктовые кейсы</a></h3>
+        <p>Как упаковать результаты в понятные и убедительные кейсы для собеседований и презентаций.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://t.me/levlevitsky_channel/1618" target="_blank" rel="noopener">Как расти по карьере оптимально</a></h3>
+        <p>Стратегия роста для PM: навыки, фокус и рычаги, которые ускоряют переходы и повышения.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://t.me/levlevitsky_channel/1168" target="_blank" rel="noopener">Что нужно уметь продакту в мире нейросетей?</a></h3>
+        <p>AI как инструмент PM: где реально помогает, какие навыки становятся базовыми.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://t.me/levlevitsky_channel/2162" target="_blank" rel="noopener">Как строить аналитические прогнозы</a></h3>
+        <p>Практичный подход к сценариям, допущениям и метрикам: как продакт считает будущее и принимает решения.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://t.me/levlevitsky_channel/1023" target="_blank" rel="noopener">Как я стал продактом с нуля</a></h3>
+        <p>История перехода из гуманитарной сферы в IT: шаги, ошибки и инсайты, которые сэкономят вам месяцы.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://t.me/levlevitsky_channel/1622" target="_blank" rel="noopener">Не верьте своим ощущениям после собеседования</a></h3>
+        <p>Почему субъективные ощущения часто обманывают — и как объективировать фидбек.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://t.me/levlevitsky_channel/2029" target="_blank" rel="noopener">Самый полезный принцип Kanban-доски</a></h3>
+        <p>Двигаем карточки с конца: как это разгружает систему и повышает эффективность работы команды.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://t.me/levlevitsky_channel/1158" target="_blank" rel="noopener">Относитесь ко всему, что вы делаете, как к продукту</a></h3>
+        <p>Продуктовое мышление как стиль жизни: гипотезы, итерации, метрики.</p>
+      </article>
+      <article class="card">
+        <h3><a href="https://t.me/levlevitsky_channel/1148" target="_blank" rel="noopener">Продакт должен работать на резюме. Или нет?</a></h3>
+        <p>Баланс между реальной ценностью, видимостью достижений и стратегией карьеры.</p>
+      </article>
+    </section>
+
+    <section class="card" aria-labelledby="ment">
+      <h2 id="ment">Менторство и консультации</h2>
+      <p>Помогаю подготовиться к собеседованиям (кейсы, питчи, soft skills), выстроить карьерную стратегию, перейти в IT из смежной сферы и вырасти в доходе в 2–3 раза. Работаю с продактами любого уровня — от Junior до Senior.</p>
+      <p><a href="https://t.me/levlevitsky" class="btn" target="_blank" rel="noopener"><span>👉</span><strong>Записаться через Telegram</strong></a></p>
+    </section>
+
+    <section class="card" aria-labelledby="ads">
+      <h2 id="ads">Реклама в Telegram-канале</h2>
+      <p>Лев Левицкий | IT-база — нишевый авторский канал с образованной, взрослой и платежеспособной аудиторией. 4k+ подписчиков | ERR 15+%. Темы: IT, бизнес, карьера, продакт-менеджмент, инвестиции. Канал веду и развиваю сам с 2017 года. Медиакит высылаю по запросу.</p>
+      <p><a href="https://t.me/levlevitsky" class="btn" target="_blank" rel="noopener"><span>📩</span><strong>Написать по рекламе</strong></a></p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Лев Левицкий • <a href="/sitemap.xml">sitemap</a> • <a href="/robots.txt">robots</a>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>

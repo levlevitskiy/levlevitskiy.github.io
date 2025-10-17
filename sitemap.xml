@@ -4,4 +4,8 @@
     <loc>https://levlevitskiy.github.io/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+  <loc>https://levlevitskiy.github.io/resume-template</loc>
+  <priority>0.8</priority>
+</url>
 </urlset>

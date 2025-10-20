@@ -7,5 +7,11 @@
   <url>
   <loc>https://levlevitskiy.github.io/resume-template</loc>
   <priority>0.8</priority>
+  <url>
+    <loc>https://levlevitskiy.github.io/how-to-become-product-manager</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>    
 </url>
 </urlset>

@@ -1,3 +1,9 @@
 User-agent: *
+Disallow: /404.html
+Disallow: /README.md
 Allow: /
-Sitemap: https://levlevitskiy.github.io/sitemap.xml
+
+Host: https://levlevitsky.ru
+Sitemap: https://levlevitsky.ru/sitemap.xml
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&utm_referrer
+

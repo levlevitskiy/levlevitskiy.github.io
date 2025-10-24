@@ -3,7 +3,9 @@ Disallow: /404.html
 Disallow: /README.md
 Allow: /
 
-Host: https://levlevitsky.ru
+Host: levlevitsky.ru
 Sitemap: https://levlevitsky.ru/sitemap.xml
+
 Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&utm_referrer
+
 

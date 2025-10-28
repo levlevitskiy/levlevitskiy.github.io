@@ -7,6 +7,18 @@
   <meta name="description" content="Подробный гайд о том, как перейти в продакт-менеджмент: мотивация, теория, практика, стажировка, резюме, сопроводительное и собеседования. Реальные советы от Senior Product Manager Льва Левицкого.">
   <meta name="keywords" content="как стать продакт менеджером, как перейти в продакт менеджмент, с чего начать продакт менеджеру, резюме продакт менеджера, стажировка продакт, pet-проект, GoPractice, product map">
 
+  <!-- Clean-URL redirect: .html -> pretty URL -->
+  <script>
+    (function () {
+      var p = location.pathname;
+      if (p.endsWith('/index.html')) {
+        location.replace(p.slice(0, -11) + '/' + location.search + location.hash);
+      } else if (p.endsWith('.html')) {
+        location.replace(p.slice(0, -5) + location.search + location.hash);
+      }
+    })();
+  </script>
+
   <!-- Canonical -->
   <link rel="canonical" href="https://levlevitsky.ru/kak-stat-product-manager">
 

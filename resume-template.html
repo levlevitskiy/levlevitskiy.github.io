@@ -6,10 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Готовый шаблон резюме для продакт-менеджера: структура резюме на 1 страницу, примеры формулировок по STAR, типичные ошибки и советы. Бесплатный шаблон Google Docs от Льва Левицкого, Senior PM в MedTech.">
 
-  <!-- ✅ Каноническая ссылка -->
+  <!-- Чистые URL: .html -> без .html -->
+  <script>
+    (function () {
+      var p = location.pathname;
+      if (p.endsWith('/index.html')) {
+        location.replace(p.slice(0, -11) + '/' + location.search + location.hash);
+      } else if (p.endsWith('.html')) {
+        location.replace(p.slice(0, -5) + location.search + location.hash);
+      }
+    })();
+  </script>
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://levlevitsky.ru/resume-template">
 
-  <!-- ✅ Open Graph -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Шаблон резюме для продакт-менеджера — пример и бесплатный шаблон">
   <meta property="og:description" content="Структура резюме на 1 страницу, примеры по STAR и бесплатный шаблон Google Docs от Льва Левицкого.">
   <meta property="og:image" content="https://levlevitsky.ru/avatar.jpg">
@@ -21,28 +33,26 @@
   <meta property="og:site_name" content="Лев Левицкий">
   <meta property="og:locale" content="ru_RU">
 
-  <!-- ✅ Twitter -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Шаблон резюме для продакт-менеджера — пример и бесплатный шаблон">
   <meta name="twitter:description" content="Структура, примеры по STAR и бесплатный шаблон Google Docs.">
   <meta name="twitter:image" content="https://levlevitsky.ru/avatar.jpg">
+  <meta name="twitter:image:alt" content="Лев Левицкий — продакт-менеджер и ментор">
 
-  <!-- ✅ Метаданные для статей -->
+  <!-- Метаданные статьи -->
   <meta property="article:published_time" content="2025-10-20">
   <meta property="article:modified_time" content="2025-10-22">
   <meta name="theme-color" content="#0b0b10">
 
-  <!-- ✅ Структурированные данные -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Шаблон резюме для продакт-менеджера — пример, советы и бесплатный шаблон",
     "description": "Готовый шаблон резюме: структура на 1 страницу, формулировки по STAR, ошибки и советы. Бесплатный шаблон Google Docs.",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://levlevitsky.ru/resume-template"
-    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://levlevitsky.ru/resume-template" },
     "image": "https://levlevitsky.ru/avatar.jpg",
     "author": { "@type": "Person", "name": "Лев Левицкий", "url": "https://levlevitsky.ru" },
     "publisher": { "@type": "Person", "name": "Лев Левицкий" },
@@ -52,11 +62,11 @@
   }
   </script>
 
-  <!-- ✅ Иконки -->
+  <!-- Иконки -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- ✅ Стили -->
+  <!-- Стили -->
   <style>
     :root { --bg:#0b0b10; --fg:#e9ecf1; --muted:#a8b0bd; --card:#13131a; --acc:#7aa2ff; }
     *{box-sizing:border-box}
@@ -81,7 +91,7 @@
   <div class="wrap">
     <header>
       <a class="back" href="/">← На главную</a>
-      <a class="back" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener">Мой Telegram-канал</a>
+      <a class="back" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer">Мой Telegram-канал</a>
     </header>
 
     <h1>Шаблон резюме для продакт-менеджера</h1>
@@ -119,7 +129,7 @@
         <li>Переработал интерфейс чекаута → +9% к конверсии в оплату.</li>
         <li>Перестроил процесс работы с бэклогом → снижение Time To Market на 25%.</li>
       </ul>
-      <p>Подробнее читайте мой разбор: <a href="https://t.me/levlevitsky_channel/1166" target="_blank" rel="noopener">фреймворк STAR для кейсов</a>.</p>
+      <p>Подробнее: <a href="https://t.me/levlevitsky_channel/1166" target="_blank" rel="noopener noreferrer">фреймворк STAR для кейсов</a>.</p>
     </section>
 
     <section class="card">
@@ -175,7 +185,7 @@
     });
   </script>
   <noscript>
-    <div><img src="https://mc.yandex.ru/watch/104666081" style="position:absolute; left:-9999px;" alt="" /></div>
+    <div><img src="https://mc.yandex.ru/watch/104666081" style="position:absolute; left:-9999px;" alt=""></div>
   </noscript>
 </body>
 </html>

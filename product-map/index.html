@@ -8,12 +8,12 @@
 
   <style>
     :root {
-      --bg:#0b0b10;
-      --fg:#e9ecf1;
-      --muted:#9aa0a9;
-      --card:#13131a;
-      --acc:#7aa2ff;
-      --bd:#1c1f26;
+      --bg:#ffffff;
+      --fg:#1b1b1f;
+      --muted:#555;
+      --card:#f5f5f7;
+      --acc:#0056ff;
+      --bd:#ddd;
     }
     * { box-sizing:border-box; }
     body {
@@ -75,14 +75,17 @@
     }
     .btn {
       margin-top: auto;
-      background: #0f1522;
-      border: 1px solid #2a3242;
+      background: #e4e7eb;
+      border: 1px solid #c7c7c7;
       color: var(--fg);
       padding: 12px 16px;
       border-radius: 12px;
       font-weight: 600;
       display: inline-block;
       font-size: 15px;
+    }
+    .btn:hover {
+      background:#d8dbe0;
     }
     .cluster-title {
       margin-top:60px;
@@ -95,12 +98,7 @@
       padding-left: 0;
       flex-grow: 1;
     }
-    @media (max-width:640px) {
-      h1 { font-size:28px; }
-      h2 { font-size:24px; }
-      .wrap { padding:28px 16px 40px; }
-    }
-      footer {
+    footer {
       margin-top:40px;
       padding-top:20px;
       border-top:1px solid var(--bd);
@@ -110,91 +108,86 @@
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
 
     <h1>Обучение продакт-менеджера с нуля — Product Map</h1>
+
     <p class="lead">
-      Product Map — структурированная карта знаний для продакт-менеджеров. Идеально для тех тех, кто хочет самостоятельно пройти
-      <strong>обучение продакт-менеджера с нуля</strong> и подготовиться к поиску работы. </br></br>
-    Карта знаний построена по фреймворку Tripple Diamond:
-      <strong>Discovery → Design Solution → Delivery</strong>. Подойдет и для начинающих продакт-менеджеров, и для опытных. Фокус на Hard Skills. 
+      Product Map — структурированная карта знаний для продакт-менеджеров.  
+      Подходит тем, кто хочет пройти <strong>обучение продакт-менеджера с нуля</strong> или укрепить базу хард-скиллов.  
+      Структура основана на фреймворке Triple Diamond: <strong>Discovery → Design Solution → Delivery</strong>.
     </p>
 
     <!-- DISCOVERY -->
     <h2 class="cluster-title">🔍 Discovery — анализ рынка, цели, исследования пользователей</h2>
     <div class="section-grid">
 
-      <!-- Анализ рынка -->
       <div class="card">
         <div class="tag">Discovery · Анализ рынка</div>
         <h3>Анализ рынка</h3>
         <ul>
-          <li>PESTEL-анализ рыночного ландшафта </li>
-          <li>TAM/SAM/SOM — оценка емкости рынка</li>
-          <li>5 сил Портера и анализ  ландшафт</li>
+          <li>PESTEL-анализ</li>
+          <li>TAM/SAM/SOM</li>
+          <li>5 сил Портера</li>
         </ul>
-        <a class="btn" href="/product-map/analiz-rynka" target="_blank">Открыть подборку →</a>
+        <a class="btn" href="/product-map/analiz-rynka.html" target="_blank">Открыть подборку →</a>
       </div>
 
-      <!-- Целеполагание -->
       <div class="card">
         <div class="tag">Discovery · Цели</div>
         <h3>Целеполагание</h3>
         <ul>
-          <li>Product Vision: формулируем видение продукта</li>
-          <li>OKR и KPI для продакт-менеджера</li>
-          <li>North Star Metric и дерево целей</li>
+          <li>Product Vision</li>
+          <li>KPI и OKR</li>
+          <li>Дерево целей, NSM</li>
         </ul>
-        <a class="btn" href="/product-map/celepolaganie-produkta" target="_blank">Открыть подборку →</a>
+        <a class="btn" href="/product-map/celepolaganie-produkta.html" target="_blank">Открыть подборку →</a>
       </div>
 
-      <!-- Исследования -->
       <div class="card">
         <div class="tag">Discovery · Исследования</div>
-        <h3>Исследования</h3>
+        <h3>Продуктовые исследования</h3>
         <ul>
-          <li>CustDev: глубинные интервью с пользователями</li>
-          <li>JTBD (Jobs-To-Be-Done) и сценарии использования</li>
-          <li>UX-исследования и опросы</li>
+          <li>CustDev</li>
+          <li>JTBD</li>
+          <li>UX-тесты и опросы</li>
         </ul>
-        <a class="btn" href="/product-map/produktovye-issledovaniya" target="_blank">Открыть подборку →</a>
+        <a class="btn" href="/product-map/produktovye-issledovaniya.html" target="_blank">Открыть подборку →</a>
       </div>
 
-      <!-- Аудитория и её потребности -->
       <div class="card">
         <div class="tag">Discovery · Аудитория</div>
-        <h3>Аудитория и ее потребности</h3>
+        <h3>Анализ аудитории</h3>
         <ul>
-          <li>Сегментация пользователей</li>
-          <li>Персоны, сценарии и контекст использования продукта</li>
-          <li>Карты потребностей и болевые точки</li>
+          <li>Сегментация</li>
+          <li>JTBD</li>
+          <li>Потребности пользователей</li>
         </ul>
-        <a class="btn" href="/product-map/analiz-auditorii-produkta" target="_blank">Открыть подборку →</a>
+        <a class="btn" href="/product-map/analiz-auditorii-produkta.html" target="_blank">Открыть подборку →</a>
       </div>
 
-      <!-- Метрики и аналитика -->
       <div class="card">
         <div class="tag">Discovery · Метрики</div>
         <h3>Метрики и аналитика</h3>
         <ul>
-          <li>AARRR-воронка (acquisition, activation, retention, revenue, referral)</li>
-          <li>Дерево продуктовых метрик и NSM</li>
-          <li>Юнит-экономика продукта</li>
+          <li>AARRR</li>
+          <li>Дерево метрик</li>
+          <li>Юнит-экономика</li>
         </ul>
-        <a class="btn" href="/product-map/metriki-i-analitika-produkta.html">Открыть подборку →</a>
+        <a class="btn" href="/product-map/metriki-i-analitika-produkta.html" target="_blank">Открыть подборку →</a>
       </div>
 
-      <!-- Работа с гипотезами и приоритизацией -->
       <div class="card">
         <div class="tag">Discovery · Гипотезы</div>
-        <h3>Работа с гипотезами и приоритизацией</h3>
+        <h3>Гипотезы и приоритизация</h3>
         <ul>
-          <li>HADI-циклы и формулирование гипотез</li>
-          <li>Приоритизация бэклога</li>
-          <li>Система проверки гипотез</li>
+          <li>HADI-цикл</li>
+          <li>RICE</li>
+          <li>Методы оценки</li>
         </ul>
-        <a class="btn" href="/product-map/gipotezy-i-prioritizaciya-produkta">Открыть подборку →</a>
+        <a class="btn" href="/product-map/gipotezy-i-prioritizaciya-produkta.html" target="_blank">Открыть подборку →</a>
       </div>
 
     </div>
@@ -203,40 +196,37 @@
     <h2 class="cluster-title">💡 Design Solution — дизайн, техпроработка и MVP / MLP</h2>
     <div class="section-grid">
 
-      <!-- Дизайн -->
       <div class="card">
         <div class="tag">Design Solution · Дизайн</div>
-        <h3>Дизайн</h3>
+        <h3>Продуктовый дизайн</h3>
         <ul>
-          <li>Пользовательские пути</li>
+          <li>User Flow</li>
           <li>Прототипирование</li>
-          <li>UX-тесты</li>
+          <li>UX-тестирование</li>
         </ul>
-        <a class="btn" href="/product-map/dizain">Открыть подборку →</a>
+        <a class="btn" href="/product-map/produktovyj-dizain.html" target="_blank">Открыть подборку →</a>
       </div>
 
-      <!-- Техническая проработка -->
       <div class="card">
         <div class="tag">Design Solution · Техника</div>
         <h3>Техническая проработка</h3>
         <ul>
-          <li>Декомпозиция задач</li>
-          <li>Требования, спецификации и критерии готовности</li>
-          <li>Риски и ограничения</li>
+          <li>Оценка задач</li>
+          <li>PBR</li>
+          <li>Требования</li>
         </ul>
-        <a class="btn" href="/product-map/tehproработка">Открыть подборку →</a>
+        <a class="btn" href="/product-map/tehnicheskaya-prorabotka.html" target="_blank">Открыть подборку →</a>
       </div>
 
-      <!-- Определение MVP / MLP -->
       <div class="card">
-        <div class="tag">Design Solution · MVP / MLP</div>
-        <h3>Определение MVP / MLP</h3>
+        <div class="tag">Design Solution · MVP</div>
+        <h3>MVP и MLP</h3>
         <ul>
-          <li>Выделение ключевой ценности продукта</li>
-          <li>Определение минимального функционала (MVP)</li>
-          <li>MLP: минимально «любимый» продукт и aha-moment</li>
+          <li>Выделение ценности</li>
+          <li>Минимальный функционал</li>
+          <li>MLP и delight</li>
         </ul>
-        <a class="btn" href="/product-map/mvp-mlp">Открыть подборку →</a>
+        <a class="btn" href="/product-map/mvp-mlp.html" target="_blank">Открыть подборку →</a>
       </div>
 
     </div>
@@ -245,48 +235,53 @@
     <h2 class="cluster-title">🚀 Delivery — разработка, управление проектами и валидация результатов</h2>
     <div class="section-grid">
 
-      <!-- Разработка -->
       <div class="card">
         <div class="tag">Delivery · Разработка</div>
-        <h3>Разработка</h3>
+        <h3>Разработка IT-продукта</h3>
         <ul>
-          <li>Agile, Scrum, Kanban — выбор процесса под продукт</li>
-          <li>Работа с командой разработки и техлидами</li>
-          <li>CI/CD-подход</li>
+          <li>Архитектура</li>
+          <li>Фронтенд / Бэкенд</li>
+          <li>Синхрон / асинхрон</li>
         </ul>
-        <a class="btn" href="/product-map/razrabotka">Открыть подборку →</a>
+        <a class="btn" href="/product-map/razrabotka-it-produkta.html" target="_blank">Открыть подборку →</a>
       </div>
 
-      <!-- Управление проектами -->
       <div class="card">
         <div class="tag">Delivery · Управление</div>
         <h3>Управление проектами</h3>
         <ul>
-          <li>Планирование релизов и дорожная карта</li>
-          <li>Коммуникация со стейкхолдерами и управление ожиданиями</li>
-          <li>Контроль сроков, объема и качества поставки</li>
+          <li>Agile / Scrum</li>
+          <li>Стейкхолдеры</li>
+          <li>Риски и сроки</li>
         </ul>
-        <a class="btn" href="/product-map/upravlenie-proektami">Открыть подборку →</a>
+        <a class="btn" href="/product-map/upravlenie-proektami-v-it.html" target="_blank">Открыть подборку →</a>
       </div>
 
-      <!-- Валидация результатов -->
       <div class="card">
-        <div class="tag">Delivery · Валидация</div>
-        <h3>Валидация результатов</h3>
+        <div class->Delivery · Валидация</div>
+        <h3>A/B-тесты и валидация</h3>
         <ul>
-          <li>A/B-тестирование и эксперименты в продукте</li>
-          <li>Когортный анализ и поведение пользователей</li>
-          <li>Оценка влияния релизов на ключевые метрики</li>
+          <li>A/B тесты</li>
+          <li>Когортный анализ</li>
+          <li>Влияние на метрики</li>
         </ul>
-        <a class="btn" href="/product-map/validaciya-rezultatov">Открыть подборку →</a>
+        <a class="btn" href="/product-map/ab-testy-validaciya-rezultatov.html" target="_blank">Открыть подборку →</a>
       </div>
 
     </div>
-    </br>
+
 <footer>
-  © <span id="y"></span> Лев Левицкий • <a href="/sitemap.xml">sitemap</a> • <a href="/robots.txt">robots</a> • <a href="/index.html">главная</a>
+  © <span id="y"></span> Лев Левицкий • 
+  <a href="/sitemap.xml" target="_blank">sitemap</a> • 
+  <a href="/robots.txt" target="_blank">robots</a> • 
+  <a href="/index.html" target="_blank">главная</a>
 </footer>
+
 </div>
-  </div>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>

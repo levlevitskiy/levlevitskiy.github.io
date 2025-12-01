@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Разработка IT-продукта и архитектура продукта — база знаний продакта | Product Map</title>
+
+  <meta name="description" content="Разработка IT-продукта для продакт-менеджеров: архитектура продукта, монолит и микросервисы, frontend и backend, синхронные и асинхронные взаимодействия. Лучшие материалы для понимания технической части продукта." />
+
+  <link rel="canonical" href="https://levlevitsky.ru/product-map/razrabotka-it-produkta" />
+
+  <style>
+    :root {
+      --bg:#ffffff;
+      --fg:#1b1b1f;
+      --muted:#555;
+      --card:#f5f5f7;
+      --acc:#0056ff;
+      --bd:#ddd;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--fg);
+      font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    a { color:var(--acc); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    .wrap {
+      max-width:960px;
+      margin:0 auto;
+      padding:40px 24px 70px;
+    }
+
+    h1 {
+      font-size:34px;
+      margin:0 0 20px;
+      font-weight:700;
+      line-height:1.3;
+    }
+    h2 {
+      font-size:26px;
+      margin:45px 0 14px;
+      font-weight:700;
+    }
+    h3 {
+      font-size:20px;
+      margin:20px 0 10px;
+      font-weight:600;
+    }
+    p.lead {
+      color:var(--muted);
+      font-size:18px;
+      max-width:760px;
+      margin-bottom:12px;
+    }
+
+    .card {
+      background:var(--card);
+      padding:28px;
+      border-radius:18px;
+      border:1px solid var(--bd);
+      margin:24px 0;
+    }
+    ul.materials {
+      margin:12px 0 6px 20px;
+      padding-left:0;
+      color:var(--muted);
+    }
+    ul.materials li { margin-bottom:6px; }
+
+    footer {
+      margin-top:50px;
+      padding-top:20px;
+      border-top:1px solid var(--bd);
+      color:var(--muted);
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <h1>Разработка IT-продукта — что должен понимать продакт</h1>
+
+  <p class="lead">
+    Разработка IT-продукта — один из ключевых элементов работы продакт-менеджера. 
+    Чтобы принимать взвешенные решения, важно понимать, как устроена архитектура продукта, 
+    чем отличаются монолит и микросервисы, как взаимодействуют сервисы, 
+    и как работают frontend и backend.
+  </p>
+
+  <p class="lead">
+    На этой странице — база материалов, которые помогают продактам понимать техническую сторону продукта, 
+    общаться с разработчиками на одном языке и более точно оценивать сложность и сроки задач.
+  </p>
+
+  <!-- Архитектура продукта -->
+  <h2>Архитектура продукта: монолит и микросервисная архитектура</h2>
+
+  <div class="card">
+    <p><strong>Почему продакту важно разбираться в архитектуре?</strong></p>
+    <ul class="materials">
+      <li>• понимать технические ограничения продукта</li>
+      <li>• оценивать сложность реализации фич</li>
+      <li>• участвовать в выборе архитектурных подходов</li>
+      <li>• понимать, зачем компании переходят на микросервисы</li>
+    </ul>
+
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://youtu.be/PmIrrFqOfn8?si=gn9bDf3WsxDyPftQ" target="_blank">Монолит и микросервисы — объяснение на понятном языке</a></li>
+      <li><a href="https://habr.com/ru/companies/haulmont/articles/758780/" target="_blank">Переход на микросервисную архитектуру: опыт компании</a></li>
+      <li><a href="https://vc.ru/dev/922352-monolitnaya-vs-mikroservisnoi-arhitektury" target="_blank">Сравнение монолитной и микросервисной архитектур</a></li>
+    </ul>
+  </div>
+
+  <!-- backend / frontend -->
+  <h2>Frontend и Backend в разработке IT-продукта</h2>
+
+  <div class="card">
+    <p><strong>Зачем продакту разбираться во frontend и backend?</strong></p>
+    <ul class="materials">
+      <li>чтобы понимать, как рождаются задачи на разработку</li>
+      <li>чтобы корректно оценивать сложность реализации</li>
+      <li>чтобы понимать ограничения разных уровней системы</li>
+      <li>чтобы точнее формулировать бизнес-логику</li>
+    </ul>
+
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://gopractice.ru/skills/5-things-to-know-about-engineering/" target="_blank">5 вещей, которые продакт должен знать о инженеринге</a></li>
+      <li><a href="https://practicum.yandex.ru/blog/chem-otlichaetsya-backend-i-frontend/" target="_blank">Чем отличаются backend и frontend</a></li>
+      <li><a href="https://vc.ru/dev/840923-frontend-i-backend-razrabotka-chto-eto-v-chem-raznica-i-chto-vybrat" target="_blank">Frontend vs Backend — обзор</a></li>
+    </ul>
+  </div>
+
+  <!-- Синхронные и асинхронные взаимодействия -->
+  <h2>Взаимодействие сервисов: синхронная и асинхронная архитектура</h2>
+
+  <div class="card">
+    <p><strong>Почему это важно?</strong></p>
+    <ul class="materials">
+      <li>определяет стабильность и быстродействие продукта</li>
+      <li>влияет на понятие «узких мест»</li>
+      <li>помогает понимать задержки и причины ошибок</li>
+      <li>влияет на архитектурные решения команды разработки</li>
+    </ul>
+
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://habr.com/ru/companies/oleg-bunin/articles/543946/" target="_blank">Синхронные и асинхронные паттерны</a></li>
+      <li><a href="https://vc.ru/u/1788045-aleksei-solonkov/709274-sinhronnoe-vs-asinhronnoe-vybiraem-podhod-k-vzaimodeistviyu-mikroservisov" target="_blank">Как выбирать подход взаимодействия микросервисов</a></li>
+      <li><a href="https://library.wannabe.ru/article/product-delivery-guide" target="_blank">Гид по доставке продукта</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    © <span id="y"></span> Лев Левицкий • 
+    <a href="/product-map">карта знаний</a> •
+    <a href="https://levlevitsky.ru" target="_blank">главная</a>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

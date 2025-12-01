@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Техническая проработка — подготовка задач к разработке | Product Map</title>
+
+  <meta name="description" content="Техническая проработка: оценка и декомпозиция задач, PBR, требования (User Story, Job Story, функциональные и нефункциональные). Полная база материалов для продакт-менеджеров." />
+
+  <link rel="canonical" href="https://levlevitsky.ru/product-map/tehnicheskaya-prorabotka" />
+
+  <style>
+    :root {
+      --bg:#ffffff;
+      --fg:#1b1b1f;
+      --muted:#555;
+      --card:#f5f5f7;
+      --acc:#0056ff;
+      --bd:#ddd;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--fg);
+      font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;
+    }
+    a { color:var(--acc); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    .wrap {
+      max-width:960px;
+      margin:0 auto;
+      padding:40px 24px 70px;
+    }
+
+    h1 {
+      font-size:34px;
+      margin:0 0 20px;
+      font-weight:700;
+      line-height:1.3;
+    }
+    h2 {
+      font-size:26px;
+      margin:45px 0 14px;
+      font-weight:700;
+    }
+    h3 {
+      font-size:20px;
+      margin:20px 0 10px;
+      font-weight:600;
+    }
+    p.lead {
+      color:var(--muted);
+      font-size:18px;
+      max-width:760px;
+    }
+
+    .card {
+      background:var(--card);
+      padding:28px;
+      border-radius:18px;
+      border:1px solid var(--bd);
+      margin:24px 0;
+    }
+    ul.materials {
+      margin:12px 0 6px 20px;
+      padding-left:0;
+      color:var(--muted);
+    }
+    ul.materials li { margin-bottom:6px; }
+
+    footer {
+      margin-top:50px;
+      padding-top:20px;
+      border-top:1px solid var(--bd);
+      color:var(--muted);
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <h1>Техническая проработка — подготовка задач к разработке</h1>
+
+  <p class="lead">
+    Техническая проработка — этап, где продакт-менеджер оценивает трудозатраты, собирает требования,
+    декомпозирует задачи, уточняет риски и помогает команде подготовиться к эффективной реализации.
+  </p>
+
+  <p class="lead">
+    На этой странице — полная база материалов по оценке задач, PBR, требованиям и формализации бизнес-логики.
+  </p>
+
+  <!-- Оценка задач -->
+  <h2>Оценка и декомпозиция задач</h2>
+  <div class="card">
+    <p><strong>Зачем это продакту?</strong></p>
+    <ul class="materials">
+      <li>не взять в работу слишком много задач</li>
+      <li>адекватно оценить сроки и ресурсы</li>
+      <li>заранее выявить риски и узкие места</li>
+    </ul>
+
+    <p><strong>Главные правила оценки:</strong></p>
+    <ul class="materials">
+      <li>регулярно общаться с техлидом</li>
+      <li>доверять экспертной оценке разработчиков</li>
+      <li>заранее погружать команду в контекст</li>
+      <li>продакт должен чётко описывать бизнес-логику</li>
+    </ul>
+
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://vc.ru/scrumtrek/1042747-pochemu-tak-slozhno-ocenivat-zadachi-v-it-i-zachem-nuzhny-stori-pointy-chast-pervaya" target="_blank">Почему сложно оценивать задачи в IT и зачем нужны story points</a></li>
+      <li><a href="https://habr.com/ru/articles/742364/" target="_blank">Как правильно оценивать задачи: частые ошибки</a></li>
+      <li>Use Cases как часть описания требований</li>
+    </ul>
+  </div>
+
+  <!-- PBR -->
+  <h2>PBR (Product Backlog Refinement)</h2>
+  <div class="card">
+    <p><strong>Зачем нужен PBR?</strong></p>
+    <ul class="materials">
+      <li>уточнить задачу до взятия в разработку</li>
+      <li>сформировать корректную оценку</li>
+      <li>собрать все вопросы команды заранее</li>
+      <li>иногда — отказаться от задачи</li>
+    </ul>
+
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://youtu.be/bNy32Hy2MEI?si=PkO99bVGEAwL58vU" target="_blank">Видео: как эффективно проводить PBR</a></li>
+      <li><a href="https://habr.com/ru/companies/inDrive/articles/682806/" target="_blank">Как inDrive проводит PBR</a></li>
+      <li><a href="https://scrum.ru/tpost/r7yolfo4o1-multikomandnoe-utochnenie-bekloga-produk" target="_blank">Мультикомандное уточнение бэклога</a></li>
+    </ul>
+  </div>
+
+  <!-- Требования -->
+  <h2>Требования: User Story, Job Story, функциональные и нефункциональные</h2>
+  <div class="card">
+    <p><strong>Зачем это продакту?</strong></p>
+    <ul class="materials">
+      <li>чтобы команда понимала, что именно нужно реализовать</li>
+      <li>чтобы бизнес-логика была описана корректно</li>
+      <li>чтобы избежать переделок</li>
+    </ul>
+
+    <p><strong>Распределение ответственности:</strong></p>
+    <ul class="materials">
+      <li>продакт описывает бизнес-логику и шаги пользователя</li>
+      <li>техлид отвечает за техническую реализацию: ручки, очереди, сервисы</li>
+      <li>уровень детализации зависит от команды</li>
+    </ul>
+
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://habr.com/ru/companies/alfa/articles/818855/" target="_blank">Как Альфа делает требования</a></li>
+      <li>Методы формализации требований: Use Case vs User Story</li>
+      <li><a href="https://systems.education/functional_requirements_in_usecases" target="_blank">Гид по функциональным требованиям</a></li>
+      <li><a href="https://practicum.yandex.ru/blog/biznes-trebovaniya/" target="_blank">Как писать бизнес-требования</a></li>
+      <li><a href="https://vc.ru" target="_blank">Как писать требования, чтобы их понимали — статья Антона Лазовского</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    © <span id="y"></span> Лев Левицкий • 
+    <a href="/product-map">карта знаний</a> •
+    <a href="https://levlevitsky.ru" target="_blank">главная</a>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

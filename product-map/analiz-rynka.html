@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Анализ рынка — Product Map | Материалы для продакт-менеджеров</title>
-  <meta name="description" content="Анализ рынка для продакт-менеджера: PESTEL, TAM/SAM/SOM, анализ конкурентов, 5 сил Портера, рыночный ландшафт, тренды. Лучшие бесплатные статьи, видео и подкасты для обучения product manager.">
+
+  <title>Анализ рынка — PESTEL, TAM/SAM/SOM, 5 сил Портера | Product Map</title>
+
+  <meta name="description" content="Анализ рынка: PESTEL, TAM/SAM/SOM, 5 сил Портера. Как продакт-менеджеру оценивать потенциал рынка, определять тренды и проверять жизнеспособность продуктовых идей." />
+
+  <link rel="canonical" href="https://levlevitsky.ru/product-map/analiz-rynka" />
 
   <style>
     :root {
-      --bg:#0b0b10;
-      --fg:#e9ecf1;
-      --muted:#9aa0a9;
-      --card:#13131a;
-      --acc:#7aa2ff;
-      --bd:#1c1f26;
+      --bg:#ffffff;
+      --fg:#1b1b1f;
+      --muted:#555;
+      --card:#f5f5f7;
+      --acc:#0056ff;
+      --bd:#ddd;
     }
     * { box-sizing:border-box; }
     body {
@@ -21,58 +25,54 @@
       padding:0;
       background:var(--bg);
       color:var(--fg);
-      font:16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
     }
     a { color:var(--acc); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    .wrap {
-      max-width:920px;
-      margin:0 auto;
-      padding:40px 24px 60px;
-    }
-    h1 { font-size:34px; margin:0 0 20px; font-weight:700; }
-    h2 { margin:40px 0 14px; font-size:26px; font-weight:700; }
-    h3 { margin:14px 0 8px; font-size:20px; font-weight:600; }
-    p.lead { color:var(--muted); font-size:18px; max-width:760px; }
 
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-      gap:22px;
-      margin-top:20px;
+    .wrap {
+      max-width:960px;
+      margin:0 auto;
+      padding:40px 24px 70px;
+    }
+
+    h1 {
+      font-size:34px;
+      margin:0 0 20px;
+      font-weight:700;
+      line-height:1.3;
+    }
+    h2 {
+      font-size:26px;
+      margin:45px 0 14px;
+      font-weight:700;
+    }
+    h3 {
+      font-size:20px;
+      margin:20px 0 10px;
+      font-weight:600;
+    }
+    p.lead {
+      color:var(--muted);
+      font-size:18px;
+      max-width:760px;
+      margin-bottom:12px;
     }
 
     .card {
       background:var(--card);
-      border:1px solid var(--bd);
+      padding:28px;
       border-radius:18px;
-      padding:22px;
-      display:flex;
-      flex-direction:column;
-      min-height:260px;
+      border:1px solid var(--bd);
+      margin:24px 0;
     }
 
-    .tag {
-      font-size:13px;
+    ul.materials {
+      margin:12px 0 6px 20px;
+      padding-left:0;
       color:var(--muted);
-      text-transform:uppercase;
-      margin-bottom:6px;
-      letter-spacing:0.5px;
     }
-
-    .btn {
-      margin-top:auto;
-      background:#0f1522;
-      border:1px solid #2a3242;
-      color:var(--fg);
-      padding:10px 14px;
-      border-radius:12px;
-      font-weight:600;
-      display:inline-block;
-      font-size:14px;
-    }
-
-    ul { margin:10px 0 18px 18px; color:var(--muted); }
+    ul.materials li { margin-bottom:6px; }
 
     footer {
       margin-top:50px;
@@ -81,166 +81,99 @@
       color:var(--muted);
       font-size:14px;
     }
-
-    @media (max-width:640px) {
-      h1 { font-size:28px; }
-      h2 { font-size:22px; }
-    }
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <h1>Анализ рынка — Product Map</h1>
+  <h1>Анализ рынка — ключевая часть стратегии продукта</h1>
+
   <p class="lead">
-    Подборка лучших бесплатных материалов для продакт-менеджеров: PESTEL, емкость рынка, конкурентный анализ,
-    рыночные тренды и стратегическая аналитика. Страница — часть обучающего маршрута Product Map.
+    Задача анализа рынка — определить, есть ли у вашей идеи потенциал, какие внешние факторы влияют на продукт и как оценить объём рынка.
+  </p>
+
+  <p class="lead">
+    На этой странице собраны основные фреймворки и материалы по анализу рынка, которые используют продакт-менеджеры и основатели.
   </p>
 
   <!-- PESTEL -->
   <h2>PESTEL-анализ</h2>
-  <div class="grid">
+  <div class="card">
+    <p><strong>Зачем продакту PESTEL?</strong></p>
+    <ul class="materials">
+      <li>понимать внешние факторы, влияющие на рынок</li>
+      <li>видеть угрозы и возможности, которые мы не контролируем</li>
+      <li>определять, растёт рынок или сокращается</li>
+      <li>учитывать макроэкономический контекст при принятии решений</li>
+    </ul>
 
-    <div class="card">
-      <div class="tag">Статья</div>
-      <h3>Как делать PESTEL-анализ</h3>
-      <p>Базовая структура, примеры, разбор факторов макросреды.</p>
-      <a class="btn" href="https://habr.com/ru/articles/681792/" target="_blank">Открыть →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Видео</div>
-      <h3>PESTEL за 12 минут</h3>
-      <p>Разбор каждого элемента + кейс оценки рынка.</p>
-      <a class="btn" href="https://www.youtube.com/watch?v=Oo5eZdXzYYo" target="_blank">Смотреть →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Статья</div>
-      <h3>PESTEL для продакт-менеджера</h3>
-      <p>Как правильно интерпретировать факторы и применять в roadmap.</p>
-      <a class="btn" href="https://productcoalition.com/how-to-use-pestel-analysis-as-a-product-manager" target="_blank">Читать →</a>
-    </div>
-
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://www.mindonmap.com/ru/blog/what-is-pestel-analysis/" target="_blank">Что такое PESTEL-анализ — полный разбор</a></li>
+      <li><a href="https://skillbox.ru/media/management/predskazyvaem-budushchee-kompanii-chto-takoe-pestanaliz-i-kak-ego-provodit/" target="_blank">Как проводить PEST-анализ — Skillbox</a></li>
+      <li><a href="https://practicum.yandex.ru/blog/chto-takoe-pest-analiz/" target="_blank">PEST-анализ: как определить будущее бизнеса</a></li>
+    </ul>
   </div>
 
-  <!-- TAM/SAM/SOM -->
-  <h2>TAM / SAM / SOM — оценка емкости рынка</h2>
-  <div class="grid">
+  <!-- TAM SAM SOM -->
+  <h2>Оценка рынка: TAM / SAM / SOM</h2>
+  <div class="card">
+    <p><strong>Зачем считать TAM/SAM/SOM?</strong></p>
+    <ul class="materials">
+      <li>определить объём рынка и потенциал продукта</li>
+      <li>оценить верхнюю границу заработка</li>
+      <li>выявить наиболее реалистичный сегмент для старта</li>
+      <li>понять, есть ли смысл инвестировать в идею</li>
+    </ul>
 
-    <div class="card">
-      <div class="tag">Статья</div>
-      <h3>TAM/SAM/SOM простыми словами</h3>
-      <p>Считаем реальный потенциал рынка и долю продукта.</p>
-      <a class="btn" href="https://habr.com/ru/articles/591201/" target="_blank">Читать →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Видео</div>
-      <h3>Как продакт считает размер рынка</h3>
-      <p>Пошаговая методика + Excel-модель.</p>
-      <a class="btn" href="https://www.youtube.com/watch?v=8iAbKLFXrrc" target="_blank">Смотреть →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Подкаст</div>
-      <h3>Оценка рынка и рыночные гипотезы</h3>
-      <p>Что важно в ранних стадиях продукта.</p>
-      <a class="btn" href="https://soundcloud.com/productsense" target="_blank">Слушать →</a>
-    </div>
-
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://vc.ru/u/269993-svetlana-chernikova/1211294-tam-sam-som-tri-glavnyh-slova-dlya-investora-kak-schitat-obem-rynka-i-gde-brat-dannye" target="_blank">TAM/SAM/SOM: как считать объём рынка</a></li>
+      <li><a href="https://skillbox.ru/media/marketing/kak-otsenit-obyem-rynka-metodom-pam-tam-sam-som-rasskazyvaem-na-primere-onlaynservisa/" target="_blank">Как оценивать рынок — Skillbox</a></li>
+      <li><a href="https://kontur.ru/compass/spravka-compass/47516-ocenka_objyoma_rynka_po_pam_tam_sam_som" target="_blank">Методика оценки объёма рынка</a></li>
+    </ul>
   </div>
 
-  <!-- Портер -->
+  <!-- Porter's Five Forces -->
   <h2>5 сил Портера</h2>
-  <div class="grid">
+  <div class="card">
+    <p><strong>Зачем использовать модель Портера?</strong></p>
+    <ul class="materials">
+      <li>оценить конкурентное давление на рынке</li>
+      <li>понять, насколько сложен вход на рынок</li>
+      <li>определить угрозы субститутов и новых игроков</li>
+      <li>выявить ключевых поставщиков и влияние клиентов</li>
+    </ul>
 
-    <div class="card">
-      <div class="tag">Статья</div>
-      <h3>Модель Портера: полный разбор</h3>
-      <p>Структура, применение, реальные примеры в IT.</p>
-      <a class="btn" href="https://ecm-journal.ru/post/model-pyati-sil-portera" target="_blank">Читать →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Видео</div>
-      <h3>5 Forces за 10 минут</h3>
-      <p>Короткое объяснение и кейсы из бизнеса.</p>
-      <a class="btn" href="https://www.youtube.com/watch?v=HrYdW9TcHc4" target="_blank">Смотреть →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Статья</div>
-      <h3>Как продакту использовать пять сил</h3>
-      <p>Анализ конкурентного давления при запуске продукта.</p>
-      <a class="btn" href="https://productcoalition.com/porters-five-forces-for-product-managers" target="_blank">Читать →</a>
-    </div>
-
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://www.unisender.com/ru/glossary/model-5-konkurentnyh-sil-portera/" target="_blank">5 сил Портера — объяснение</a></li>
+      <li><a href="https://vc.ru/marketing/69023-5-sil-portera-primer-analiza-s-poshagovoi-instrukciei-i-tablicei" target="_blank">Пошаговая инструкция анализа по Портеру</a></li>
+    </ul>
   </div>
 
-  <!-- Анализ конкурентов -->
-  <h2>Анализ конкурентов</h2>
-  <div class="grid">
+  <!-- Other methods -->
+  <h2>Другие подходы к анализу рынка</h2>
+  <div class="card">
+    <p>Дополнительные материалы, которые расширят понимание рыночного анализа.</p>
 
-    <div class="card">
-      <div class="tag">Статья</div>
-      <h3>Как проводить конкурентный анализ</h3>
-      <p>Фичи, позиционирование, ценность, сегменты пользователей.</p>
-      <a class="btn" href="https://vc.ru/u/1992778-product-zone/711356" target="_blank">Читать →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Видео</div>
-      <h3>Конкурентные таблицы и методики</h3>
-      <p>Разбор инструментария продакта.</p>
-      <a class="btn" href="https://www.youtube.com/watch?v=lZZ_-NAfZCY" target="_blank">Смотреть →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Статья</div>
-      <h3>Как искать слабые места конкурентов</h3>
-      <p>Jobs-to-be-done угол + триггеры перехода.</p>
-      <a class="btn" href="https://rewired.one/blog/competitor-analysis/" target="_blank">Читать →</a>
-    </div>
-
-  </div>
-
-  <!-- Тренды рынка -->
-  <h2>Анализ трендов и рыночного ландшафта</h2>
-  <div class="grid">
-
-    <div class="card">
-      <div class="tag">Видео</div>
-      <h3>Как продакт исследует тренды</h3>
-      <p>Источники данных, отчеты, прогнозирование.</p>
-      <a class="btn" href="https://www.youtube.com/watch?v=GMp2wFk_hO0" target="_blank">Смотреть →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Статья</div>
-      <h3>Анализ трендов: инструменты и методы</h3>
-      <p>Google Trends, SimilarWeb, PwC, Gartner — как читать данные.</p>
-      <a class="btn" href="https://vc.ru/u/588382-lev-levickiy/186781" target="_blank">Читать →</a>
-    </div>
-
-    <div class="card">
-      <div class="tag">Отчеты</div>
-      <h3>Gartner + McKinsey: бесплатные части отчетов</h3>
-      <p>Главные ежегодные инсайты рынков.</p>
-      <a class="btn" href="https://www.mckinsey.com/featured-insights" target="_blank">Открыть →</a>
-    </div>
-
+    <ul class="materials">
+      <li><a href="https://www.youtube.com/watch?v=mqYLhI3JS2M" target="_blank">Видео: Как анализировать рынок и конкурентов</a></li>
+      <li><a href="https://habr.com/ru/articles/785316/" target="_blank">Habr: современный взгляд на анализ рынка</a></li>
+    </ul>
   </div>
 
   <footer>
-    © <span id="y"></span> Лев Левицкий • <a href="/sitemap.xml">sitemap</a> • <a href="/product-map">карта знаний</a> • <a href="/">главная</a>
+    © <span id="y"></span> Лев Левицкий • 
+    <a href="/product-map">карта знаний</a> •
+    <a href="https://levlevitsky.ru" target="_blank">главная</a>
   </footer>
 
 </div>
 
 <script>
-  document.getElementById('y').textContent=new Date().getFullYear();
+  document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 
 </body>

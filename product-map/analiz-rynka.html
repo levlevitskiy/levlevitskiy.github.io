@@ -2,26 +2,27 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Анализ рынка в продукт-менеджменте — методы, примеры, инструменты</title>
+  <title>Анализ рынка в продукт-менеджменте — методы, примеры, инструменты</title>
 
-    <meta name="description" content="Как провести анализ рынка продукт-менеджеру: конкуренты, TAM/SAM/SOM, сегментация, точки роста. Методы и чеклист для PM.">
+  <meta name="description" content="Как провести анализ рынка продукт-менеджеру: конкуренты, TAM/SAM/SOM, сегментация, точки роста. Методы и чеклист для PM.">
 
-    <link rel="canonical" href="https://levlevitsky.ru/product-map/analiz-rynka">
+  <link rel="canonical" href="https://levlevitsky.ru/product-map/analiz-rynka">
 
-    <meta property="og:title" content="Анализ рынка — руководство PM">
-    <meta property="og:description" content="Методы анализа рынка: конкуренты, сегментация, TAM/SAM/SOM. Полное руководство для PM.">
-    <meta property="og:url" content="https://levlevitsky.ru/product-map/analiz-rynka">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://levlevitsky.ru/avatar.jpg">
+  <meta property="og:title" content="Анализ рынка — руководство PM">
+  <meta property="og:description" content="Методы анализа рынка: конкуренты, сегментация, TAM/SAM/SOM. Полное руководство для PM.">
+  <meta property="og:url" content="https://levlevitsky.ru/product-map/analiz-rynka">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://levlevitsky.ru/avatar.jpg">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Анализ рынка — гайд продукт-менеджера">
-    <meta name="twitter:description" content="Методы анализа рынка: конкуренты, сегментация, TAM/SAM/SOM.">
-    <meta name="twitter:image" content="https://levlevitsky.ru/avatar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Анализ рынка — гайд продукт-менеджера">
+  <meta name="twitter:description" content="Методы анализа рынка: конкуренты, сегментация, TAM/SAM/SOM.">
+  <meta name="twitter:image" content="https://levlevitsky.ru/avatar.jpg">
 
-    <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
+
   <style>
     :root {
       --bg:#ffffff;
@@ -31,7 +32,9 @@
       --acc:#0056ff;
       --bd:#ddd;
     }
+
     * { box-sizing:border-box; }
+
     body {
       margin:0;
       padding:0;
@@ -39,6 +42,7 @@
       color:var(--fg);
       font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
     }
+
     a { color:var(--acc); text-decoration:none; }
     a:hover { text-decoration:underline; }
 
@@ -54,16 +58,19 @@
       font-weight:700;
       line-height:1.3;
     }
+
     h2 {
       font-size:26px;
       margin:45px 0 14px;
       font-weight:700;
     }
+
     h3 {
       font-size:20px;
       margin:20px 0 10px;
       font-weight:600;
     }
+
     p.lead {
       color:var(--muted);
       font-size:18px;
@@ -79,11 +86,95 @@
       margin:24px 0;
     }
 
+    /* Header */
+    .header-nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+      margin-bottom:10px;
+      border-bottom:1px solid var(--bd);
+    }
+
+    .nav-link {
+      font-size:16px;
+      color:var(--acc);
+    }
+
+    /* TOC */
+    .toc {
+      margin:32px 0;
+      padding:0;
+    }
+
+    .toc-title {
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+
+    .toc-list {
+      list-style:none;
+      padding-left:0;
+      margin:0;
+    }
+
+    .toc-list li {
+      margin:6px 0;
+      padding-left:0;
+    }
+
+    .toc-list li a {
+      color:var(--acc);
+      font-size:16px;
+    }
+    
+    .cta-block {
+  margin-top: 50px;
+  padding: 32px;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--bd);
+}
+
+.cta-title {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cta-text {
+  margin: 0 0 24px;
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 700px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--acc);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--acc);
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cta-button:hover {
+  background: var(--acc);
+  color: white;
+  text-decoration: none;
+}
+
+
     ul.materials {
       margin:12px 0 6px 20px;
       padding-left:0;
       color:var(--muted);
     }
+
     ul.materials li { margin-bottom:6px; }
 
     footer {
@@ -93,100 +184,173 @@
       color:var(--muted);
       font-size:14px;
     }
+
+    /* Mobile layout */
+    @media (max-width:480px) {
+      .header-nav {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+      }
+    }
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <h1>Анализ рынка — ключевая часть стратегии продукта</h1>
+<header class="header-nav">
+  <a class="nav-link" href="/product-map/">← К карте знаний</a>
+  <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer">Мой Telegram-канал</a>
+</header>
 
-  <p class="lead">
-    Задача анализа рынка — определить, есть ли у вашей идеи потенциал, какие внешние факторы влияют на продукт и как оценить объём рынка.
+<h1>Анализ рынка: полный разбор для продакт-менеджеров</h1>
+
+<p class="lead">
+Анализ рынка — один из ключевых этапов работы продукт-менеджера.
+Он помогает понять конкурентов, объём рынка, сегменты, динамику спроса и точки роста.
+</p>
+
+<p class="lead">
+На этой странице собраны основные фреймворки и материалы по анализу рынка, которые используют продакт-менеджеры и основатели компаний.
+</p>
+
+<nav class="toc">
+  <h3 class="toc-title">Оглавление</h3>
+  <ul class="toc-list">
+    <li><a href="#pestel">PESTEL-анализ</a></li>
+    <li><a href="#tam-sam-som">Оценка рынка: TAM / SAM / SOM</a></li>
+    <li><a href="#porter">5 сил Портера</a></li>
+    <li><a href="#other-approaches">Другие подходы к анализу рынка</a></li>
+  </ul>
+</nav>
+
+<!-- PESTEL -->
+<h2 id="pestel">PESTEL-анализ</h2>
+<div class="card">
+  <p><strong>Зачем продакту PESTEL?</strong></p>
+  <ul class="materials">
+    <li>понимать внешние факторы, влияющие на рынок</li>
+    <li>видеть угрозы и возможности, которые мы не контролируем</li>
+    <li>определять, растёт рынок или сокращается</li>
+    <li>учитывать макроэкономический контекст при принятии решений</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://www.mindonmap.com/ru/blog/what-is-pestel-analysis/" target="_blank">Что такое PESTEL-анализ — полный разбор</a></li>
+    <li><a href="https://skillbox.ru/media/management/predskazyvaem-budushchee-kompanii-chto-takoe-pestanaliz-i-kak-ego-provodit/" target="_blank">Как проводить PEST-анализ — Skillbox</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-pest-analiz/" target="_blank">PEST-анализ: как определить будущее бизнеса</a></li>
+  </ul>
+</div>
+
+<!-- TAM SAM SOM -->
+<h2 id="tam-sam-som">Оценка рынка: TAM / SAM / SOM</h2>
+<div class="card">
+  <p><strong>Зачем считать TAM/SAM/SOM?</strong></p>
+  <ul class="materials">
+    <li>определить объём рынка и потенциал продукта</li>
+    <li>оценить верхнюю границу заработка</li>
+    <li>выявить наиболее реалистичный сегмент для старта</li>
+    <li>понять, есть ли смысл инвестировать в идею</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://vc.ru/u/269993-svetlana-chernikova/1211294-tam-sam-som-tri-glavnyh-slova-dlya-investora-kak-schitat-obem-rynka-i-gde-brat-dannye" target="_blank">TAM/SAM/SOM: как считать объём рынка</a></li>
+    <li><a href="https://skillbox.ru/media/marketing/kak-otsenit-obyem-rynka-metodom-pam-tam-sam-som-rasskazyvaem-na-primere-onlaynservisa/" target="_blank">Как оценивать рынок — Skillbox</a></li>
+    <li><a href="https://kontur.ru/compass/spravka-compass/47516-ocenka_objyoma_rynka_po_pam_tam_sam_som" target="_blank">Методика оценки объёма рынка</a></li>
+  </ul>
+</div>
+
+<!-- Porter's Five Forces -->
+<h2 id="porter">5 сил Портера</h2>
+<div class="card">
+  <p><strong>Зачем использовать модель Портера?</strong></p>
+  <ul class="materials">
+    <li>оценить конкурентное давление на рынке</li>
+    <li>понять, насколько сложен вход на рынок</li>
+    <li>определить угрозы субститутов и новых игроков</li>
+    <li>выявить ключевых поставщиков и влияние клиентов</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://www.unisender.com/ru/glossary/model-5-konkurentnyh-sil-portera/" target="_blank">5 сил Портера — объяснение</a></li>
+    <li><a href="https://vc.ru/marketing/69023-5-sil-portера-primer-analiza-s-poshagovoi-instrukciei-i-tablicei" target="_blank">Пошаговая инструкция анализа по Портеру</a></li>
+  </ul>
+</div>
+
+<!-- Other methods -->
+<h2 id="other-approaches">Другие подходы к анализу рынка</h2>
+<div class="card">
+  <p>Дополнительные материалы, которые расширят понимание рыночного анализа.</p>
+
+  <ul class="materials">
+    <li><a href="https://www.youtube.com/watch?v=mqYLhI3JS2M" target="_blank">Видео: Как анализировать рынок и конкурентов</a></li>
+    <li><a href="https://habr.com/ru/articles/785316/" target="_blank">Habr: современный взгляд на анализ рынка</a></li>
+  </ul>
+</div>
+
+<section class="related">
+  <h2>Читайте также</h2>
+  <ul>
+    <li><a href="/product-map/analiz-auditorii-produkta">Анализ аудитории продукта</a></li>
+    <li><a href="/product-map/gipotezy-i-prioritizaciya-produkta">Гипотезы и приоритизация</a></li>
+    <li><a href="/product-map/metriki-i-analitika-produkta">Метрики и аналитика продукта</a></li>
+    <li><a href="/product-map/mvp-mlp">MVP и MLP</a></li>
+  </ul>
+</section>
+
+<div class="cta-block">
+  <h2 class="cta-title">Подписывайся на мой Telegram-канал</h2>
+  <p class="cta-text">
+    В канале я делюсь материалами по продакт-менеджменту, разбираю кейсы, показываю инструменты и рассказываю о развитии в профессии.
   </p>
 
-  <p class="lead">
-    На этой странице собраны основные фреймворки и материалы по анализу рынка, которые используют продакт-менеджеры и основатели.
-  </p>
+  <a href="https://t.me/levlevitsky_channel" target="_blank" class="cta-button">
+    📣 Подписаться на Telegram-канал
+  </a>
+</div>
 
-  <!-- PESTEL -->
-  <h2>PESTEL-анализ</h2>
-  <div class="card">
-    <p><strong>Зачем продакту PESTEL?</strong></p>
-    <ul class="materials">
-      <li>понимать внешние факторы, влияющие на рынок</li>
-      <li>видеть угрозы и возможности, которые мы не контролируем</li>
-      <li>определять, растёт рынок или сокращается</li>
-      <li>учитывать макроэкономический контекст при принятии решений</li>
-    </ul>
 
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://www.mindonmap.com/ru/blog/what-is-pestel-analysis/" target="_blank">Что такое PESTEL-анализ — полный разбор</a></li>
-      <li><a href="https://skillbox.ru/media/management/predskazyvaem-budushchee-kompanii-chto-takoe-pestanaliz-i-kak-ego-provodit/" target="_blank">Как проводить PEST-анализ — Skillbox</a></li>
-      <li><a href="https://practicum.yandex.ru/blog/chto-takoe-pest-analiz/" target="_blank">PEST-анализ: как определить будущее бизнеса</a></li>
-    </ul>
-  </div>
-
-  <!-- TAM SAM SOM -->
-  <h2>Оценка рынка: TAM / SAM / SOM</h2>
-  <div class="card">
-    <p><strong>Зачем считать TAM/SAM/SOM?</strong></p>
-    <ul class="materials">
-      <li>определить объём рынка и потенциал продукта</li>
-      <li>оценить верхнюю границу заработка</li>
-      <li>выявить наиболее реалистичный сегмент для старта</li>
-      <li>понять, есть ли смысл инвестировать в идею</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://vc.ru/u/269993-svetlana-chernikova/1211294-tam-sam-som-tri-glavnyh-slova-dlya-investora-kak-schitat-obem-rynka-i-gde-brat-dannye" target="_blank">TAM/SAM/SOM: как считать объём рынка</a></li>
-      <li><a href="https://skillbox.ru/media/marketing/kak-otsenit-obyem-rynka-metodom-pam-tam-sam-som-rasskazyvaem-na-primere-onlaynservisa/" target="_blank">Как оценивать рынок — Skillbox</a></li>
-      <li><a href="https://kontur.ru/compass/spravka-compass/47516-ocenka_objyoma_rynka_po_pam_tam_sam_som" target="_blank">Методика оценки объёма рынка</a></li>
-    </ul>
-  </div>
-
-  <!-- Porter's Five Forces -->
-  <h2>5 сил Портера</h2>
-  <div class="card">
-    <p><strong>Зачем использовать модель Портера?</strong></p>
-    <ul class="materials">
-      <li>оценить конкурентное давление на рынке</li>
-      <li>понять, насколько сложен вход на рынок</li>
-      <li>определить угрозы субститутов и новых игроков</li>
-      <li>выявить ключевых поставщиков и влияние клиентов</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://www.unisender.com/ru/glossary/model-5-konkurentnyh-sil-portera/" target="_blank">5 сил Портера — объяснение</a></li>
-      <li><a href="https://vc.ru/marketing/69023-5-sil-portera-primer-analiza-s-poshagovoi-instrukciei-i-tablicei" target="_blank">Пошаговая инструкция анализа по Портеру</a></li>
-    </ul>
-  </div>
-
-  <!-- Other methods -->
-  <h2>Другие подходы к анализу рынка</h2>
-  <div class="card">
-    <p>Дополнительные материалы, которые расширят понимание рыночного анализа.</p>
-
-    <ul class="materials">
-      <li><a href="https://www.youtube.com/watch?v=mqYLhI3JS2M" target="_blank">Видео: Как анализировать рынок и конкурентов</a></li>
-      <li><a href="https://habr.com/ru/articles/785316/" target="_blank">Habr: современный взгляд на анализ рынка</a></li>
-    </ul>
-  </div>
-
-  <footer>
-    © <span id="y"></span> Лев Левицкий • 
-    <a href="/product-map">карта знаний</a> •
-    <a href="https://levlevitsky.ru" target="_blank">главная</a>
-  </footer>
+<footer>
+  © <span id="y"></span> Лев Левицкий • 
+  <a href="/product-map">карта знаний</a> •
+  <a href="https://levlevitsky.ru" target="_blank">главная</a>
+</footer>
 
 </div>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+
+<!-- 🔍 Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) { return; }
+    }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104666081', 'ym');
+
+ym(104666081, 'init', {
+    ssr:true,
+    webvisor:true,
+    trackHash:true,
+    clickmap:true,
+    ecommerce:"dataLayer",
+    accurateTrackBounce:true,
+    trackLinks:true
+});
+</script>
+
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/104666081" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
 
 </body>
 </html>

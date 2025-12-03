@@ -1,79 +1,167 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Метрики и аналитика продукта — база материалов | Product Map</title>
+  <title>Метрики и аналитика продукта — руководство PM</title>
 
-  <meta name="description" content="Метрики и аналитика продукта для продакт-менеджеров: data-driven подход, дерево метрик, AARRR, аналитический прогноз, юнит-экономика, инструменты аналитики. Полная бесплатная база материалов для обучения продакт-менеджера с нуля.">
+  <meta name="description" content="Продуктовые метрики, аналитика, AARRR, дерево метрик, юнит-экономика, прогнозирование и аналитические инструменты. Полная система материалов для продукт-менеджера.">
 
-  <link rel="canonical" href="https://levlevitsky.ru/product-map/metriki-i-analitika-produkta" />
+  <link rel="canonical" href="https://levlevitsky.ru/product-map/metriki-i-analitika-produkta">
+
+  <meta property="og:title" content="Метрики и аналитика продукта — руководство PM">
+  <meta property="og:description" content="Метрики, AARRR, прогнозы, юнит-экономика, аналитические инструменты. Полная база для PM.">
+  <meta property="og:url" content="https://levlevitsky.ru/product-map/metriki-i-analitika-produkta">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://levlevitsky.ru/avatar.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Метрики и аналитика продукта — гайд PM">
+  <meta name="twitter:description" content="Метрики, AARRR, прогнозирование, аналитика. База материалов.">
+  <meta name="twitter:image" content="https://levlevitsky.ru/avatar.jpg">
+
+  <link rel="icon" href="/favicon.ico">
 
   <style>
     :root {
       --bg:#ffffff;
-      --fg:#111111;
+      --fg:#1b1b1f;
       --muted:#555;
-      --card:#f6f6f8;
       --acc:#7a5cff;
+      --card:#f6f6f8;
       --bd:#e2e2e6;
     }
+
     * { box-sizing:border-box; }
+
     body {
       margin:0;
       padding:0;
       background:var(--bg);
       color:var(--fg);
-      font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
     }
+
     a { color:var(--acc); text-decoration:none; }
     a:hover { text-decoration:underline; }
 
     .wrap {
-      max-width:900px;
+      max-width:960px;
       margin:0 auto;
       padding:40px 24px 70px;
     }
 
     h1 {
-      font-size:36px;
+      font-size:34px;
       margin:0 0 20px;
       font-weight:700;
-      line-height:1.28;
+      line-height:1.3;
     }
+
     h2 {
       font-size:26px;
-      margin:46px 0 14px;
+      margin:45px 0 14px;
       font-weight:700;
     }
+
     h3 {
       font-size:20px;
-      margin:22px 0 10px;
+      margin:20px 0 10px;
       font-weight:600;
     }
+
     p.lead {
       color:var(--muted);
       font-size:18px;
       max-width:760px;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
 
     .card {
       background:var(--card);
       padding:28px;
-      border-radius:16px;
+      border-radius:18px;
       border:1px solid var(--bd);
-      margin:26px 0;
+      margin:24px 0;
+    }
+
+    /* Header */
+    .header-nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+      margin-bottom:10px;
+      border-bottom:1px solid var(--bd);
+    }
+
+    .nav-link {
+      font-size:16px;
+      color:var(--acc);
+    }
+
+    /* TOC */
+    .toc {
+      margin:32px 0;
+    }
+
+    .toc-title {
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+
+    .toc-list {
+      list-style:none;
+      padding-left:0;
+    }
+
+    .toc-list li {
+      margin:6px 0;
+    }
+
+    .cta-block {
+      margin-top: 50px;
+      padding: 32px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--bd);
+    }
+
+    .cta-title {
+      margin: 0 0 12px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .cta-text {
+      margin: 0 0 24px;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 14px;
+      border: 1px solid var(--acc);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--acc);
+      background: transparent;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .cta-button:hover {
+      background: var(--acc);
+      color: white;
     }
 
     ul.materials {
-      margin:14px 0 6px 20px;
-      padding-left:0;
+      margin:12px 0 6px 20px;
       color:var(--muted);
-    }
-    ul.materials li {
-      margin-bottom:6px;
     }
 
     footer {
@@ -83,144 +171,213 @@
       color:var(--muted);
       font-size:14px;
     }
+
+    @media (max-width:480px) {
+      .header-nav {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+      }
+    }
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <h1>Метрики и аналитика продукта</h1>
+<header class="header-nav">
+  <a class="nav-link" href="/product-map/">← К карте знаний</a>
+  <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank">Мой Telegram-канал</a>
+</header>
 
-  <p class="lead">
-    Метрики и аналитика — фундамент работы продакт-менеджера. Именно они позволяют понять, как продукт растёт, какие действия влияют на ключевые показатели и куда надо направить усилия команды.
+<h1>Метрики и аналитика продукта</h1>
+
+<p class="lead">
+Метрики — это система координат, в которой живёт продукт. Они позволяют понимать рост, находить узкие места, принимать решения и прогнозировать результаты.
+</p>
+
+<p class="lead">
+Здесь собрана структурированная база материалов о метриках, аналитическом подходе, воронках AARRR, дереве метрик, юнит-экономике и аналитических инструментах.
+</p>
+
+<nav class="toc">
+  <h3 class="toc-title">Оглавление</h3>
+  <ul class="toc-list">
+    <li><a href="#data-driven">Data-driven подход</a></li>
+    <li><a href="#metric-tree">Дерево метрик</a></li>
+    <li><a href="#aarrr">Воронка AARRR</a></li>
+    <li><a href="#forecast">Аналитический прогноз</a></li>
+    <li><a href="#tools">Инструменты аналитики</a></li>
+    <li><a href="#unit">Юнит-экономика</a></li>
+  </ul>
+</nav>
+
+<!-- DATA DRIVEN -->
+<h2 id="data-driven">Data-driven подход</h2>
+<div class="card">
+  <p><strong>Зачем продакту решения на данных?</strong></p>
+  <ul class="materials">
+    <li>минимизация ошибок за счёт проверки гипотез</li>
+    <li>понимание реального поведения пользователей</li>
+    <li>объективная оценка влияния продукта</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://www.youtube.com/watch?v=LGwy0QmMvOE" target="_blank">Основы data-driven подхода</a></li>
+    <li><a href="https://www.youtube.com/watch?v=v1S4ikiFAxA" target="_blank">Как продакт принимает решения на данных</a></li>
+    <li><a href="https://habr.com/ru/companies/vk/articles/503296/" target="_blank">Как устроена аналитика в продукте</a></li>
+  </ul>
+</div>
+
+<!-- METRIC TREE -->
+<h2 id="metric-tree">Дерево метрик</h2>
+<div class="card">
+  <p><strong>Зачем строить дерево метрик?</strong></p>
+  <ul class="materials">
+    <li>связь продуктовых и бизнес-метрик</li>
+    <li>определение метрик, на которые можно влиять напрямую</li>
+    <li>прогнозирование результатов изменений</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://youtu.be/0KColE4-MdY" target="_blank">Видео: что такое дерево метрик</a></li>
+    <li><a href="https://habr.com/ru/companies/otus/articles/694734/" target="_blank">Как строить дерево метрик</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-produktovye-metriki-i-kakimi-они-byvayut/" target="_blank">Разбор продуктовых метрик</a></li>
+  </ul>
+</div>
+
+<!-- AARRR -->
+<h2 id="aarrr">Воронка AARRR</h2>
+<div class="card">
+  <p><strong>Зачем нужна AARRR?</strong></p>
+  <ul class="materials">
+    <li>полная картина пути пользователя</li>
+    <li>выявление узких точек в движении по продукту</li>
+    <li>приоритизация улучшений через данные</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://www.alexcouncil.com/aarrr-piratskie-metriki/" target="_blank">AARRR — пиратские метрики</a></li>
+    <li><a href="https://youtu.be/FdP6KU8Xi68" target="_blank">Видео разбор AARRR</a></li>
+  </ul>
+</div>
+
+<!-- FORECAST -->
+<h2 id="forecast">Аналитический прогноз</h2>
+<div class="card">
+  <p><strong>Зачем продакту прогноз?</strong></p>
+  <ul class="materials">
+    <li>оценка влияния фичи на ключевые показатели</li>
+    <li>понимание экономики изменений до разработки</li>
+    <li>приоритизация задач по ожидаемому эффекту</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://t.me/levlevitsky_channel/2162" target="_blank">Как продакт строит прогнозы</a></li>
+  </ul>
+</div>
+
+<!-- TOOLS -->
+<h2 id="tools">Инструменты аналитики</h2>
+<div class="card">
+  <p><strong>Какие инструменты должен знать продакт?</strong></p>
+  <ul class="materials">
+    <li>SQL</li>
+    <li>Excel / Google Sheets</li>
+    <li>Tableau</li>
+    <li>Superset</li>
+    <li>Amplitude</li>
+    <li>Metabase</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://www.youtube.com/watch?v=Vy_rq-x9QEo" target="_blank">Обзор инструментов аналитики</a></li>
+  </ul>
+</div>
+
+<!-- UNIT -->
+<h2 id="unit">Юнит-экономика</h2>
+<div class="card">
+  <p><strong>Почему продакт должен уметь считать юнит-экономику?</strong></p>
+  <ul class="materials">
+    <li>понимание окупаемости продукта</li>
+    <li>поиск точек масштабирования</li>
+    <li>выявление убыточных сегментов</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://youtu.be/h8VWl0GFW3Y" target="_blank">Видео: основы юнит-экономики</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-yunit-ekonomika-kak-schitat/" target="_blank">Как считать юнит-экономику</a></li>
+  </ul>
+</div>
+
+<!-- RELATED -->
+<section class="related" style="margin-top:50px;">
+  <h2>Читайте также</h2>
+  <ul>
+    <li><a href="/product-map/analiz-rynka">Анализ рынка</a></li>
+    <li><a href="/product-map/analiz-auditorii-produkta">Анализ аудитории продукта</a></li>
+    <li><a href="/product-map/gipotezy-i-prioritizaciya-produkta">Гипотезы и приоритизация</a></li>
+    <li><a href="/product-map/mvp-mlp">MVP и MLP</a></li>
+  </ul>
+</section>
+
+<!-- CTA -->
+<div class="cta-block">
+  <h2 class="cta-title">Подписывайся на мой Telegram-канал</h2>
+  <p class="cta-text">
+    Там я делюсь аналитикой, фреймворками и инструментами, которые использую как продакт. 
+    Всё — бесплатно и практично.
   </p>
 
-  <p class="lead">
-    На этой странице — лучшие бесплатные материалы о продуктовых метриках, аналитике, прогнозировании, AARRR, юнит-экономике и аналитических инструментах. Всё, что нужно для <strong>обучения продакт-менеджера с нуля</strong> и системного роста.
-  </p>
+  <a href="https://t.me/levlevitsky_channel" target="_blank" class="cta-button">
+    📣 Подписаться на Telegram-канал
+  </a>
+</div>
 
-  <!-- DATA-DRIVEN -->
-  <h2>Data-driven подход</h2>
-  <div class="card">
-    <p><strong>Почему продакт должен принимать решения на данных?</strong></p>
-    <ul class="materials">
-      <li>минимизация ошибок за счет проверки гипотез цифрами</li>
-      <li>понимание реального поведения пользователей</li>
-      <li>возможность объективно оценивать влияние продукта</li>
-    </ul>
+<footer>
+  © <span id="y"></span> Лев Левицкий • 
+  <a href="/product-map">карта знаний</a> •
+  <a href="https://levlevitsky.ru" target="_blank">главная</a>
+</footer>
 
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://www.youtube.com/watch?v=LGwy0QmMvOE" target="_blank">Основы data-driven подхода</a></li>
-      <li><a href="https://www.youtube.com/watch?v=v1S4ikiFAxA" target="_blank">Как продакт принимает решения на данных</a></li>
-      <li><a href="https://habr.com/ru/companies/vk/articles/503296/" target="_blank">Как устроена аналитика в продукте</a></li>
-    </ul>
-  </div>
-
-  <!-- METRIC TREE -->
-  <h2>Дерево метрик</h2>
-  <div class="card">
-    <p><strong>Зачем продакт строит дерево метрик?</strong></p>
-    <ul class="materials">
-      <li>понимание связи между продуктовыми и бизнес-метриками</li>
-      <li>выделение метрик, на которые команда может реально влиять</li>
-      <li>возможность прогнозировать результаты изменений</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://youtu.be/0KColE4-MdY?si=5OePACxARuTev0Dd" target="_blank">Видео: что такое дерево метрик</a></li>
-      <li><a href="https://habr.com/ru/companies/otus/articles/694734/" target="_blank">Как строить дерево метрик</a></li>
-      <li><a href="https://practicum.yandex.ru/blog/chto-takoe-produktovye-metriki-i-kakimi-oni-byvayut/" target="_blank">Разбор продуктовых метрик</a></li>
-      <li><a href="https://skillbox.ru/media/management/chto_takoe_produktovye_metriki_i_zachem_oni_nuzhny/" target="_blank">Гайд по продуктовым метрикам</a></li>
-      <li><a href="https://habr.com/ru/companies/agima/articles/753314/" target="_blank">Стратегия метрик: рекомендации</a></li>
-    </ul>
-  </div>
-
-  <!-- AARRR -->
-  <h2>Воронка AARRR</h2>
-  <div class="card">
-    <p><strong>Почему AARRR важна для продакта?</strong></p>
-    <ul class="materials">
-      <li>дает полную картину того, как пользователи проходят путь в продукте</li>
-      <li>позволяет находить узкие места</li>
-      <li>помогает формировать сильные продуктовые гипотезы</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://www.alexcouncil.com/aarrr-piratskie-metriki/" target="_blank">AARRR — пиратские метрики</a></li>
-      <li><a href="https://youtu.be/FdP6KU8Xi68?si=glxfdzGvyPOF7V-l" target="_blank">Видео разбор AARRR</a></li>
-    </ul>
-  </div>
-
-  <!-- FORECAST -->
-  <h2>Составление аналитического прогноза</h2>
-  <div class="card">
-    <p><strong>Зачем продакту прогноз?</strong></p>
-    <ul class="materials">
-      <li>оценка влияния фичи на ключевые метрики</li>
-      <li>понимание экономики изменений до разработки</li>
-      <li>приоритизация задач через ожидаемый эффект</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://t.me/levlevitsky_channel/2162" target="_blank">Как продакт строит аналитические прогнозы</a></li>
-    </ul>
-  </div>
-
-  <!-- ANALYTICAL TOOLS -->
-  <h2>Инструменты аналитики</h2>
-  <div class="card">
-    <p><strong>Почему продакту важно владеть инструментами аналитики?</strong></p>
-    <ul class="materials">
-      <li>быстрый поиск инсайтов на данных</li>
-      <li>умение работать с дашбордами и визуализациями</li>
-      <li>генерация гипотез на основе поведения пользователей</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://www.youtube.com/watch?v=Vy_rq-x9QEo" target="_blank">Обзор инструментов аналитики</a></li>
-      <li>Excel</li>
-      <li>SQL</li>
-      <li>Tableau</li>
-      <li>Superset</li>
-      <li>Amplitude</li>
-      <li>Metabase</li>
-    </ul>
-  </div>
-
-  <!-- UNIT ECONOMICS -->
-  <h2>Юнит-экономика</h2>
-  <div class="card">
-    <p><strong>Зачем продакту юнит-экономика?</strong></p>
-    <ul class="materials">
-      <li>оценка окупаемости продукта</li>
-      <li>понимание возможностей масштабирования</li>
-      <li>поиск проблемных зон экономики продукта</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://youtu.be/h8VWl0GFW3Y?si=0PcIULjki_-UAoIg" target="_blank">Видео: основы юнит-экономики</a></li>
-      <li><a href="https://practicum.yandex.ru/blog/chto-takoe-yunit-ekonomika-kak-schitat/" target="_blank">Как считать юнит-экономику</a></li>
-      <li><a href="https://business.yandex/finansy/kak-poschitat-yunit-ekonomiku/" target="_blank">Юнит-экономика в бизнесе</a></li>
-      <li><a href="https://skillbox.ru/media/management/razbor-metodiki-yunitekonomika/" target="_blank">Разбор методики юнит-экономики</a></li>
-    </ul>
-  </div>
-
-  <footer>
-    © <span id="y"></span> Лев Левицкий • 
-    <a href="/product-map">карта знаний</a> •
-    <a href="https://levlevitsky.ru" target="_blank" rel="noopener noreferrer">главная</a>
-  </footer>
 </div>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+
+<!-- 🔍 Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) { return; }
+    }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104666081', 'ym');
+
+ym(104666081, 'init', {
+    ssr:true,
+    webvisor:true,
+    trackHash:true,
+    clickmap:true,
+    ecommerce:"dataLayer",
+    accurateTrackBounce:true,
+    trackLinks:true
+});
+</script>
+
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/104666081" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
 
 </body>
 </html>

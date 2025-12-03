@@ -6,7 +6,7 @@
 
   <title>Продуктовые исследования — полная база материалов | Product Map</title>
 
-  <meta name="description" content="Продуктовые исследования для продакт-менеджеров: CustDev, UX-тесты, опросы, анализ конкурентов, исследования по отзывам. Полная бесплатная база материалов для обучения продакт-менеджера с нуля.">
+  <meta name="description" content="Продуктовые исследования: CustDev, UX-тесты, опросы, анализ конкурентов, качественные исследования. Полная бесплатная база материалов для продакт-менеджеров." />
 
   <link rel="canonical" href="https://levlevitsky.ru/product-map/produktovye-issledovaniya" />
 
@@ -19,61 +19,134 @@
       --acc:#7a5cff;
       --bd:#e2e2e6;
     }
+
     * { box-sizing:border-box; }
+
     body {
       margin:0;
       padding:0;
       background:var(--bg);
       color:var(--fg);
-      font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font:16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
+
     a { color:var(--acc); text-decoration:none; }
     a:hover { text-decoration:underline; }
 
     .wrap {
-      max-width:900px;
+      max-width:960px;
       margin:0 auto;
       padding:40px 24px 70px;
     }
 
     h1 {
-      font-size:36px;
+      font-size:34px;
       margin:0 0 20px;
       font-weight:700;
-      line-height:1.28;
+      line-height:1.3;
     }
     h2 {
       font-size:26px;
-      margin:46px 0 14px;
+      margin:45px 0 14px;
       font-weight:700;
     }
     h3 {
       font-size:20px;
-      margin:22px 0 10px;
+      margin:20px 0 10px;
       font-weight:600;
     }
     p.lead {
       color:var(--muted);
       font-size:18px;
       max-width:760px;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
 
     .card {
       background:var(--card);
       padding:28px;
-      border-radius:16px;
+      border-radius:18px;
       border:1px solid var(--bd);
-      margin:26px 0;
+      margin:24px 0;
     }
 
+    /* Header */
+    .header-nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+      margin-bottom:10px;
+      border-bottom:1px solid var(--bd);
+    }
+    .nav-link {
+      font-size:16px;
+      color:var(--acc);
+    }
+
+    /* TOC */
+    .toc { margin:32px 0; }
+    .toc-title {
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .toc-list {
+      list-style:none;
+      padding-left:0;
+      margin:0;
+    }
+    .toc-list li { margin:6px 0; }
+    .toc-list a {
+      font-size:16px;
+      color:var(--acc);
+    }
+
+    /* Materials */
     ul.materials {
-      margin:14px 0 6px 20px;
+      margin:12px 0 6px 20px;
       padding-left:0;
       color:var(--muted);
     }
     ul.materials li {
       margin-bottom:6px;
+      list-style:disc;
+    }
+
+    /* CTA */
+    .cta-block {
+      margin-top:50px;
+      padding:32px;
+      border-radius:18px;
+      background:var(--card);
+      border:1px solid var(--bd);
+    }
+    .cta-title {
+      font-size:24px;
+      font-weight:700;
+      margin:0 0 12px;
+    }
+    .cta-text {
+      font-size:16px;
+      color:var(--muted);
+      margin:0 0 24px;
+      max-width:700px;
+    }
+    .cta-button {
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:14px;
+      border:1px solid var(--acc);
+      font-size:17px;
+      font-weight:600;
+      color:var(--acc);
+      background:transparent;
+      transition:background .15s, color .15s;
+    }
+    .cta-button:hover {
+      background:var(--acc);
+      color:white;
+      text-decoration:none;
     }
 
     footer {
@@ -83,125 +156,201 @@
       color:var(--muted);
       font-size:14px;
     }
+
+    /* Mobile */
+    @media (max-width:480px) {
+      .header-nav {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <h1>Продуктовые исследования — полная база материалов</h1>
+<header class="header-nav">
+  <a class="nav-link" href="/">← К карте знаний</a>
+  <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank">Мой Telegram-канал</a>
+</header>
 
-  <p class="lead">
-    Продуктовые исследования — основа работы продакт-менеджера. Они помогают находить новые гипотезы, проверять идеи, понимать реальных пользователей и принимать решения на основе данных.
+<h1>Продуктовые исследования — полная база материалов</h1>
+
+<p class="lead">
+Продуктовые исследования — фундамент продакт-менеджмента. Они помогают понимать реальных пользователей, проверять гипотезы, находить проблемы и принимать решения на основе данных.
+</p>
+
+<p class="lead">
+Здесь собрана лучшая бесплатная база знаний: CustDev, UX-тесты, опросы, анализ конкурентов и качественные исследования.
+</p>
+
+<nav class="toc">
+  <h2 class="toc-title">Оглавление</h2>
+  <ul class="toc-list">
+    <li><a href="#custdev">CustDev (глубинные интервью)</a></li>
+    <li><a href="#ux">UX-тестирование</a></li>
+    <li><a href="#surveys">Опросы</a></li>
+    <li><a href="#competitors">Анализ конкурентов</a></li>
+    <li><a href="#qualitative">Качественные исследования</a></li>
+  </ul>
+</nav>
+
+<!-- CUSTDEV -->
+<h2 id="custdev">CustDev (глубинные интервью)</h2>
+<div class="card">
+  <p><strong>Зачем продакту CustDev?</strong></p>
+  <ul class="materials">
+    <li>увидеть реальных пользователей и их контекст</li>
+    <li>найти новые гипотезы</li>
+    <li>проверить текущие идеи</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://youtu.be/ymsswuIoXz8" target="_blank">Видео: как правильно проводить CustDev</a></li>
+    <li><a href="https://www.youtube.com/watch?v=DUTw9LLGjdk" target="_blank">Лекция по кастдев-интервью</a></li>
+    <li><a href="https://www.youtube.com/watch?v=OqgF7yAvsco" target="_blank">Методы интервью с пользователями</a></li>
+    <li><a href="https://www.youtube.com/live/tMkgicuUB48" target="_blank">Разбор реальных интервью</a></li>
+    <li><a href="https://vc.ru/books/95793-konspekt-knigi-roba-fitcpatrika-сprosi-mamu" target="_blank">Конспект книги «Спроси маму»</a></li>
+    <li><a href="https://vc.ru/marketing/270457-kasdev-intervyu" target="_blank">Кастдев: структура и ошибки</a></li>
+  </ul>
+</div>
+
+<!-- UX -->
+<h2 id="ux">UX-тестирование</h2>
+<div class="card">
+  <p><strong>Зачем продакту UX-тесты?</strong></p>
+  <ul class="materials">
+    <li>выявить проблемы пользовательского пути</li>
+    <li>выбрать интерфейс, который лучше решает задачу</li>
+    <li>получить честный фидбек</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://bangbangeducation.ru/point/ux-ui-dizain/chto-takoe-ux-testirovanie/" target="_blank">Что такое UX-тестирование</a></li>
+    <li><a href="https://www.youtube.com/watch?v=SyHanFuLHNs" target="_blank">Практические методы</a></li>
+    <li><a href="https://youtu.be/E7TfKVUZPno" target="_blank">Как проводить пользовательские тесты</a></li>
+  </ul>
+</div>
+
+<!-- SURVEYS -->
+<h2 id="surveys">Опросы</h2>
+<div class="card">
+  <p><strong>Зачем продакту опросы?</strong></p>
+  <ul class="materials">
+    <li>подтвердить или отранжировать гипотезы</li>
+    <li>сегментировать аудиторию</li>
+    <li>получить количественные данные</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://education.yandex.ru/journal/11-issledovatelskikh-metodov-dlya-prodakt-menedzherov" target="_blank">11 методов исследований — Яндекс</a></li>
+    <li><a href="https://iom.anketolog.ru/2023/11/03/testirovanie-koncepcii-novogo-produkta-onlajn-opros" target="_blank">Как тестировать концепции через опросы</a></li>
+    <li><a href="https://habr.com/ru/companies/testograf/articles/769792/" target="_blank">Как правильно строить опросы</a></li>
+  </ul>
+</div>
+
+<!-- COMPETITORS -->
+<h2 id="competitors">Анализ конкурентов</h2>
+<div class="card">
+  <p><strong>Зачем анализ конкурентов?</strong></p>
+  <ul class="materials">
+    <li>найти новые продуктовые идеи</li>
+    <li>подтвердить или опровергнуть гипотезы</li>
+    <li>понять логику решений конкурентов</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://habr.com/ru/companies/atom/articles/777928/" target="_blank">Гайд по конкурентному анализу</a></li>
+    <li><a href="https://skillbox.ru/media/marketing/vvedenie-v-konkurentnyy-analiz" target="_blank">11 шагов конкурентного анализа</a></li>
+    <li><a href="https://www.youtube.com/watch?v=mqYLhI3JS2M" target="_blank">Видео-разбор конкурентов</a></li>
+    <li>SWOT-анализ — классический подход</li>
+  </ul>
+</div>
+
+<!-- QUALITATIVE -->
+<h2 id="qualitative">Другие качественные исследования</h2>
+<div class="card">
+  <p><strong>Когда нужны качественные исследования?</strong></p>
+  <ul class="materials">
+    <li>анализировать обращения и отзывы</li>
+    <li>находить новые гипотезы</li>
+    <li>проверять идеи без количественных данных</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://gopractice.ru/skills/qualitative-research-guide/" target="_blank">Гайд по качественным исследованиям — GoPractice</a></li>
+    <li><a href="https://vc.ru/u/1217196-dima-netesov/740900-gaid-po-tipam-issledovanii-kachestvennye" target="_blank">Типы качественных исследований</a></li>
+  </ul>
+</div>
+
+<!-- RELATED -->
+<section class="related">
+  <h2>Читайте также</h2>
+  <ul>
+    <li><a href="/product-map/gipotezy-i-prioritizaciya-produkta">Гипотезы и приоритизация</a></li>
+    <li><a href="/product-map/analiz-rynka">Анализ рынка</a></li>
+    <li><a href="/product-map/analiz-auditorii-produkta">Анализ аудитории</a></li>
+    <li><a href="/product-map/celepolaganie-produkta">Целеполагание продукта</a></li>
+  </ul>
+</section>
+
+<!-- CTA -->
+<div class="cta-block">
+  <h2 class="cta-title">Подписывайся на мой Telegram-канал</h2>
+  <p class="cta-text">
+    Там я делюсь исследованиями, инструментами, кейсами и практическими советами для продакт-менеджеров. Уже 3000+ подписчиков.
   </p>
 
-  <p class="lead">
-    На этой странице — полная подборка лучших бесплатных материалов: CustDev, UX-тестирование, опросы, анализ конкурентов и качественные исследования.
-  </p>
+  <a href="https://t.me/levlevitsky_channel" class="cta-button" target="_blank">
+    📣 Подписаться на канал
+  </a>
+</div>
 
-  <!-- CUSTDEV -->
-  <h2>CustDev (глубинные интервью)</h2>
-  <div class="card">
-    <p><strong>Зачем продакту CustDev?</strong></p>
-    <ul class="materials">
-      <li>увидеть живых людей, которые пользуются вашим продуктом</li>
-      <li>найти новые гипотезы</li>
-      <li>проверить существующие гипотезы</li>
-    </ul>
+<footer>
+  © <span id="y"></span> Лев Левицкий • 
+  <a href="/product-map">карта знаний</a> •
+  <a href="https://levlevitsky.ru" target="_blank">главная</a>
+</footer>
 
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://youtu.be/ymsswuIoXz8?si=oxdVuOrmUJme09t6" target="_blank">Видео: как правильно проводить CustDev</a></li>
-      <li><a href="https://www.youtube.com/watch?v=DUTw9LLGjdk" target="_blank">Лекция по кастдев-интервью</a></li>
-      <li><a href="https://www.youtube.com/watch?v=OqgF7yAvsco" target="_blank">Методы интервью с пользователями</a></li>
-      <li><a href="https://www.youtube.com/live/tMkgicuUB48?si=AIBGd0pBdZ6R4J2j" target="_blank">Большой разбор реальных интервью</a></li>
-      <li><a href="https://vc.ru/books/95793-konspekt-knigi-roba-fitcpatrika-сprosi-mamu" target="_blank">Конспект книги «Спроси маму»</a></li>
-      <li><a href="https://vc.ru/marketing/270457-kasdev-intervyu" target="_blank">Кастдев-интервью: структура и ошибки</a></li>
-    </ul>
-  </div>
-
-  <!-- UX -->
-  <h2>UX-тестирование</h2>
-  <div class="card">
-    <p><strong>Зачем продакту UX-тесты?</strong></p>
-    <ul class="materials">
-      <li>найти идеи для улучшения пользовательского пути</li>
-      <li>выбрать макет, который лучше закрывает джобу пользователя</li>
-      <li>быстро получить честный фидбек по интерфейсу</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://bangbangeducation.ru/point/ux-ui-dizain/chto-takoe-ux-testirovanie/" target="_blank">Что такое UX-тестирование</a></li>
-      <li><a href="https://www.youtube.com/watch?v=SyHanFuLHNs" target="_blank">Практические методы UX-тестов</a></li>
-      <li><a href="https://youtu.be/E7TfKVUZPno?si=XL86Yh7MjhjVEdE8" target="_blank">Как проводить пользовательское тестирование</a></li>
-    </ul>
-  </div>
-
-  <!-- SURVEYS -->
-  <h2>Опросы</h2>
-  <div class="card">
-    <p><strong>Зачем продакту опросы?</strong></p>
-    <ul class="materials">
-      <li>подтвердить или отранжировать гипотезы</li>
-      <li>сегментировать аудиторию</li>
-      <li>получить количественные данные</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://education.yandex.ru/journal/11-issledovatelskikh-metodov-dlya-prodakt-menedzherov" target="_blank">11 исследовательских методов от Яндекса</a></li>
-      <li><a href="https://iom.anketolog.ru/2023/11/03/testirovanie-koncepcii-novogo-produkta-onlajn-opros" target="_blank">Онлайн-опросы для тестирования концепций</a></li>
-      <li><a href="https://habr.com/ru/companies/testograf/articles/769792/" target="_blank">Как правильно строить опросы</a></li>
-    </ul>
-  </div>
-
-  <!-- COMPETITORS -->
-  <h2>Анализ конкурентов</h2>
-  <div class="card">
-    <p><strong>Зачем продакту анализ конкурентов?</strong></p>
-    <ul class="materials">
-      <li>найти новые продуктовые идеи</li>
-      <li>подтвердить или опровергнуть гипотезы</li>
-      <li>понять, как конкуренты решают ту же задачу</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://habr.com/ru/companies/atom/articles/777928/" target="_blank">Гайд по конкурентному анализу</a></li>
-      <li><a href="https://skillbox.ru/media/marketing/vvedenie-v-konkurentnyy-analiz-izuchaem-konkurentov-za-11-shagov-na-primere-nintendo-i-sony/" target="_blank">11 шагов конкурентного анализа</a></li>
-      <li><a href="https://www.youtube.com/watch?v=mqYLhI3JS2M" target="_blank">Видео: как анализировать конкурентов</a></li>
-      <li>SWOT-анализ — классический подход</li>
-    </ul>
-  </div>
-
-  <!-- QUALITATIVE -->
-  <h2>Другие качественные исследования</h2>
-  <div class="card">
-    <p><strong>Зачем нужны?</strong></p>
-    <ul class="materials">
-      <li>анализировать отзывы и обращения</li>
-      <li>находить новые гипотезы</li>
-      <li>проверять предположения без количественных данных</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://gopractice.ru/skills/qualitative-research-guide/" target="_blank">Гайд по качественным исследованиям</a></li>
-      <li><a href="https://vc.ru/u/1217196-dima-netesov/740900-gaid-po-tipam-issledovanii-kachestvennye" target="_blank">Разбор типов качественных исследований</a></li>
-    </ul>
-  </div>
-
-  <footer>
-    © <span id="y"></span> Лев Левицкий • 
-    <a href="/product-map">карта знаний</a> •
-    <a href="https://levlevitsky.ru" target="_blank" rel="noopener noreferrer">главная</a>
-  </footer>
 </div>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+
+<!-- 🔍 Yandex.Metrika -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) { return; }
+      }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104666081', 'ym');
+
+  ym(104666081, 'init', {
+      ssr:true,
+      webvisor:true,
+      trackHash:true,
+      clickmap:true,
+      ecommerce:"dataLayer",
+      accurateTrackBounce:true,
+      trackLinks:true
+  });
+</script>
+
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/104666081" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
 
 </body>
 </html>

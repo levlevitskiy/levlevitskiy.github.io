@@ -6,7 +6,7 @@
 
   <title>Целеполагание продукта — KPI, OKR, стратегия, SMART | Product Map</title>
 
-  <meta name="description" content="Целеполагание продукта: KPI, OKR, стратегия продукта и метод SMART. Как увязывать задачи продукта со стратегией компании и формулировать сильные цели." />
+  <meta name="description" content="Целеполагание продукта: KPI, OKR, стратегия продукта, SMART. Как продакт-менеджеру ставить сильные цели, увязывать их с бизнесом и измерять прогресс." />
 
   <link rel="canonical" href="https://levlevitsky.ru/product-map/celepolaganie-produkta" />
 
@@ -73,6 +73,78 @@
       margin:24px 0;
     }
 
+    /* Header nav */
+    .header-nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+      margin-bottom:10px;
+      border-bottom:1px solid var(--bd);
+    }
+
+    .nav-link {
+      font-size:16px;
+      color:var(--acc);
+      text-decoration:none;
+    }
+    .nav-link:hover { text-decoration:underline; }
+
+    /* TOC */
+    .toc { margin:32px 0; }
+    .toc-title {
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .toc-list {
+      list-style:none;
+      padding-left:0;
+      margin:0;
+    }
+    .toc-list li { margin:6px 0; }
+    .toc-list a {
+      color:var(--acc);
+      font-size:16px;
+    }
+
+    /* CTA */
+    .cta-block {
+      margin-top:50px;
+      padding:32px;
+      border-radius:18px;
+      background:var(--card);
+      border:1px solid var(--bd);
+    }
+    .cta-title {
+      margin:0 0 12px;
+      font-size:24px;
+      font-weight:700;
+    }
+    .cta-text {
+      margin:0 0 24px;
+      font-size:16px;
+      color:var(--muted);
+      max-width:700px;
+    }
+    .cta-button {
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:14px;
+      border:1px solid var(--acc);
+      font-size:17px;
+      font-weight:600;
+      color:var(--acc);
+      background:transparent;
+      transition:background .15s, color .15s;
+    }
+    .cta-button:hover {
+      background:var(--acc);
+      color:white;
+      text-decoration:none;
+    }
+
+    /* materials */
     ul.materials {
       margin:12px 0 6px 20px;
       padding-left:0;
@@ -80,6 +152,7 @@
     }
     ul.materials li { margin-bottom:6px; }
 
+    /* Footer */
     footer {
       margin-top:50px;
       padding-top:20px;
@@ -87,94 +160,155 @@
       color:var(--muted);
       font-size:14px;
     }
+
+    /* Mobile */
+    @media (max-width:480px) {
+      .header-nav {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+      }
+    }
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <h1>Целеполагание продукта — как продакту ставить сильные цели</h1>
+<header class="header-nav">
+  <a class="nav-link" href="/">← К карте знаний</a>
+  <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank">Мой Telegram-канал</a>
+</header>
 
-  <p class="lead">
-    Целеполагание продукта — это связка между ежедневными задачами команды, стратегией продукта и стратегией компании.
-    Чем лучше продакт понимает цели, тем точнее выбирает гипотезы, roadmaps и метрики.
+<h1>Целеполагание продукта — как продакту ставить сильные цели</h1>
+
+<p class="lead">
+Целеполагание продукта — это связка между задачами команды, стратегией продукта и стратегией компании. Сильные цели позволяют принимать уверенные решения, выбирать правильные метрики и собирать реалистичный roadmap.
+</p>
+
+<p class="lead">
+На этой странице — практическая база по KPI, OKR, стратегии продукта и SMART, чтобы выстраивать цели, которые действительно работают.
+</p>
+
+<nav class="toc">
+  <h2 class="toc-title">Оглавление</h2>
+  <ul class="toc-list">
+    <li><a href="#kpi-okr">KPI и OKR</a></li>
+    <li><a href="#product-strategy">Стратегия продукта</a></li>
+    <li><a href="#smart">Подход SMART</a></li>
+  </ul>
+</nav>
+
+<!-- KPI & OKR -->
+<h2 id="kpi-okr">KPI и OKR</h2>
+<div class="card">
+  <p><strong>Зачем продакту KPI и OKR?</strong></p>
+  <ul class="materials">
+    <li>чтобы ставить реалистичные и измеримые цели</li>
+    <li>чтобы увязывать цели продукта с целями компании</li>
+    <li>чтобы избегать хаотичной работы и приоритизации "по ощущениям"</li>
+    <li>чтобы понимать собственный прогресс и фокус команды</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://habr.com/ru/articles/449426/" target="_blank">Что такое OKR — подробное объяснение</a></li>
+    <li><a href="https://habr.com/ru/articles/717222/" target="_blank">OKR в IT-компаниях</a></li>
+    <li><a href="https://vc.ru/scrumtrek/1020654-40-rozovyh-kustov-ili-1-bal-dlya-zolushki-kpi-okr-i-chem-oni-otlichayutsya-s-tochki-zreniya-motivacii" target="_blank">KPI vs OKR: ключевые различия</a></li>
+    <li><a href="https://secrets.tinkoff.ru/razvitie/metod-okr/" target="_blank">Метод OKR — Тинькофф</a></li>
+  </ul>
+</div>
+
+<!-- Product Strategy -->
+<h2 id="product-strategy">Стратегия продукта</h2>
+<div class="card">
+  <p><strong>Зачем продакту понимать стратегию продукта?</strong></p>
+  <ul class="materials">
+    <li>чтобы понимать, за счёт чего продукт может выиграть</li>
+    <li>чтобы выбирать направления развития, а не просто задачи</li>
+    <li>чтобы объяснять команде и бизнесу логику решений</li>
+    <li>чтобы собирать roadmap, основанный на целях</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://www.youtube.com/live/Zyd0fwCaRh0" target="_blank">Видео: стратегия продукта — глубокий разбор</a></li>
+    <li><a href="https://youtu.be/uxj6wD3jAuw" target="_blank">Как формировать продуктовую стратегию</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/chto-takoe-produktovaya-strategiya/" target="_blank">Стратегия продукта — Практикум</a></li>
+    <li><a href="https://vc.ru/marketing/251588-produktovaya-strategiya" target="_blank">Стратегия продукта: ошибки и факторы успеха</a></li>
+    <li><a href="https://habr.com/ru/companies/hygger/articles/353164/" target="_blank">Hygger: как формировать стратегию продукта</a></li>
+  </ul>
+</div>
+
+<!-- SMART -->
+<h2 id="smart">Подход SMART</h2>
+<div class="card">
+  <p><strong>Зачем использовать SMART?</strong></p>
+  <ul class="materials">
+    <li>чтобы формулировать конкретные и измеримые цели</li>
+    <li>чтобы избегать размытых задач и неконкретных формулировок</li>
+    <li>чтобы проверять реалистичность и адекватность целей</li>
+    <li>чтобы развивать структурное мышление</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://www.youtube.com/watch?v=17pJy04kWsY" target="_blank">Видео: что такое SMART цели</a></li>
+    <li><a href="https://skillbox.ru/media/management/metod_smart_v_digital/" target="_blank">Как применять SMART в digital</a></li>
+    <li><a href="https://habr.com/ru/companies/otus/articles/772794/" target="_blank">SMART: как правильно ставить цели</a></li>
+  </ul>
+</div>
+
+<!-- CTA -->
+<div class="cta-block">
+  <h2 class="cta-title">Подписывайся на мой Telegram-канал</h2>
+  <p class="cta-text">
+    В канале я делюсь опытом в продукт-менеджменте, инструментами, кейсами и мыслями о развитии. 3000+ продактов уже внутри.
   </p>
 
-  <p class="lead">
-    На этой странице — лучшие материалы по KPI, OKR, стратегии продукта и SMART, чтобы уверенно формировать цели.
-  </p>
+  <a href="https://t.me/levlevitsky_channel" class="cta-button" target="_blank">
+    📣 Подписаться на Telegram-канал
+  </a>
+</div>
 
-  <!-- KPI & OKR -->
-  <h2>KPI и OKR</h2>
-  <div class="card">
-    <p><strong>Зачем продакту KPI и OKR?</strong></p>
-    <ul class="materials">
-      <li>чтобы ставить реалистичные и измеримые цели</li>
-      <li>чтобы увязывать цели продукта с целями компании</li>
-      <li>чтобы избегать хаотичной и несистемной работы</li>
-      <li>чтобы понимать, как оценить собственный прогресс</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://habr.com/ru/articles/449426/" target="_blank">Что такое OKR — подробное объяснение</a></li>
-      <li><a href="https://habr.com/ru/articles/717222/" target="_blank">OKR в IT-компаниях</a></li>
-      <li><a href="https://vc.ru/scrumtrek/1020654-40-rozovyh-kustov-ili-1-bal-dlya-zolushki-kpi-okr-i-chem-oni-otlichayutsya-s-tochki-zreniya-motivacii" target="_blank">KPI vs OKR: различия и влияние на мотивацию</a></li>
-      <li><a href="https://secrets.tinkoff.ru/razvitie/metod-okr/" target="_blank">Метод OKR — Тинькофф</a></li>
-    </ul>
-  </div>
-
-  <!-- Product Strategy -->
-  <h2>Стратегия продукта</h2>
-  <div class="card">
-    <p><strong>Зачем понимать стратегию продукта?</strong></p>
-    <ul class="materials">
-      <li>чтобы понимать, благодаря чему продукт может стать успешным</li>
-      <li>чтобы выбирать направления развития, а не просто задачи</li>
-      <li>чтобы объяснять команде и бизнесу логику решений</li>
-      <li>чтобы выстраивать roadmap, основанный на целях</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://www.youtube.com/live/Zyd0fwCaRh0?si=5sdoKyT--EPCATd-" target="_blank">Видео: стратегия продукта — глубокий разбор</a></li>
-      <li><a href="https://youtu.be/uxj6wD3jAuw?si=e99527N99-CWcSb1" target="_blank">Как формировать продуктовую стратегию</a></li>
-      <li><a href="https://practicum.yandex.ru/blog/chto-takoe-produktovaya-strategiya/" target="_blank">Стратегия продукта — Яндекс Практикум</a></li>
-      <li><a href="https://vc.ru/marketing/251588-produktovaya-strategiya-faktory-uspeha-i-4-glavnyh-oshibki" target="_blank">Продуктовая стратегия: ошибки и факторы успеха</a></li>
-      <li><a href="https://habr.com/ru/companies/hygger/articles/353164/" target="_blank">Hygger: как формировать стратегию продукта</a></li>
-    </ul>
-  </div>
-
-  <!-- SMART -->
-  <h2>Подход SMART</h2>
-  <div class="card">
-    <p><strong>Зачем использовать SMART?</strong></p>
-    <ul class="materials">
-      <li>чтобы формулировать выполнимые, ясные и измеримые цели</li>
-      <li>чтобы избегать неясных и неконкретных формулировок</li>
-      <li>чтобы проверять адекватность поставленных целей</li>
-      <li>чтобы прокачать навык цельного и логичного мышления</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://www.youtube.com/watch?v=17pJy04kWsY" target="_blank">Видео: что такое SMART цели</a></li>
-      <li><a href="https://skillbox.ru/media/management/metod_smart_v_digital/" target="_blank">Как применять SMART в digital</a></li>
-      <li><a href="https://habr.com/ru/companies/otus/articles/772794/" target="_blank">SMART: как правильно ставить цели</a></li>
-    </ul>
-  </div>
-
-  <footer>
-    © <span id="y"></span> Лев Левицкий • 
-    <a href="/product-map">карта знаний</a> •
-    <a href="https://levlevitsky.ru" target="_blank">главная</a>
-  </footer>
+<footer>
+  © <span id="y"></span> Лев Левицкий • 
+  <a href="/product-map">карта знаний</a> •
+  <a href="https://levlevitsky.ru" target="_blank">главная</a>
+</footer>
 
 </div>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+
+<!-- 🔍 Yandex.Metrika -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) { return; }
+      }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104666081', 'ym');
+
+  ym(104666081, 'init', {
+      ssr:true,
+      webvisor:true,
+      trackHash:true,
+      clickmap:true,
+      ecommerce:"dataLayer",
+      accurateTrackBounce:true,
+      trackLinks:true
+  });
+</script>
+
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/104666081" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
+
 
 </body>
 </html>

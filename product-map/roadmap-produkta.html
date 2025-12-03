@@ -2,175 +2,277 @@
 <html lang="ru">
 <head>
    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Roadmap продукта — как составить дорожную карту продукт-менеджеру</title>
+   <title>Roadmap продукта — как составить дорожную карту PM | Product Map</title>
 
-    <meta name="description" content="Что такое roadmap продукта, как PM планирует развитие: структура, примеры, форматы, частые ошибки. Пошаговое руководство для продукт-менеджеров.">
+   <meta name="description" content="Что такое roadmap продукта, как PM планирует развитие: структура, примеры, форматы, риски и частые ошибки. Пошаговое руководство для продакт-менеджеров.">
+   <link rel="canonical" href="https://levlevitsky.ru/product-map/roadmap-produkta">
 
-    <link rel="canonical" href="https://levlevitsky.ru/product-map/roadmap-produkta">
+   <meta property="og:title" content="Roadmap продукта — руководство для PM">
+   <meta property="og:description" content="Полный разбор создания roadmap: структура, приоритизация, квартальное планирование и ошибки PM.">
+   <meta property="og:url" content="https://levlevitsky.ru/product-map/roadmap-produkta">
+   <meta property="og:type" content="article">
+   <meta property="og:image" content="https://levlevitsky.ru/avatar.jpg">
 
-    <meta property="og:title" content="Roadmap продукта — руководство для PM">
-    <meta property="og:description" content="Полный разбор создания roadmap: структура, канбан, квартальное планирование и ошибки PM.">
-    <meta property="og:url" content="https://levlevitsky.ru/product-map/roadmap-produkta">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://levlevitsky.ru/avatar.jpg">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="Roadmap продукта — как составить дорожную карту PM">
+   <meta name="twitter:description" content="Пошаговое руководство по созданию roadmap для продукта.">
+   <meta name="twitter:image" content="https://levlevitsky.ru/avatar.jpg">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Roadmap продукта — как составить дорожную карту PM">
-    <meta name="twitter:description" content="Пошаговое руководство по созданию roadmap для продукта.">
-    <meta name="twitter:image" content="https://levlevitsky.ru/avatar.jpg">
+   <link rel="icon" href="/favicon.ico">
 
-    <link rel="icon" href="/favicon.ico">
+   <style>
+      :root {
+         --bg:#ffffff;
+         --fg:#1b1b1f;
+         --muted:#555;
+         --card:#f6f6f8;
+         --acc:#7a5cff;
+         --bd:#e2e2e6;
+      }
 
-  <style>
-    :root {
-      --bg:#ffffff;
-      --fg:#1b1b1f;
-      --muted:#555;
-      --card:#f5f5f7;
-      --acc:#0056ff;
-      --bd:#ddd;
-    }
-    * { box-sizing:border-box; }
-    body {
-      margin:0;
-      padding:0;
-      background:var(--bg);
-      color:var(--fg);
-      font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
-    }
-    a { color:var(--acc); text-decoration:none; }
-    a:hover { text-decoration:underline; }
+      * { box-sizing: border-box; }
 
-    .wrap {
-      max-width:960px;
-      margin:0 auto;
-      padding:40px 24px 70px;
-    }
+      body {
+         margin:0;
+         padding:0;
+         background:var(--bg);
+         color:var(--fg);
+         font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
 
-    h1 {
-      font-size:34px;
-      margin:0 0 20px;
-      font-weight:700;
-      line-height:1.3;
-    }
-    h2 {
-      font-size:26px;
-      margin:45px 0 14px;
-      font-weight:700;
-    }
-    h3 {
-      font-size:20px;
-      margin:20px 0 10px;
-      font-weight:600;
-    }
-    p.lead {
-      color:var(--muted);
-      font-size:18px;
-      max-width:760px;
-      margin-bottom:12px;
-    }
+      a { color:var(--acc); text-decoration:none; }
+      a:hover { text-decoration:underline; }
 
-    .card {
-      background:var(--card);
-      padding:28px;
-      border-radius:18px;
-      border:1px solid var(--bd);
-      margin:24px 0;
-    }
-    ul.materials {
-      margin:12px 0 6px 20px;
-      padding-left:0;
-      color:var(--muted);
-    }
-    ul.materials li { margin-bottom:6px; }
+      .wrap {
+         max-width:960px;
+         margin:0 auto;
+         padding:40px 24px 70px;
+      }
 
-    footer {
-      margin-top:50px;
-      padding-top:20px;
-      border-top:1px solid var(--bd);
-      color:var(--muted);
-      font-size:14px;
-    }
-  </style>
+      /* Header */
+      .header-nav {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:20px 0;
+        margin-bottom:10px;
+        border-bottom:1px solid var(--bd);
+      }
+
+      .nav-link { color:var(--acc); }
+
+      h1 {
+         font-size:34px;
+         margin:0 0 20px;
+         font-weight:700;
+      }
+
+      h2 {
+         font-size:26px;
+         margin:45px 0 14px;
+         font-weight:700;
+      }
+
+      h3 {
+         font-size:20px;
+         margin:20px 0 10px;
+         font-weight:600;
+      }
+
+      p.lead {
+         color:var(--muted);
+         font-size:18px;
+         max-width:760px;
+         margin-bottom:12px;
+      }
+
+      .card {
+         background:var(--card);
+         padding:28px;
+         border-radius:18px;
+         border:1px solid var(--bd);
+         margin:24px 0;
+      }
+
+      ul.materials {
+         margin:12px 0 6px 20px;
+         color:var(--muted);
+         padding-left:0;
+      }
+
+      ul.materials li { margin-bottom:6px; }
+
+      /* TOC */
+      .toc { margin:32px 0; }
+      .toc-title {
+         font-size:22px;
+         font-weight:700;
+         margin-bottom:12px;
+      }
+      .toc-list {
+         list-style:none;
+         padding-left:0;
+      }
+      .toc-list li { margin:6px 0; }
+
+      /* CTA */
+      .cta-block {
+        margin-top:50px;
+        padding:32px;
+        border-radius:18px;
+        background:var(--card);
+        border:1px solid var(--bd);
+      }
+      .cta-title {
+        margin:0 0 12px;
+        font-size:24px;
+        font-weight:700;
+      }
+      .cta-text {
+        margin:0 0 24px;
+        font-size:16px;
+        color:var(--muted);
+        max-width:700px;
+      }
+      .cta-button {
+        display:inline-block;
+        padding:14px 22px;
+        border-radius:14px;
+        border:1px solid var(--acc);
+        font-size:17px;
+        font-weight:600;
+        color:var(--acc);
+        transition:0.15s;
+      }
+      .cta-button:hover {
+        background:var(--acc);
+        color:#fff;
+        text-decoration:none;
+      }
+
+      footer {
+         margin-top:50px;
+         padding-top:20px;
+         border-top:1px solid var(--bd);
+         color:var(--muted);
+         font-size:14px;
+      }
+
+      @media (max-width:480px) {
+        .header-nav { flex-direction:column; align-items:flex-start; gap:8px; }
+      }
+   </style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <h1>Roadmap продукта — дорожная карта развития и стратегические шаги</h1>
+<header class="header-nav">
+  <a class="nav-link" href="/product-map/">← К карте знаний</a>
+  <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank">Мой Telegram-канал</a>
+</header>
 
-    <p class="lead">
-      Создание Roadmap продукта — один из ключевых навыков продакт-менеджера.  
-      Правильный Roadmap помогает сформировать стратегию, объяснить приоритеты команде и стейкхолдерам,
-      выстроить последовательность инициатив и сфокусироваться на ценности для пользователя и бизнеса.
-    </p>
+<h1>Roadmap продукта — дорожная карта развития</h1>
 
-    <p class="lead">
-      На этой странице — лучшие материалы по тому, как составлять <strong>дорожную карту продукта</strong>, формировать <strong>Next Steps</strong>,
-      а также управлять рисками, которые могут повлиять на развитие продукта.
-    </p>
+<p class="lead">
+Roadmap — это визуальное представление стратегии и направления развития продукта.  
+Он помогает синхронизировать команду, объяснять приоритеты и принимать решения на основе данных.
+</p>
 
-    <!-- Roadmap -->
-    <h2>Roadmap продукта: основы и лучшие практики</h2>
-    <div class="card">
-      <p><strong>Зачем продакту Roadmap продукта?</strong></p>
-      <ul class="materials">
-        <li>сформировать стратегическое видение развития продукта</li>
-        <li>донести до стейкхолдеров логику приоритетов и направлений</li>
-        <li>объяснить, почему выполняются именно выбранные инициативы</li>
-        <li>синхронизировать продукт, бизнес, разработку и аналитику</li>
-      </ul>
+<p class="lead">
+На этой странице собраны лучшие материалы о том, как формировать Roadmap, выстраивать стратегию и работать с рисками.
+</p>
 
-      <p><strong>Признаки хорошего Roadmap продукта:</strong></p>
-      <ul class="materials">
-        <li>основан на метриках, исследованиях и целях продукта</li>
-        <li>фокусируется не на сроках, а на приоритетах и направлениях</li>
-        <li>показывает зависимости, логическую структуру и блоки работ</li>
-        <li>регулярно обновляется по мере изменения контекста и данных</li>
-      </ul>
+<nav class="toc">
+   <h3 class="toc-title">Оглавление</h3>
+   <ul class="toc-list">
+      <li><a href="#basics">Основы и лучшие практики</a></li>
+      <li><a href="#risks">Работа с рисками</a></li>
+      <li><a href="#links">Читайте также</a></li>
+   </ul>
+</nav>
 
-      <h3>Материалы по Roadmap продукта</h3>
-      <ul class="materials">
-        <li><a href="https://youtu.be/FdP6KU8Xi68?si=Ot7xjIyXc_kQzx73" target="_blank">Видео: Roadmap продукта и стратегическое планирование</a></li>
-        <li><a href="https://habr.com/ru/companies/hygger/articles/352294/" target="_blank">Подробное руководство по созданию Roadmap</a></li>
-        <li><a href="https://vc.ru/marketing/216978-roadmap-produkta" target="_blank">Roadmap продукта: примеры, структуры и форматы</a></li>
-      </ul>
-    </div>
+<!-- Roadmap -->
+<h2 id="basics">Roadmap продукта: основы и лучшие практики</h2>
+<div class="card">
+   <p><strong>Зачем продакту Roadmap?</strong></p>
+   <ul class="materials">
+      <li>создать стратегическое направление развития продукта</li>
+      <li>объяснить логику приоритизации стейкхолдерам</li>
+      <li>выделить ключевые инициативы и зависимости</li>
+      <li>обеспечить синхронность между продактом, бизнесом и разработкой</li>
+   </ul>
 
-    <!-- Риски -->
-    <h2>Работа с рисками в Roadmap продукта</h2>
-    <div class="card">
-      <p><strong>Зачем управлять рисками?</strong></p>
-      <ul class="materials">
-        <li>чтобы оценивать вероятность срыва ключевых инициатив</li>
-        <li>чтобы выявлять слабые места и создаваемые зависимости</li>
-        <li>чтобы заранее планировать варианты действий при изменении условий</li>
-        <li>чтобы принимать стратегические решения на основе фактов, а не интуиции</li>
-      </ul>
+   <p><strong>Признаки хорошего Roadmap:</strong></p>
+   <ul class="materials">
+      <li>опирается на данные, исследования и метрики</li>
+      <li>расставляет приоритеты, а не фиксированные сроки</li>
+      <li>показывает зависимости и блоки работ</li>
+      <li>регулярно обновляется: Roadmap — живой документ</li>
+   </ul>
 
-      <h3>Как работать с рисками в Roadmap продукта:</h3>
-      <ul class="materials">
-        <li>создать карту рисков продукта и инициатив</li>
-        <li>оценить вероятность и влияние каждого риска</li>
-        <li>проработать превентивные меры</li>
-        <li>подготовить план действий при наступлении риска</li>
-        <li>регулярно пересматривать карту рисков и актуализировать Roadmap</li>
-      </ul>
+   <h3>Материалы по Roadmap</h3>
+   <ul class="materials">
+      <li><a href="https://youtu.be/FdP6KU8Xi68?si=Ot7xjIyXc_kQzx73" target="_blank">Видео: Roadmap продукта</a></li>
+      <li><a href="https://habr.com/ru/companies/hygger/articles/352294/" target="_blank">Подробное руководство по Roadmap</a></li>
+      <li><a href="https://vc.ru/marketing/216978-roadmap-produkta" target="_blank">Примеры форматов и структур Roadmap</a></li>
+   </ul>
+</div>
 
-      <p>Могу добавить шаблон таблицы рисков или матрицу вероятности × влияния — скажи.</p>
-    </div>
+<!-- Risks -->
+<h2 id="risks">Работа с рисками в Roadmap продукта</h2>
+<div class="card">
+   <p><strong>Зачем управлять рисками?</strong></p>
+   <ul class="materials">
+      <li>оценить вероятность срыва ключевых инициатив</li>
+      <li>выявить зависимости и слабые места продукта</li>
+      <li>подготовить варианты действий при изменении контекста</li>
+      <li>принимать стратегические решения на основе данных</li>
+   </ul>
 
-    <footer>
-      © <span id="y"></span> Лев Левицкий • 
-      <a href="/product-map">карта знаний</a> •
-      <a href="https://levlevitsky.ru" target="_blank">главная</a>
-    </footer>
-  </div>
+   <h3>Как работать с рисками:</h3>
+   <ul class="materials">
+      <li>сформировать карту рисков</li>
+      <li>оценить вероятность × влияние</li>
+      <li>описать превентивные меры</li>
+      <li>подготовить план действий при наступлении риска</li>
+      <li>регулярно обновлять карту рисков и Roadmap</li>
+   </ul>
+</div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<!-- Related -->
+<h2 id="links">Читайте также</h2>
+<ul>
+   <li><a href="/product-map/analiz-auditorii-produkta">Анализ аудитории продукта</a></li>
+   <li><a href="/product-map/gipotezy-i-prioritizaciya-produkta">Гипотезы и приоритизация</a></li>
+   <li><a href="/product-map/metriki-i-analitika-produkta">Метрики и аналитика</a></li>
+   <li><a href="/product-map/mvp-mlp">MVP и MLP</a></li>
+</ul>
+
+<!-- CTA -->
+<div class="cta-block">
+   <h2 class="cta-title">Подписывайся на Telegram-канал</h2>
+   <p class="cta-text">
+      Там я разбираю реальные Roadmap, ошибки PM, подходы к планированию и стратегии.
+   </p>
+   <a href="https://t.me/levlevitsky_channel" target="_blank" class="cta-button">
+      📣 Подписаться на канал
+   </a>
+</div>
+
+<footer>
+   © <span id="y"></span> Лев Левицкий • 
+   <a href="/product-map">карта знаний</a> •
+   <a href="https://levlevitsky.ru" target="_blank">главная</a>
+</footer>
+
+</div>
+
+<script>
+   document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>

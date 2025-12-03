@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>A/B тесты, валидация результатов и когортный анализ | Product Map</title>
+  <title>A/B-тесты, валидация результатов и когортный анализ | Product Map</title>
 
-  <meta name="description" content="A/B тесты, валидация результатов и когортный анализ: как оценивать эффект продуктовых изменений, проверять гипотезы и корректно интерпретировать данные. Полная база материалов для продакт-менеджеров." />
+  <meta name="description" content="A/B-тесты, валидация результатов и когортный анализ: как оценивать эффект продуктовых изменений, проверять гипотезы и корректно интерпретировать данные. Полная база материалов для продакт-менеджеров.">
 
-  <link rel="canonical" href="https://levlevitsky.ru/product-map/ab-testy-validaciya-rezultatov" />
+  <link rel="canonical" href="https://levlevitsky.ru/product-map/ab-testy-validaciya-rezultatov">
+
+  <meta property="og:title" content="A/B-тесты и когортный анализ — база материалов для PM">
+  <meta property="og:description" content="Как продакт-менеджеру ставить и интерпретировать A/B-тесты, валидировать результаты и использовать когортный анализ.">
+  <meta property="og:url" content="https://levlevitsky.ru/product-map/ab-testy-validaciya-rezultatov">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://levlevitsky.ru/avatar.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A/B-тесты, валидация и когортный анализ">
+  <meta name="twitter:description" content="Инструменты продакта для проверки продуктовых гипотез и интерпретации данных.">
+  <meta name="twitter:image" content="https://levlevitsky.ru/avatar.jpg">
+
+  <link rel="icon" href="/favicon.ico">
 
   <style>
     :root {
       --bg:#ffffff;
       --fg:#1b1b1f;
       --muted:#555;
-      --card:#f5f5f7;
-      --acc:#0056ff;
-      --bd:#ddd;
+      --acc:#7a5cff;   /* фиолетовый акцент */
+      --card:#f6f6f8;  /* мягкий фон карточек */
+      --bd:#e2e2e6;    /* лёгкая граница */
     }
+
     * { box-sizing:border-box; }
+
     body {
       margin:0;
       padding:0;
       background:var(--bg);
       color:var(--fg);
-      font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+      font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;
     }
+
     a { color:var(--acc); text-decoration:none; }
     a:hover { text-decoration:underline; }
 
@@ -42,16 +58,19 @@
       font-weight:700;
       line-height:1.3;
     }
+
     h2 {
       font-size:26px;
       margin:45px 0 14px;
       font-weight:700;
     }
+
     h3 {
       font-size:20px;
       margin:20px 0 10px;
       font-weight:600;
     }
+
     p.lead {
       color:var(--muted);
       font-size:18px;
@@ -67,12 +86,109 @@
       margin:24px 0;
     }
 
+    /* Header */
+    .header-nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+      margin-bottom:10px;
+      border-bottom:1px solid var(--bd);
+    }
+
+    .nav-link {
+      font-size:16px;
+      color:var(--acc);
+    }
+
+    /* TOC */
+    .toc {
+      margin:32px 0;
+    }
+
+    .toc-title {
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+
+    .toc-list {
+      list-style:none;
+      padding-left:0;
+      margin:0;
+    }
+
+    .toc-list li {
+      margin:6px 0;
+    }
+
+    .toc-list a {
+      font-size:16px;
+    }
+
     ul.materials {
       margin:12px 0 6px 20px;
       padding-left:0;
       color:var(--muted);
     }
-    ul.materials li { margin-bottom:6px; }
+
+    ul.materials li {
+      margin-bottom:6px;
+    }
+
+    /* Related */
+    .related {
+      margin-top:50px;
+    }
+
+    .related ul {
+      margin:10px 0 0 20px;
+      padding-left:0;
+    }
+
+    .related li {
+      margin-bottom:6px;
+    }
+
+    /* CTA */
+    .cta-block {
+      margin-top: 50px;
+      padding: 32px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--bd);
+    }
+
+    .cta-title {
+      margin: 0 0 12px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .cta-text {
+      margin: 0 0 24px;
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 14px;
+      border: 1px solid var(--acc);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--acc);
+      background: transparent;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .cta-button:hover {
+      background: var(--acc);
+      color:#ffffff;
+      text-decoration:none;
+    }
 
     footer {
       margin-top:50px;
@@ -81,81 +197,165 @@
       color:var(--muted);
       font-size:14px;
     }
+
+    @media (max-width:480px) {
+      .header-nav {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+      }
+    }
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <h1>A/B тесты, валидация результатов и когортный анализ</h1>
+  <header class="header-nav">
+    <a class="nav-link" href="/product-map/">← К карте знаний</a>
+    <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer">Мой Telegram-канал</a>
+  </header>
+
+  <h1>A/B-тесты, валидация результатов и когортный анализ</h1>
 
   <p class="lead">
-    Валидация результатов — ключевой этап перед тем, как принимать стратегические решения.  
-    Продуктовые изменения нужно не только внедрять, но и корректно измерять их эффект.
+    Валидация результатов — финальный фильтр перед тем, как принимать продуктовые решения. 
+    Важно не только запустить изменение, но и корректно измерить его эффект: отделить шум от сигнала и не сделать лишних выводов.
   </p>
 
   <p class="lead">
-    На странице собраны лучшие материалы для понимания A/B тестов, валидации продуктовых гипотез и когортного анализа.
+    На этой странице — база материалов для продакт-менеджера по A/B-тестам, валидации продуктовых гипотез и когортному анализу. 
+    Это инструменты, которые помогают принимать решения на данных, а не на ощущениях.
   </p>
+
+  <nav class="toc">
+    <h3 class="toc-title">Оглавление</h3>
+    <ul class="toc-list">
+      <li><a href="#ab-tests">A/B-тесты: постановка и ограничения</a></li>
+      <li><a href="#validation">Валидация результатов и ошибки интерпретации</a></li>
+      <li><a href="#cohorts">Когортный анализ</a></li>
+    </ul>
+  </nav>
 
   <!-- A/B TESTS -->
-  <h2>A/B тесты</h2>
-
+  <h2 id="ab-tests">A/B-тесты: постановка и ограничения</h2>
   <div class="card">
-    <p><strong>Зачем нужны A/B тесты?</strong></p>
+    <p><strong>Зачем продакту A/B-тесты?</strong></p>
     <ul class="materials">
-      <li>проверить влияние продуктового изменения на метрики</li>
-      <li>оценить, не ухудшил ли релиз текущие показатели</li>
-      <li>понять истинную ценность гипотезы</li>
-      <li>выбрать наиболее эффективное решение среди альтернатив</li>
+      <li>проверить влияние продуктового изменения на ключевые метрики</li>
+      <li>оценить, не ухудшили ли мы текущие показатели</li>
+      <li>понять реальную ценность гипотезы, а не её «красоту» в презентации</li>
+      <li>выбрать наиболее эффективное решение среди нескольких вариантов</li>
     </ul>
 
-    <p><strong>Важно понимать:</strong></p>
+    <p><strong>Важно помнить:</strong></p>
     <ul class="materials">
-      <li>A/B тест — это не инструмент поиска идей, а инструмент проверки эффекта</li>
-      <li>A/B тесты подходят не для всех задач</li>
-      <li>часто нужно полное завершение разработки → дорого и долго</li>
-      <li>A/B тесты отлично работают в маркетинге, хуже — в операционных процессах</li>
+      <li>A/B-тест — не инструмент генерации идей, а инструмент проверки эффекта</li>
+      <li>тесты подходят не для всех задач и не для всех метрик</li>
+      <li>часто требуют полной реализации фичи → это дорого по времени и ресурсам</li>
+      <li>A/B-тесты отлично работают в маркетинге и продуктовых воронках, хуже — в операционных процессах</li>
     </ul>
 
-    <p><strong>A/B тест отвечает на вопросы:</strong></p>
+    <p><strong>Хороший A/B-тест отвечает на вопросы:</strong></p>
     <ul class="materials">
       <li>«Не сломали ли мы что-то случайно?»</li>
       <li>«Какую реальную ценность создаёт гипотеза?»</li>
-      <li>«Не херню ли мы сделали?»</li>
+      <li>«Не херню ли мы сделали?» — но выражено на языке метрик и статистики</li>
     </ul>
 
     <h3>Материалы</h3>
     <ul class="materials">
-      <li><a href="https://youtu.be/IQUt9qTsQ0s?si=HRan6tCya8mrBfVF" target="_blank">Основы A/B тестирования</a></li>
-      <li><a href="https://www.youtube.com/live/gMx-juYkNCw?si=Zuj1tRt2e-pkYkqg" target="_blank">Глубокий разбор A/B тестов для продактов</a></li>
-      <li><a href="https://youtu.be/gljfGAkgX_o?si=UNeN7xfufE2n8hd4" target="_blank">Типичные ошибки при A/B тестировании</a></li>
+      <li><a href="https://youtu.be/IQUt9qTsQ0s?si=HRan6tCya8mrBfVF" target="_blank" rel="noopener noreferrer">Основы A/B-тестирования</a></li>
+      <li><a href="https://www.youtube.com/live/gMx-juYkNCw?si=Zuj1tRt2e-pkYkqg" target="_blank" rel="noopener noreferrer">Глубокий разбор A/B-тестов для продактов</a></li>
+      <li><a href="https://youtu.be/gljfGAkgX_o?si=UNeN7xfufE2n8hd4" target="_blank" rel="noopener noreferrer">Типичные ошибки при A/B-тестировании</a></li>
     </ul>
   </div>
 
-  <!-- Cohort analysis -->
-  <h2>Когортный анализ</h2>
-
+  <!-- VALIDATION -->
+  <h2 id="validation">Валидация результатов и ошибки интерпретации</h2>
   <div class="card">
-    <p><strong>Зачем нужен когортный анализ?</strong></p>
+    <p><strong>Что включает в себя валидация результатов?</strong></p>
     <ul class="materials">
-      <li>чтобы сравнивать поведение пользователей, пришедших в разные даты</li>
-      <li>чтобы оценивать эффект от изменений продукта во времени</li>
-      <li>чтобы увидеть, растёт ли удержание и жизненный цикл пользователя</li>
-      <li>чтобы находить провалы в продуктовой воронке</li>
+      <li>проверку корректности дизайна эксперимента (рандомизация, контроль, сплит)</li>
+      <li>оценку статистической значимости и мощности теста</li>
+      <li>учёт сезонности, акций, внешних факторов и «грязных» данных</li>
+      <li>проверку инвариантных метрик, влияющих на доверие к результатам</li>
+    </ul>
+
+    <p><strong>Частые ошибки продактов при интерпретации:</strong></p>
+    <ul class="materials">
+      <li>«досматриваем» тест каждый день и останавливаемся, когда результат понравился</li>
+      <li>игнорируем эффект множественных сравнений (много метрик, много вариантов)</li>
+      <li>делаем выводы по слишком короткому периоду или маленькой выборке</li>
+      <li>смотрим только на относительный прирост, не оценив базу и доверительные интервалы</li>
+    </ul>
+
+    <p><strong>Как продакт может улучшить качество решений:</strong></p>
+    <ul class="materials">
+      <li>договориться с аналитиками о единых правилах запуска и остановки тестов</li>
+      <li>заранее формулировать гипотезу и ожидаемый эффект (а не «после факта»)</li>
+      <li>разделять «интересный результат» и «решение менять продукт»</li>
     </ul>
 
     <h3>Материалы</h3>
     <ul class="materials">
-      <li><a href="https://habr.com/ru/companies/productstar/articles/509410/" target="_blank">Введение в когортный анализ</a></li>
-      <li><a href="https://gopractice.ru/product/cohort_analysis/" target="_blank">Cohort Analysis — разбор от GoPractice</a></li>
+      <li><a href="https://gopractice.io/product/ab-testing/" target="_blank" rel="noopener noreferrer">A/B-тестирование — подход GoPractice</a></li>
+      <li><a href="https://habr.com/ru/companies/edison/articles/673982/" target="_blank" rel="noopener noreferrer">Как не наделать ошибок при A/B-тестах</a></li>
     </ul>
+  </div>
+
+  <!-- COHORT ANALYSIS -->
+  <h2 id="cohorts">Когортный анализ</h2>
+  <div class="card">
+    <p><strong>Зачем продакту когортный анализ?</strong></p>
+    <ul class="materials">
+      <li>сравнивать поведение пользователей, пришедших в разные периоды</li>
+      <li>оценивать эффект от изменений продукта на удержание и LTV</li>
+      <li>видеть, как продукт «стареет» для пользователя: возвраты, отток, активность</li>
+      <li>выявлять провалы и прогрессы в продуктовой воронке по когортам</li>
+    </ul>
+
+    <p><strong>Когда особенно полезен когортный анализ:</strong></p>
+    <ul class="materials">
+      <li>после крупных продуктовых изменений (новый онбординг, тарифы, фича)</li>
+      <li>когда важно понять долгосрочный эффект, а не только мгновенный uplift</li>
+      <li>при анализе удержания, подписок и повторных покупок</li>
+    </ul>
+
+    <h3>Материалы</h3>
+    <ul class="materials">
+      <li><a href="https://habr.com/ru/companies/productstar/articles/509410/" target="_blank" rel="noopener noreferrer">Введение в когортный анализ</a></li>
+      <li><a href="https://gopractice.ru/product/cohort_analysis/" target="_blank" rel="noopener noreferrer">Cohort Analysis — разбор от GoPractice</a></li>
+    </ul>
+  </div>
+
+  <!-- RELATED -->
+  <section class="related">
+    <h2>Читайте также</h2>
+    <ul>
+      <li><a href="/product-map/metriki-i-analitika-produkta">Метрики и аналитика продукта</a></li>
+      <li><a href="/product-map/produktovye-issledovaniya">Продуктовые исследования</a></li>
+      <li><a href="/product-map/gipotezy-i-prioritizaciya-produkta">Гипотезы и приоритизация продукта</a></li>
+      <li><a href="/product-map/analiz-rynka">Анализ рынка</a></li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h2 class="cta-title">Подписывайся на мой Telegram-канал</h2>
+    <p class="cta-text">
+      В канале я делюсь материалами по продакт-менеджменту, разборами метрик, примерами A/B-тестов и практическими инструментами для принятия решений на данных.
+    </p>
+
+    <a href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer" class="cta-button">
+      📣 Подписаться на Telegram-канал
+    </a>
   </div>
 
   <footer>
     © <span id="y"></span> Лев Левицкий • 
-    <a href="/product-map">карта знаний</a> •
-    <a href="https://levlevitsky.ru" target="_blank">главная</a>
+    <a href="/product-map/">карта знаний</a> •
+    <a href="https://levlevitsky.ru" target="_blank" rel="noopener noreferrer">главная</a>
   </footer>
 
 </div>
@@ -163,6 +363,32 @@
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+
+<!-- 🔍 Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) { return; }
+    }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104666081', 'ym');
+
+ym(104666081, 'init', {
+    ssr:true,
+    webvisor:true,
+    trackHash:true,
+    clickmap:true,
+    ecommerce:"dataLayer",
+    accurateTrackBounce:true,
+    trackLinks:true
+});
+</script>
+
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/104666081" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
 
 </body>
 </html>

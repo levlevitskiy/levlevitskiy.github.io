@@ -6,7 +6,7 @@
 
   <title>Гипотезы и приоритизация продукта — полная база материалов | Product Map</title>
 
-  <meta name="description" content="Гипотезы и приоритизация продукта: источники гипотез, HADI-цикл, методы проверки продуктовых гипотез, RICE, альтернативные методы приоритизации. Полная база материалов для обучения продакт-менеджера с нуля.">
+  <meta name="description" content="Гипотезы и приоритизация продукта: источники гипотез, HADI-цикл, методы проверки продуктовых гипотез, RICE, альтернативные методы приоритизации. Полная база материалов для продакт-менеджера." />
 
   <link rel="canonical" href="https://levlevitsky.ru/product-map/gipotezy-i-prioritizaciya-produkta" />
 
@@ -19,7 +19,9 @@
       --acc:#7a5cff;
       --bd:#e2e2e6;
     }
+
     * { box-sizing:border-box; }
+
     body {
       margin:0;
       padding:0;
@@ -27,54 +29,132 @@
       color:var(--fg);
       font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
     }
+
     a { color:var(--acc); text-decoration:none; }
     a:hover { text-decoration:underline; }
 
     .wrap {
-      max-width:900px;
+      max-width:960px;
       margin:0 auto;
       padding:40px 24px 70px;
     }
 
     h1 {
-      font-size:36px;
+      font-size:34px;
       margin:0 0 20px;
       font-weight:700;
-      line-height:1.28;
+      line-height:1.3;
     }
+
     h2 {
       font-size:26px;
-      margin:46px 0 14px;
+      margin:45px 0 14px;
       font-weight:700;
     }
+
     h3 {
       font-size:20px;
-      margin:22px 0 10px;
+      margin:20px 0 10px;
       font-weight:600;
     }
+
     p.lead {
       color:var(--muted);
       font-size:18px;
       max-width:760px;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
 
     .card {
       background:var(--card);
       padding:28px;
-      border-radius:16px;
+      border-radius:18px;
       border:1px solid var(--bd);
-      margin:26px 0;
+      margin:24px 0;
     }
 
+    /* Header */
+    .header-nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+      margin-bottom:10px;
+      border-bottom:1px solid var(--bd);
+    }
+    .nav-link {
+      font-size:16px;
+      color:var(--acc);
+    }
+
+    /* TOC */
+    .toc { margin:32px 0; }
+    .toc-title {
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .toc-list {
+      list-style:none;
+      padding-left:0;
+      margin:0;
+    }
+    .toc-list li {
+      margin:6px 0;
+    }
+    .toc-list a {
+      color:var(--acc);
+      font-size:16px;
+    }
+
+    /* Materials */
     ul.materials {
-      margin:14px 0 6px 20px;
+      margin:12px 0 6px 20px;
       padding-left:0;
       color:var(--muted);
     }
     ul.materials li {
       margin-bottom:6px;
-      list-style-type: disc;
+      list-style:disc;
+    }
+
+    /* CTA */
+    .cta-block {
+      margin-top:50px;
+      padding:32px;
+      border-radius:18px;
+      background:var(--card);
+      border:1px solid var(--bd);
+    }
+
+    .cta-title {
+      font-size:24px;
+      margin:0 0 12px;
+      font-weight:700;
+    }
+
+    .cta-text {
+      margin:0 0 24px;
+      font-size:16px;
+      color:var(--muted);
+      max-width:700px;
+    }
+
+    .cta-button {
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:14px;
+      border:1px solid var(--acc);
+      font-size:17px;
+      font-weight:600;
+      color:var(--acc);
+      background:transparent;
+      transition:background 0.15s, color 0.15s;
+    }
+    .cta-button:hover {
+      background:var(--acc);
+      color:white;
+      text-decoration:none;
     }
 
     footer {
@@ -84,120 +164,184 @@
       color:var(--muted);
       font-size:14px;
     }
+
+    /* Mobile */
+    @media (max-width:480px) {
+      .header-nav {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+      }
+    }
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <h1>Гипотезы и приоритизация продукта</h1>
+<header class="header-nav">
+  <a class="nav-link" href="/">← К карте знаний</a>
+  <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank">Мой Telegram-канал</a>
+</header>
 
-  <p class="lead">
-    Гипотезы и приоритизация продукта — один из главных навыков продакт-менеджера. Вам нужно уметь собирать гипотезы, проверять их и выбирать самые сильные точки роста, чтобы продукт развивался максимально эффективно.
+<h1>Гипотезы и приоритизация продукта</h1>
+
+<p class="lead">
+Гипотезы — фундамент продуктовой работы. Чтобы продукт рос, продакт должен уметь находить идеи, проверять их и выбирать те, которые дают максимальный эффект.
+</p>
+
+<p class="lead">
+На этой странице — база знаний по источникам гипотез, HADI-циклу, методам проверки, RICE и альтернативным подходам к приоретизации.
+</p>
+
+<nav class="toc">
+  <h2 class="toc-title">Оглавление</h2>
+  <ul class="toc-list">
+    <li><a href="#sources">Источники гипотез</a></li>
+    <li><a href="#hadi">HADI-цикл</a></li>
+    <li><a href="#methods">Методы проверки гипотез</a></li>
+    <li><a href="#rice">Приоритизация RICE</a></li>
+    <li><a href="#alternatives">Альтернативные методы</a></li>
+  </ul>
+</nav>
+
+<!-- SOURCES -->
+<h2 id="sources">Откуда брать продуктовые гипотезы</h2>
+<div class="card">
+  <p><strong>Зачем продакту источники гипотез?</strong></p>
+  <ul class="materials">
+    <li>наполнять бэклог актуальными идеями</li>
+    <li>регулярно находить сильные точки роста</li>
+    <li>видеть альтернативные способы решения проблем пользователей</li>
+  </ul>
+
+  <h3>Основные источники</h3>
+  <ul class="materials">
+    <li>бэклоги команд</li>
+    <li>качественные исследования</li>
+    <li>аналитика</li>
+    <li>конкуренты</li>
+    <li>рыночные тренды</li>
+    <li>обращения и отзывы пользователей</li>
+    <li>идеи стейкхолдеров</li>
+  </ul>
+</div>
+
+<!-- HADI -->
+<h2 id="hadi">HADI-цикл</h2>
+<div class="card">
+  <p><strong>Зачем нужен HADI?</strong></p>
+  <ul class="materials">
+    <li>быстро проверять гипотезы</li>
+    <li>строить следующий шаг на основе данных</li>
+    <li>непрерывно улучшать метрики</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://habr.com/ru/articles/716912/" target="_blank">Подробный разбор HADI-цикла</a></li>
+    <li><a href="https://skillbox.ru/media/management/chto-takoe-metodika-hadi-i-kak-ona-pomogaet-nepreryvno-razvivat-biznes/" target="_blank">Методика HADI</a></li>
+  </ul>
+</div>
+
+<!-- METHODS -->
+<h2 id="methods">Методы проверки продуктовых гипотез</h2>
+<div class="card">
+  <ul class="materials">
+    <li>эксперименты</li>
+    <li>A/B-тесты</li>
+    <li>глубинные интервью</li>
+    <li>UX-тестирование</li>
+    <li>прототипирование</li>
+    <li>smoke-тесты</li>
+    <li>аналитический прогноз</li>
+  </ul>
+</div>
+
+<!-- RICE -->
+<h2 id="rice">Приоритизация по RICE</h2>
+<div class="card">
+  <p><strong>Когда применять RICE?</strong></p>
+  <ul class="materials">
+    <li>когда ресурсов мало, а гипотез много</li>
+    <li>когда важно объективно оценивать влияние и усилия</li>
+    <li>когда нужно согласовать приоритеты со стейкхолдерами</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://habr.com/ru/companies/otus/articles/481366/" target="_blank">Как работает RICE</a></li>
+    <li><a href="https://vc.ru/life/702812-prioritezaciya-gipotez-i-zadach-s-pomoshyu-rice" target="_blank">Разбор метода RICE</a></li>
+  </ul>
+</div>
+
+<!-- ALTERNATIVES -->
+<h2 id="alternatives">Альтернативные методы</h2>
+<div class="card">
+  <p><strong>Зачем знать альтернативы?</strong></p>
+  <ul class="materials">
+    <li>подбор подхода под разные типы задач</li>
+    <li>учёт блокеров и зависимостей</li>
+    <li>взвешенные продуктовые решения</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://www.youtube.com/live/0_CJ_mnxKVQ" target="_blank">Альтернативные методы — видео</a></li>
+    <li><a href="https://www.youtube.com/watch?v=ZRUXLIy5iW0" target="_blank">Фреймворки приоритизации</a></li>
+    <li><a href="https://t.me/levlevitsky_channel/1336" target="_blank">Разбор подходов — канал Льва</a></li>
+  </ul>
+</div>
+
+<!-- CTA -->
+<div class="cta-block">
+  <h2 class="cta-title">Подписывайся на мой Telegram-канал</h2>
+  <p class="cta-text">
+    Здесь я делюсь продуктовой экспертизой, инструментами, таблицами, кейсами и мыслями о развитии. Более 3000 продактов уже в сообществе.
   </p>
 
-  <p class="lead">
-    Здесь — полная бесплатная база материалов: источники гипотез, HADI-цикл, методы проверки продуктовых гипотез, RICE и альтернативные способы приоритизации.
-  </p>
+  <a href="https://t.me/levlevitsky_channel" class="cta-button" target="_blank">
+    📣 Подписаться на канал
+  </a>
+</div>
 
-  <!-- SOURCES -->
-  <h2>Откуда брать продуктовые гипотезы</h2>
-  <div class="card">
-    <p><strong>Зачем продакту источники гипотез?</strong></p>
-    <ul class="materials">
-      <li>наполнить бэклог актуальными идеями</li>
-      <li>регулярно находить новые точки роста продукта</li>
-      <li>видеть альтернативные решения проблем пользователей</li>
-    </ul>
+<footer>
+  © <span id="y"></span> Лев Левицкий • 
+  <a href="/product-map">карта знаний</a> •
+  <a href="https://levlevitsky.ru" target="_blank">главная</a>
+</footer>
 
-    <h3>Основные источники гипотез</h3>
-    <ul class="materials">
-      <li>бэклоги других продуктовых команд</li>
-      <li>качественные исследования (интервью, UX-тесты)</li>
-      <li>количественная аналитика и визуализация данных</li>
-      <li>конкуренты и их продуктовые решения</li>
-      <li>рыночные тренды</li>
-      <li>отзывы и обращения пользователей</li>
-      <li>идеи и запросы стейкхолдеров</li>
-    </ul>
-  </div>
-
-  <!-- HADI -->
-  <h2>HADI-цикл</h2>
-  <div class="card">
-    <p><strong>Зачем продакт-менеджеру HADI-цикл?</strong></p>
-    <ul class="materials">
-      <li>быстро проверять гипотезы продукта</li>
-      <li>строить новые гипотезы на основе результатов</li>
-      <li>непрерывно улучшать продуктовые метрики</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://habr.com/ru/articles/716912/" target="_blank">Подробный разбор HADI-цикла</a></li>
-      <li><a href="https://skillbox.ru/media/management/chto-takoe-metodika-hadi-i-kak-ona-pomogaet-nepreryvno-razvivat-biznes/" target="_blank">HADI: методика и применение</a></li>
-    </ul>
-  </div>
-
-  <!-- METHODS -->
-  <h2>Методы проверки продуктовых гипотез</h2>
-  <div class="card">
-    <ul class="materials">
-      <li>эксперименты</li>
-      <li>A/B-тесты</li>
-      <li>глубинные интервью</li>
-      <li>UX-тестирование</li>
-      <li>прототипирование</li>
-      <li>smoke-тесты</li>
-      <li>аналитический прогноз</li>
-    </ul>
-  </div>
-
-  <!-- RICE -->
-  <h2>Приоритизация продуктовых гипотез по RICE</h2>
-  <div class="card">
-    <p><strong>Когда продакт использует RICE?</strong></p>
-    <ul class="materials">
-      <li>когда нужно выбрать самые сильные гипотезы при ограниченных ресурсах</li>
-      <li>когда важно объективно оценить трудозатраты и влияние</li>
-      <li>когда необходимо согласовать приоритеты со стейкхолдерами</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://habr.com/ru/companies/otus/articles/481366/" target="_blank">Как работает RICE</a></li>
-      <li><a href="https://vc.ru/life/702812-prioritezaciya-gipotez-i-zadach-s-pomoshyu-rice" target="_blank">Приоритизация гипотез с помощью RICE</a></li>
-    </ul>
-  </div>
-
-  <!-- OTHER METHODS -->
-  <h2>Альтернативные методы приоритизации</h2>
-  <div class="card">
-    <p><strong>Зачем продакту знать альтернативы RICE?</strong></p>
-    <ul class="materials">
-      <li>чтобы гибко подбирать метод под тип задачи</li>
-      <li>чтобы учитывать блокеры, зависимости и переиспользуемость</li>
-      <li>чтобы принимать более взвешенные продуктовые решения</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://www.youtube.com/live/0_CJ_mnxKVQ?si=BZuEa9AOHbWuM44G" target="_blank">Видео: альтернативные методы приоритизации</a></li>
-      <li><a href="https://www.youtube.com/watch?v=ZRUXLIy5iW0" target="_blank">Фреймворки приоритизации</a></li>
-      <li><a href="https://t.me/levlevitsky_channel/1336" target="_blank">Разбор приоритизации от Льва Левицкого</a></li>
-    </ul>
-  </div>
-
-  <footer>
-    © <span id="y"></span> Лев Левицкий • 
-    <a href="/product-map">карта знаний</a> •
-    <a href="https://levlevitsky.ru" target="_blank" rel="noopener noreferrer">главная</a>
-  </footer>
 </div>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+
+<!-- 🔍 Yandex.Metrika -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) { return; }
+      }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104666081', 'ym');
+
+  ym(104666081, 'init', {
+      ssr:true,
+      webvisor:true,
+      trackHash:true,
+      clickmap:true,
+      ecommerce:"dataLayer",
+      accurateTrackBounce:true,
+      trackLinks:true
+  });
+</script>
+
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/104666081" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
 
 </body>
 </html>

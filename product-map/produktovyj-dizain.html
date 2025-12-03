@@ -86,7 +86,6 @@
       margin:24px 0;
     }
 
-    /* Header */
     .header-nav {
       display:flex;
       justify-content:space-between;
@@ -101,7 +100,6 @@
       color:var(--acc);
     }
 
-    /* TOC */
     .toc {
       margin:32px 0;
     }
@@ -121,43 +119,42 @@
       margin:6px 0;
     }
 
-    /* CTA */
     .cta-block {
-      margin-top: 50px;
-      padding: 32px;
-      border-radius: 18px;
-      background: var(--card);
-      border: 1px solid var(--bd);
+      margin-top:50px;
+      padding:32px;
+      border-radius:18px;
+      background:var(--card);
+      border:1px solid var(--bd);
     }
 
     .cta-title {
-      margin: 0 0 12px;
-      font-size: 24px;
-      font-weight: 700;
+      margin:0 0 12px;
+      font-size:24px;
+      font-weight:700;
     }
 
     .cta-text {
-      margin: 0 0 24px;
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 700px;
+      margin:0 0 24px;
+      font-size:16px;
+      color:var(--muted);
+      max-width:700px;
     }
 
     .cta-button {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 14px;
-      border: 1px solid var(--acc);
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--acc);
-      background: transparent;
-      transition: background 0.15s, color 0.15s;
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:14px;
+      border:1px solid var(--acc);
+      font-size:17px;
+      font-weight:600;
+      color:var(--acc);
+      background:transparent;
+      transition:background 0.15s, color 0.15s;
     }
 
     .cta-button:hover {
-      background: var(--acc);
-      color: white;
+      background:var(--acc);
+      color:white;
     }
 
     footer {
@@ -182,7 +179,7 @@
 <div class="wrap">
 
 <header class="header-nav">
-  <a class="nav-link" href="/product-map/">← К карте знаний</a>
+  <a class="nav-link" href="/product-map/" target="_blank">← К карте знаний</a>
   <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank">Мой Telegram-канал</a>
 </header>
 
@@ -199,9 +196,9 @@
 <nav class="toc">
   <h3 class="toc-title">Оглавление</h3>
   <ul class="toc-list">
-    <li><a href="#task">Постановка задачи на дизайн</a></li>
-    <li><a href="#prototypes">Прототипирование</a></li>
-    <li><a href="#ux-tests">UX-тестирование</a></li>
+    <li><a href="#task" target="_blank">Постановка задачи на дизайн</a></li>
+    <li><a href="#prototypes" target="_blank">Прототипирование</a></li>
+    <li><a href="#ux-tests" target="_blank">UX-тестирование</a></li>
   </ul>
 </nav>
 
@@ -254,7 +251,7 @@
   </ul>
 
   <p>Большая подборка UX-тестов доступна в разделе  
-    <a href="/product-map/produktovye-issledovaniya">«Продуктовые исследования»</a>.
+    <a href="/product-map/produktovye-issledovaniya" target="_blank">«Продуктовые исследования»</a>.
   </p>
 </div>
 
@@ -262,10 +259,10 @@
 <section class="related" style="margin-top:50px;">
   <h2>Читайте также</h2>
   <ul>
-    <li><a href="/product-map/analiz-auditorii-produkta">Анализ аудитории продукта</a></li>
-    <li><a href="/product-map/gipotezy-и-prioritizaciya-produkta">Гипотезы и приоритизация продукта</a></li>
-    <li><a href="/product-map/metriki-i-analitika-produkta">Метрики и аналитика</a></li>
-    <li><a href="/product-map/mvp-mlp">MVP и MLP</a></li>
+    <li><a href="/product-map/analiz-auditorii-produkta" target="_blank">Анализ аудитории продукта</a></li>
+    <li><a href="/product-map/gipotezy-и-prioritizaciya-produkta" target="_blank">Гипотезы и приоритизация продукта</a></li>
+    <li><a href="/product-map/metriki-и-analitika-produkта" target="_blank">Метрики и аналитика</a></li>
+    <li><a href="/product-map/mvp-mlp" target="_blank">MVP и MLP</a></li>
   </ul>
 </section>
 
@@ -283,7 +280,7 @@
 
 <footer>
   © <span id="y"></span> Лев Левицкий • 
-  <a href="/product-map">карта знаний</a> •
+  <a href="/product-map" target="_blank">карта знаний</a> •
   <a href="https://levlevitsky.ru" target="_blank">главная</a>
 </footer>
 
@@ -293,7 +290,7 @@
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 
-<!-- ➜ Яндекс.Метрика -->
+<!-- Yandex.Metrika -->
 <script type="text/javascript">
 (function(m,e,t,r,i,k,a){
     m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

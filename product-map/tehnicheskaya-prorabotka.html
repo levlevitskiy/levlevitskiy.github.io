@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Техническая проработка — подготовка задач к разработке | Product Map</title>
 
-  <meta name="description" content="Техническая проработка: оценка и декомпозиция задач, PBR, требования (User Story, Job Story, функциональные и нефункциональные). Полная база материалов для продакт-менеджеров." />
+  <meta name="description" content="Техническая проработка: оценка и декомпозиция задач, PBR, требования (User Story, Job Story, функциональные и нефункциональные). Полная база материалов для продакт-менеджеров.">
 
-  <link rel="canonical" href="https://levlevitsky.ru/product-map/tehnicheskaya-prorabotka" />
+  <link rel="canonical" href="https://levlevitsky.ru/product-map/tehnicheskaya-prorabotka">
+
+  <meta property="og:title" content="Техническая проработка — подготовка задач к разработке">
+  <meta property="og:description" content="Оценка задач, PBR, требования и формализация бизнес-логики. Руководство для продакт-менеджера.">
+  <meta property="og:url" content="https://levlevitsky.ru/product-map/tehnicheskaya-prorabotka">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://levlevitsky.ru/avatar.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Техническая проработка — подготовка задач к разработке">
+  <meta name="twitter:description" content="Оценка и декомпозиция задач, PBR и требования.">
+  <meta name="twitter:image" content="https://levlevitsky.ru/avatar.jpg">
+
+  <link rel="icon" href="/favicon.ico">
 
   <style>
     :root {
       --bg:#ffffff;
       --fg:#1b1b1f;
       --muted:#555;
-      --card:#f5f5f7;
-      --acc:#0056ff;
-      --bd:#ddd;
+      --acc:#7a5cff;   /* фиолетовый акцент */
+      --card:#f6f6f8;  /* мягкий фон карточек */
+      --bd:#e2e2e6;    /* лёгкая граница */
     }
+
     * { box-sizing:border-box; }
+
     body {
       margin:0;
       padding:0;
       background:var(--bg);
       color:var(--fg);
-      font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;
+      font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
     }
+
     a { color:var(--acc); text-decoration:none; }
     a:hover { text-decoration:underline; }
 
@@ -42,20 +58,24 @@
       font-weight:700;
       line-height:1.3;
     }
+
     h2 {
       font-size:26px;
       margin:45px 0 14px;
       font-weight:700;
     }
+
     h3 {
       font-size:20px;
       margin:20px 0 10px;
       font-weight:600;
     }
+
     p.lead {
       color:var(--muted);
       font-size:18px;
       max-width:760px;
+      margin-bottom:12px;
     }
 
     .card {
@@ -65,12 +85,92 @@
       border:1px solid var(--bd);
       margin:24px 0;
     }
+
     ul.materials {
       margin:12px 0 6px 20px;
       padding-left:0;
       color:var(--muted);
     }
-    ul.materials li { margin-bottom:6px; }
+
+    ul.materials li {
+      margin-bottom:6px;
+    }
+
+    /* Header */
+    .header-nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+      margin-bottom:10px;
+      border-bottom:1px solid var(--bd);
+    }
+
+    .nav-link {
+      font-size:16px;
+      color:var(--acc);
+    }
+
+    /* TOC */
+    .toc {
+      margin:32px 0;
+    }
+
+    .toc-title {
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+
+    .toc-list {
+      list-style:none;
+      padding-left:0;
+      margin:0;
+    }
+
+    .toc-list li {
+      margin:6px 0;
+    }
+
+    /* CTA */
+    .cta-block {
+      margin-top:50px;
+      padding:32px;
+      border-radius:18px;
+      background:var(--card);
+      border:1px solid var(--bd);
+    }
+
+    .cta-title {
+      margin:0 0 12px;
+      font-size:24px;
+      font-weight:700;
+    }
+
+    .cta-text {
+      margin:0 0 24px;
+      font-size:16px;
+      color:var(--muted);
+      max-width:700px;
+    }
+
+    .cta-button {
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:14px;
+      border:1px solid var(--acc);
+      font-size:17px;
+      font-weight:600;
+      color:var(--acc);
+      background:transparent;
+      transition:background 0.15s, color 0.15s;
+    }
+
+    .cta-button:hover {
+      background:var(--acc);
+      color:#ffffff;
+      text-decoration:none;
+    }
 
     footer {
       margin-top:50px;
@@ -79,105 +179,175 @@
       color:var(--muted);
       font-size:14px;
     }
+
+    @media (max-width:480px) {
+      .header-nav {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+      }
+    }
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <h1>Техническая проработка — подготовка задач к разработке</h1>
+<header class="header-nav">
+  <a class="nav-link" href="/product-map/">← К карте знаний</a>
+  <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer">Мой Telegram-канал</a>
+</header>
 
-  <p class="lead">
-    Техническая проработка — этап, где продакт-менеджер оценивает трудозатраты, собирает требования,
-    декомпозирует задачи, уточняет риски и помогает команде подготовиться к эффективной реализации.
+<h1>Техническая проработка — подготовка задач к разработке</h1>
+
+<p class="lead">
+Техническая проработка — этап, где продакт-менеджер оценивает трудозатраты, собирает требования,
+декомпозирует задачи, уточняет риски и помогает команде подготовиться к эффективной реализации.
+</p>
+
+<p class="lead">
+На этой странице — подборка материалов по оценке задач, PBR, требованиям и формализации бизнес-логики, чтобы задачи приходили в разработку уже «дожатыми».
+</p>
+
+<nav class="toc">
+  <h3 class="toc-title">Оглавление</h3>
+  <ul class="toc-list">
+    <li><a href="#estimation">Оценка и декомпозиция задач</a></li>
+    <li><a href="#pbr">PBR (Product Backlog Refinement)</a></li>
+    <li><a href="#requirements">Требования: User Story, Job Story и др.</a></li>
+  </ul>
+</nav>
+
+<!-- Оценка задач -->
+<h2 id="estimation">Оценка и декомпозиция задач</h2>
+<div class="card">
+  <p><strong>Зачем это продакту?</strong></p>
+  <ul class="materials">
+    <li>не взять в работу слишком много задач</li>
+    <li>адекватно оценить сроки и ресурсы</li>
+    <li>заранее выявить риски и узкие места</li>
+  </ul>
+
+  <p><strong>Главные правила оценки:</strong></p>
+  <ul class="materials">
+    <li>регулярно общаться с техлидом и ключевыми разработчиками</li>
+    <li>доверять экспертной оценке команды, а не «продавать» свои сроки</li>
+    <li>заранее погружать команду в контекст, а не только в формулировку задачи</li>
+    <li>продакт должен чётко описывать бизнес-логику и сценарии</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://vc.ru/scrumtrek/1042747-pochemu-tak-slozhno-ocenivat-zadachi-v-it-i-zachem-nuzhny-stori-pointy-chast-pervaya" target="_blank" rel="noopener noreferrer">Почему сложно оценивать задачи в IT и зачем нужны story points</a></li>
+    <li><a href="https://habr.com/ru/articles/742364/" target="_blank" rel="noopener noreferrer">Как правильно оценивать задачи: частые ошибки</a></li>
+    <li>Use Cases как часть описания требований (сценарии использования вместо абстрактных формулировок)</li>
+  </ul>
+</div>
+
+<!-- PBR -->
+<h2 id="pbr">PBR (Product Backlog Refinement)</h2>
+<div class="card">
+  <p><strong>Зачем нужен PBR?</strong></p>
+  <ul class="materials">
+    <li>уточнить задачу до взятия в разработку</li>
+    <li>сформировать корректную оценку и понять риски</li>
+    <li>собрать все вопросы команды заранее — до спринта</li>
+    <li>иногда — честно отказаться от задачи или перенести её</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://youtu.be/bNy32Hy2MEI?si=PkO99bVGEAwL58vU" target="_blank" rel="noopener noreferrer">Видео: как эффективно проводить PBR</a></li>
+    <li><a href="https://habr.com/ru/companies/inDrive/articles/682806/" target="_blank" rel="noopener noreferrer">Как inDrive проводит PBR</a></li>
+    <li><a href="https://scrum.ru/tpost/r7yolfo4o1-multikomandnoe-utochnenie-bekloga-produk" target="_blank" rel="noopener noreferrer">Мультикомандное уточнение бэклога</a></li>
+  </ul>
+</div>
+
+<!-- Требования -->
+<h2 id="requirements">Требования: User Story, Job Story, функциональные и нефункциональные</h2>
+<div class="card">
+  <p><strong>Зачем это продакту?</strong></p>
+  <ul class="materials">
+    <li>чтобы команда понимала, что именно нужно реализовать</li>
+    <li>чтобы бизнес-логика была описана корректно и непротиворечиво</li>
+    <li>чтобы избежать переделок и «а мы это не обсуждали»</li>
+  </ul>
+
+  <p><strong>Распределение ответственности:</strong></p>
+  <ul class="materials">
+    <li>продакт описывает бизнес-логику, шаги пользователя и ограничения</li>
+    <li>техлид отвечает за техническую реализацию: ручки, очереди, сервисы, интеграции</li>
+    <li>уровень детализации зависит от зрелости команды и продукта</li>
+  </ul>
+
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://habr.com/ru/companies/alfa/articles/818855/" target="_blank" rel="noopener noreferrer">Как Альфа делает требования</a></li>
+    <li>Методы формализации требований: Use Case vs User Story</li>
+    <li><a href="https://systems.education/functional_requirements_in_usecases" target="_blank" rel="noopener noreferrer">Гид по функциональным требованиям</a></li>
+    <li><a href="https://practicum.yandex.ru/blog/biznes-trebovaniya/" target="_blank" rel="noopener noreferrer">Как писать бизнес-требования</a></li>
+    <li><a href="https://vc.ru" target="_blank" rel="noopener noreferrer">Как писать требования, чтобы их понимали — статья Антона Лазовского</a></li>
+  </ul>
+</div>
+
+<section style="margin-top:50px;">
+  <h2>Читайте также</h2>
+  <ul>
+    <li><a href="/product-map/analiz-auditorii-produkta">Анализ аудитории продукта</a></li>
+    <li><a href="/product-map/gipotezy-i-prioritizaciya-produkta">Гипотезы и приоритизация продукта</a></li>
+    <li><a href="/product-map/metriki-i-analitika-produkta">Метрики и аналитика продукта</a></li>
+    <li><a href="/product-map/mvp-mlp">MVP и MLP</a></li>
+  </ul>
+</section>
+
+<div class="cta-block">
+  <h2 class="cta-title">Подписывайся на мой Telegram-канал</h2>
+  <p class="cta-text">
+    В канале я разбираю реальные кейсы техпроработки, показываю примеры требований, делюсь шаблонами для PBR и постановки задач, а ещё пишу про продакт-менеджмент без воды.
   </p>
 
-  <p class="lead">
-    На этой странице — полная база материалов по оценке задач, PBR, требованиям и формализации бизнес-логики.
-  </p>
+  <a href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer" class="cta-button">
+    📣 Подписаться на Telegram-канал
+  </a>
+</div>
 
-  <!-- Оценка задач -->
-  <h2>Оценка и декомпозиция задач</h2>
-  <div class="card">
-    <p><strong>Зачем это продакту?</strong></p>
-    <ul class="materials">
-      <li>не взять в работу слишком много задач</li>
-      <li>адекватно оценить сроки и ресурсы</li>
-      <li>заранее выявить риски и узкие места</li>
-    </ul>
+<footer>
+  © <span id="y"></span> Лев Левицкий • 
+  <a href="/product-map">карта знаний</a> •
+  <a href="https://levlevitsky.ru" target="_blank" rel="noopener noreferrer">главная</a>
+</footer>
 
-    <p><strong>Главные правила оценки:</strong></p>
-    <ul class="materials">
-      <li>регулярно общаться с техлидом</li>
-      <li>доверять экспертной оценке разработчиков</li>
-      <li>заранее погружать команду в контекст</li>
-      <li>продакт должен чётко описывать бизнес-логику</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://vc.ru/scrumtrek/1042747-pochemu-tak-slozhno-ocenivat-zadachi-v-it-i-zachem-nuzhny-stori-pointy-chast-pervaya" target="_blank">Почему сложно оценивать задачи в IT и зачем нужны story points</a></li>
-      <li><a href="https://habr.com/ru/articles/742364/" target="_blank">Как правильно оценивать задачи: частые ошибки</a></li>
-      <li>Use Cases как часть описания требований</li>
-    </ul>
-  </div>
-
-  <!-- PBR -->
-  <h2>PBR (Product Backlog Refinement)</h2>
-  <div class="card">
-    <p><strong>Зачем нужен PBR?</strong></p>
-    <ul class="materials">
-      <li>уточнить задачу до взятия в разработку</li>
-      <li>сформировать корректную оценку</li>
-      <li>собрать все вопросы команды заранее</li>
-      <li>иногда — отказаться от задачи</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://youtu.be/bNy32Hy2MEI?si=PkO99bVGEAwL58vU" target="_blank">Видео: как эффективно проводить PBR</a></li>
-      <li><a href="https://habr.com/ru/companies/inDrive/articles/682806/" target="_blank">Как inDrive проводит PBR</a></li>
-      <li><a href="https://scrum.ru/tpost/r7yolfo4o1-multikomandnoe-utochnenie-bekloga-produk" target="_blank">Мультикомандное уточнение бэклога</a></li>
-    </ul>
-  </div>
-
-  <!-- Требования -->
-  <h2>Требования: User Story, Job Story, функциональные и нефункциональные</h2>
-  <div class="card">
-    <p><strong>Зачем это продакту?</strong></p>
-    <ul class="materials">
-      <li>чтобы команда понимала, что именно нужно реализовать</li>
-      <li>чтобы бизнес-логика была описана корректно</li>
-      <li>чтобы избежать переделок</li>
-    </ul>
-
-    <p><strong>Распределение ответственности:</strong></p>
-    <ul class="materials">
-      <li>продакт описывает бизнес-логику и шаги пользователя</li>
-      <li>техлид отвечает за техническую реализацию: ручки, очереди, сервисы</li>
-      <li>уровень детализации зависит от команды</li>
-    </ul>
-
-    <h3>Материалы</h3>
-    <ul class="materials">
-      <li><a href="https://habr.com/ru/companies/alfa/articles/818855/" target="_blank">Как Альфа делает требования</a></li>
-      <li>Методы формализации требований: Use Case vs User Story</li>
-      <li><a href="https://systems.education/functional_requirements_in_usecases" target="_blank">Гид по функциональным требованиям</a></li>
-      <li><a href="https://practicum.yandex.ru/blog/biznes-trebovaniya/" target="_blank">Как писать бизнес-требования</a></li>
-      <li><a href="https://vc.ru" target="_blank">Как писать требования, чтобы их понимали — статья Антона Лазовского</a></li>
-    </ul>
-  </div>
-
-  <footer>
-    © <span id="y"></span> Лев Левицкий • 
-    <a href="/product-map">карта знаний</a> •
-    <a href="https://levlevitsky.ru" target="_blank">главная</a>
-  </footer>
 </div>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+
+<!-- 🔍 Yandex.Metrika -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) { return; }
+    }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104666081', 'ym');
+
+ym(104666081, 'init', {
+    ssr:true,
+    webvisor:true,
+    trackHash:true,
+    clickmap:true,
+    ecommerce:"dataLayer",
+    accurateTrackBounce:true,
+    trackLinks:true
+});
+</script>
+
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/104666081" style="position:absolute; left:-9999px;" alt=""></div>
+</noscript>
 
 </body>
 </html>

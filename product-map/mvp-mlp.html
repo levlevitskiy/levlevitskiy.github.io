@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MVP и MLP — минимальный и «любимый» продукт | Product Map</title>
-  <meta name="description" content="MVP и MLP — как определить минимальный жизнеспособный продукт (MVP) и минимально любимый продукт (MLP), подготовить релиз и запустить фичу. База знаний для продакт-менеджеров." />
-  <link rel="canonical" href="https://levlevitsky.ru/product-map/mvp-mlp" />
+
+  <meta name="description" content="Что такое MVP и MLP, как определить минимальный жизнеспособный продукт и минимально любимый продукт. Полный разбор, примеры, рекомендации и материалы для продакт-менеджеров.">
+
+  <link rel="canonical" href="https://levlevitsky.ru/product-map/mvp-mlp">
+
+  <meta property="og:title" content="MVP и MLP — минимальный и «любимый» продукт">
+  <meta property="og:description" content="Руководство по созданию MVP и MLP. Как запускать минимальные версии продукта, проверять гипотезы и повышать ценность для пользователей.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://levlevitsky.ru/product-map/mvp-mlp">
+  <meta property="og:image" content="https://levlevitsky.ru/avatar.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MVP и MLP — минимальный и «любимый» продукт">
+  <meta name="twitter:description" content="Как определять MVP и MLP, запускать фичи и минимизировать риски.">
+  <meta name="twitter:image" content="https://levlevitsky.ru/avatar.jpg">
+
+  <link rel="icon" href="/favicon.ico">
 
   <style>
     :root {
       --bg:#ffffff;
       --fg:#1b1b1f;
       --muted:#555;
-      --card:#f5f5f7;
-      --acc:#0056ff;
-      --bd:#ddd;
+      --acc:#7a5cff;  /* фиолетовый акцент */
+      --card:#f6f6f8;
+      --bd:#e2e2e6;
     }
+
     * { box-sizing:border-box; }
+
     body {
       margin:0;
       padding:0;
       background:var(--bg);
       color:var(--fg);
-      font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;
+      font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
     }
+
     a { color:var(--acc); text-decoration:none; }
     a:hover { text-decoration:underline; }
 
@@ -34,11 +52,22 @@
       padding:40px 24px 70px;
     }
 
+    /* Header */
+    .header-nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+      margin-bottom:10px;
+      border-bottom:1px solid var(--bd);
+    }
+
+    .nav-link { color:var(--acc); }
+
     h1 {
       font-size:34px;
       margin:0 0 20px;
       font-weight:700;
-      line-height:1.3;
     }
     h2 {
       font-size:26px;
@@ -50,6 +79,7 @@
       margin:20px 0 10px;
       font-weight:600;
     }
+
     p.lead {
       color:var(--muted);
       font-size:18px;
@@ -57,6 +87,7 @@
       margin-bottom:12px;
     }
 
+    /* Cards */
     .card {
       background:var(--card);
       padding:28px;
@@ -64,12 +95,62 @@
       border:1px solid var(--bd);
       margin:24px 0;
     }
+
     ul.materials {
       margin:12px 0 6px 20px;
-      padding-left:0;
       color:var(--muted);
     }
     ul.materials li { margin-bottom:6px; }
+
+    /* Table of Contents */
+    .toc {
+      margin:32px 0;
+    }
+    .toc-title {
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .toc-list {
+      list-style:none;
+      padding-left:0;
+    }
+    .toc-list li { margin:6px 0; }
+
+    /* CTA */
+    .cta-block {
+      margin-top:50px;
+      padding:32px;
+      border-radius:18px;
+      background:var(--card);
+      border:1px solid var(--bd);
+    }
+    .cta-title {
+      margin:0 0 12px;
+      font-size:24px;
+      font-weight:700;
+    }
+    .cta-text {
+      margin:0 0 24px;
+      font-size:16px;
+      color:var(--muted);
+      max-width:700px;
+    }
+    .cta-button {
+      display:inline-block;
+      padding:14px 22px;
+      border-radius:14px;
+      border:1px solid var(--acc);
+      font-size:17px;
+      font-weight:600;
+      color:var(--acc);
+      transition:0.15s;
+    }
+    .cta-button:hover {
+      background:var(--acc);
+      color:#fff;
+      text-decoration:none;
+    }
 
     footer {
       margin-top:50px;
@@ -78,71 +159,110 @@
       color:var(--muted);
       font-size:14px;
     }
+
+    @media (max-width:480px){
+      .header-nav { flex-direction:column; align-items:flex-start; gap:8px; }
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <h1>MVP &amp; MLP — минимальный и «любимый» продукт</h1>
+<header class="header-nav">
+  <a class="nav-link" href="/product-map/">← К карте знаний</a>
+  <a class="nav-link" href="https://t.me/levlevitsky_channel" target="_blank">Мой Telegram-канал</a>
+</header>
 
-    <p class="lead">
-      MVP (минимально жизнеспособный продукт) — это простой вариант продукта с минимальным набором функций, достаточным для проверки гипотез и запуска в продакшн.  
-      MLP (минимально любимый продукт) — версия, которая приносит реальную ценность и вызывает «love» у пользователей.
-    </p>
+<h1>MVP & MLP — минимальный и «любимый» продукт</h1>
 
-    <p class="lead">
-      Использование MVP/MLP помогает минимизировать риски, быстрее доставлять ценность и проверять идеи перед масштабированием.  
-      Ниже — лучшие материалы, которые помогут сформулировать MVP/MLP, протестировать гипотезы и запустить первую версию.
-    </p>
+<p class="lead">
+MVP — минимально жизнеспособная версия продукта, достаточная для проверки гипотез.  
+MLP — версия, которая уже вызывает эмоции и приносит пользователю реальную ценность.
+</p>
 
-    <!-- MVP -->
-    <h2>MVP — минимально жизнеспособный продукт</h2>
-    <div class="card">
-      <p><strong>Что такое MVP и зачем он нужен?</strong></p>
-      <ul class="materials">
-        <li>проверить ключевые гипотезы с минимальными затратами</li>
-        <li>собрать обратную связь от первых пользователей</li>
-        <li>сократить риск разработки ненужного функционала</li>
-      </ul>
+<p class="lead">
+MVP помогает быстро проверять идеи и избегать лишних затрат.  
+MLP — повышать удержание, улучшать NPS и формировать первое «вау»-впечатление.
+</p>
 
-      <h3>Материалы</h3>
-      <ul class="materials">
-        <li><a href="https://productstar.ru/mvp" target="_blank">MVP: полный гайд (ProductStar.ru)</a></li>
-        <li><a href="https://www.youtube.com/watch?v=3rUM5Mzx8CQ" target="_blank">Видео: как правильно запускать MVP</a></li>
-        <li><a href="https://vc.ru/marketing/139040-sekret-uspeshnyh-startapov-minimum-viable-product-chto-eto-i-kak-ego-sozdayut" target="_blank">Секрет успешных стартапов: что такое MVP и как его создают</a></li>
-        <li><a href="https://trends.rbc.ru/trends/innovation/60dc23419a7947caa5598064" target="_blank">Анализ рынка и примеры выхода с MVP (RBC)</a></li>
-        <li><a href="https://www.youtube.com/watch?v=sWN4qT2J7P8" target="_blank">Видео-разбор этапов создания MVP</a></li>
-      </ul>
-    </div>
+<nav class="toc">
+  <h3 class="toc-title">Оглавление</h3>
+  <ul class="toc-list">
+    <li><a href="#mvp">MVP — минимально жизнеспособный продукт</a></li>
+    <li><a href="#mlp">MLP — минимально любимый продукт</a></li>
+    <li><a href="#links">Дополнительные материалы</a></li>
+  </ul>
+</nav>
 
-    <!-- MLP -->
-    <h2>MLP — минимально «любимый» продукт</h2>
-    <div class="card">
-      <p><strong>Что такое MLP и зачем он нужен?</strong></p>
-      <ul class="materials">
-        <li>выделить минимальный набор функций, которые действительно важны пользователю</li>
-        <li>сделать первый релиз, который приносит ценность и вызывает первое «влюбление»</li>
-        <li>обеспечить сильное первое впечатление и повысить шанс удержания</li>
-      </ul>
+<!-- MVP -->
+<h2 id="mvp">MVP — минимально жизнеспособный продукт</h2>
+<div class="card">
+  <p><strong>Для чего нужен MVP?</strong></p>
+  <ul class="materials">
+    <li>проверка ключевых продуктовых гипотез</li>
+    <li>понимание реального спроса</li>
+    <li>получение обратной связи до масштабной разработки</li>
+    <li>минимизация объёма бессмысленной разработки</li>
+  </ul>
 
-      <h3>Материалы</h3>
-      <ul class="materials">
-        <li><a href="https://habr.com/ru/companies/kaiten/articles/813935/" target="_blank">MVP vs MLP: когда нужен минимально любимый продукт</a></li>
-        <li><a href="https://vc.ru/marketing/1002525-mvp-vs-mlp" target="_blank">Разница между MVP и MLP — подробный обзор</a></li>
-      </ul>
-    </div>
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://productstar.ru/mvp" target="_blank">Полный гайд по MVP (ProductStar)</a></li>
+    <li><a href="https://www.youtube.com/watch?v=3rUM5Mzx8CQ" target="_blank">Видео: как запускать MVP</a></li>
+    <li><a href="https://vc.ru/marketing/139040-sekret-uspeshnyh-startapov-minimum-viable-product-chto-eto-i-kak-ego-sozdayut" target="_blank">Как создают MVP — кейсы стартапов</a></li>
+    <li><a href="https://trends.rbc.ru/trends/innovation/60dc23419a7947caa5598064" target="_blank">Анализ рынка и примеры MVP (RBC)</a></li>
+    <li><a href="https://www.youtube.com/watch?v=sWN4qT2J7P8" target="_blank">Видео-разбор этапов создания MVP</a></li>
+  </ul>
+</div>
 
-    <footer>
-      © <span id="y"></span> Лев Левицкий • 
-      <a href="/product-map">карта знаний</a> •
-      <a href="https://levlevitsky.ru" target="_blank">главная</a>
-    </footer>
+<!-- MLP -->
+<h2 id="mlp">MLP — минимально «любимый» продукт</h2>
+<div class="card">
+  <p><strong>Почему MLP важен?</strong></p>
+  <ul class="materials">
+    <li>повышает вероятность возврата пользователя после первого использования</li>
+    <li>создаёт первый эмоциональный крючок</li>
+    <li>выделяет продукт среди конкурентов</li>
+    <li>улучшает удержание и NPS</li>
+  </ul>
 
-  </div>
+  <h3>Материалы</h3>
+  <ul class="materials">
+    <li><a href="https://habr.com/ru/companies/kaiten/articles/813935/" target="_blank">Когда нужен MLP</a></li>
+    <li><a href="https://vc.ru/marketing/1002525-mvp-vs-mlp" target="_blank">Сравнение MVP и MLP</a></li>
+  </ul>
+</div>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<!-- Links -->
+<h2 id="links">Читайте также</h2>
+<ul>
+  <li><a href="/product-map/analiz-auditorii-produkta">Анализ аудитории продукта</a></li>
+  <li><a href="/product-map/gipotezy-i-prioritizaciya-produkta">Гипотезы и приоритизация</a></li>
+  <li><a href="/product-map/metriki-i-analitika-produkta">Метрики и аналитика</a></li>
+  <li><a href="/product-map/tehnicheskaya-prorabotka">Техническая проработка</a></li>
+</ul>
+
+<!-- CTA -->
+<div class="cta-block">
+  <h2 class="cta-title">Подписывайся на Telegram-канал</h2>
+  <p class="cta-text">
+    Я регулярно публикую разборы MVP/MLP, реальные кейсы, продуктовые ошибки и мини-гайды по построению первых версий продукта.
+  </p>
+  <a href="https://t.me/levlevitsky_channel" class="cta-button" target="_blank">📣 Подписаться на канал</a>
+</div>
+
+<footer>
+  © <span id="y"></span> Лев Левицкий • 
+  <a href="/product-map">карта знаний</a> •
+  <a href="https://levlevitsky.ru" target="_blank">главная</a>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>

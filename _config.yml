@@ -1,2 +1,5 @@
 domain: levlevitsky.ru
 url: https://levlevitsky.ru
+
+plugins:
+  - jekyll-redirect-from

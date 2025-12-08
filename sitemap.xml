@@ -16,28 +16,28 @@
 
   <!-- Основные страницы -->
   <url>
-    <loc>https://levlevitsky.ru/kak-stat-product-manager</loc>
+    <loc>https://levlevitsky.ru/kak-stat-product-manager/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://levlevitsky.ru/resume-template</loc>
+    <loc>https://levlevitsky.ru/resume-template/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://levlevitsky.ru/razmestit-reklamu-v-telegram-kanale</loc>
+    <loc>https://levlevitsky.ru/razmestit-reklamu-v-telegram-kanale/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://levlevitsky.ru/kak-nakopit-3-milliona-rublej</loc>
+    <loc>https://levlevitsky.ru/kak-nakopit-3-milliona-rublej/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -48,96 +48,93 @@
     <loc>https://levlevitsky.ru/product-map/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
 
-  <!-- Product Map — разделы -->
+  <!-- Product Map — подразделы -->
 
-  <!-- Discovery -->
   <url>
-    <loc>https://levlevitsky.ru/product-map/analiz-rynka</loc>
+    <loc>https://levlevitsky.ru/product-map/analiz-rynka/</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://levlevitsky.ru/product-map/analiz-auditorii-produkta/</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://levlevitsky.ru/product-map/produktovye-issledovaniya/</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://levlevitsky.ru/product-map/gipotezy-i-prioritizaciya-produkta/</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://levlevitsky.ru/product-map/celepolaganie-produkta/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://levlevitsky.ru/product-map/analiz-auditorii-produkta</loc>
+    <loc>https://levlevitsky.ru/product-map/tehnicheskaya-prorabotka/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://levlevitsky.ru/product-map/produktovye-issledovaniya</loc>
+    <loc>https://levlevitsky.ru/product-map/roadmap-produkta/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://levlevitsky.ru/product-map/gipotezy-i-prioritizaciya-produkta</loc>
+    <loc>https://levlevitsky.ru/product-map/upravlenie-proektami-v-it/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://levlevitsky.ru/product-map/celepolaganie-produkta</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Delivery / Execution -->
-  <url>
-    <loc>https://levlevitsky.ru/product-map/tehnicheskaya-prorabotka</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://levlevitsky.ru/product-map/roadmap-produkta</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://levlevitsky.ru/product-map/upravlenie-proektami-v-it</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://levlevitsky.ru/product-map/razrabotka-it-produkta</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://levlevitsky.ru/product-map/mvp-mlp</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Analytics -->
-  <url>
-    <loc>https://levlevitsky.ru/product-map/metriki-i-analitika-produkta</loc>
+    <loc>https://levlevitsky.ru/product-map/razrabotka-it-produkta/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://levlevitsky.ru/product-map/ab-testy-validaciya-rezultatov</loc>
+    <loc>https://levlevitsky.ru/product-map/mvp-mlp/</loc>
     <lastmod>2025-12-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://levlevitsky.ru/product-map/metriki-i-analitika-produkta/</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://levlevitsky.ru/product-map/ab-testy-validaciya-rezultatov/</loc>
+    <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>

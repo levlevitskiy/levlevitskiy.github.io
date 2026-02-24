@@ -68,7 +68,7 @@
     "@type": "WebPage",
     "@id": "https://levlevitsky.ru/resume-template/"
   },
-  "image": "https://levlevitsky.ru/avatar-400.jpg"
+  "image": "https://levlevitsky.ru/avatar-400.jpg",
   "inLanguage": "ru-RU",
   "fileFormat": "application/pdf",
   "url": "https://levlevitsky.ru/resume-template/",
@@ -79,38 +79,27 @@
 
 
   <!-- Иконки -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+  <link rel="stylesheet" href="/base.css">
   <!-- Стили -->
   <style>
-    :root { --bg:#0b0b10; --fg:#e9ecf1; --muted:#a8b0bd; --card:#13131a; --acc:#7aa2ff; }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif}
-    a{color:var(--acc);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:900px;margin:0 auto;padding:36px 20px}
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-    .back{color:var(--muted);font-size:14px}
-    h1{font-size:32px;margin:8px 0 10px}
     .lead{color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;margin:14px 0;border-radius:14px;border:1px solid #243047;background:#0f1522;font-weight:600}
-    .card{background:var(--card);border:1px solid #1b1f2a;border-radius:16px;padding:16px;margin:16px 0}
-    h2{font-size:22px;margin:18px 0 8px}
-    h3{font-size:18px;margin:14px 0 6px}
-    ul{margin:8px 0 8px 20px}
-    footer{margin:28px 0;color:var(--muted);font-size:14px}
   </style>
 </head>
 
-<body>
+<body class="theme-dark">
+  <a href="#main" class="sr-only">Перейти к основному содержимому</a>
   <div class="wrap">
-    <header>
+    <header class="header-nav header-nav--no-border">
       <a class="back" href="/">← На главную</a>
       <a class="back" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer">Мой Telegram-канал</a>
     </header>
 
-    <h1>Шаблон резюме для продакт-менеджера</h1>
+    <main id="main">
+    <h1 id="page-title">Шаблон резюме для продакт-менеджера</h1>
     <p class="lead">За свой карьерный путь я прошёл больше 100 собеседований, провёл больше 50, видел больше сотни резюме. Главный вывод: <strong>резюме — это тоже продукт</strong>. Его задача — быстро показать, какую ценность вы создаёте.</p>
 
     <p>

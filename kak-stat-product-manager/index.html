@@ -7,6 +7,12 @@
   <meta name="description" content="Подробный гайд о том, как перейти в продакт-менеджмент: мотивация, теория, практика, стажировка, резюме, сопроводительное и собеседования. Реальные советы от Senior Product Manager Льва Левицкого.">
   <meta name="keywords" content="как стать продакт менеджером, как перейти в продакт менеджмент, с чего начать продакт менеджеру, резюме продакт менеджера, стажировка продакт, pet-проект, GoPractice, product map">
 
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/base.css">
+
   <!-- Clean-URL redirect: .html -> pretty URL -->
   <script>
     (function () {
@@ -42,28 +48,7 @@
   <meta name="twitter:image" content="https://levlevitsky.ru/avatar-400.jpg">
   <meta name="twitter:image:alt" content="Лев Левицкий — продакт-менеджер и ментор">
 
-  <!-- Icons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
   <style>
-    :root { --bg:#0b0b10; --fg:#e9ecf1; --muted:#a8b0bd; --card:#13131a; --acc:#7aa2ff; }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif}
-    a{color:var(--acc);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:900px;margin:0 auto;padding:36px 20px}
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-    .back{color:var(--muted);font-size:14px}
-    .btn-top{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;margin:20px 0;border-radius:14px;border:1px solid #243047;background:#0f1522;font-weight:600}
-    h1{font-size:32px;margin:8px 0 10px}
-    .lead{color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;margin:14px 0;border-radius:14px;border:1px solid #243047;background:#0f1522;font-weight:600}
-    .card{background:var(--card);border:1px solid #1b1f2a;border-radius:16px;padding:16px;margin:16px 0}
-    h2{font-size:22px;margin:18px 0 8px}
-    h3{font-size:18px;margin:14px 0 6px}
-    ul{margin:8px 0 8px 20px}
-    footer{margin:28px 0;color:var(--muted);font-size:14px}
     .note{color:var(--muted);font-size:14px}
   </style>
 
@@ -96,18 +81,20 @@
 
 
 </head>
-<body>
+<body class="theme-dark">
+  <a href="#main" class="sr-only">Перейти к основному содержимому</a>
   <div class="wrap">
-    <header>
+    <header class="header-nav header-nav--no-border">
       <a class="back" href="/">← На главную</a>
       <a class="back" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer">Мой Telegram-канал</a>
     </header>
 
-    <h1>Как стать продакт-менеджером: простой гайд от Senior PM</h1>
+    <h1 id="page-title">Как стать продакт-менеджером: простой гайд от Senior PM</h1>
     <p class="lead">Простой гайд для тех, кто хочет перейти в продакт-менеджмент. Разбираем мотивацию, базовую теорию, практический опыт, стажировки, резюме, сопроводительное и собеседования.</p>
 
     <a class="btn-top" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer" onclick="ym(104666081,'reachGoal','click_telegram_channel');">📣 Подписаться на Telegram-канал</a>
 
+    <main id="main">
     <section class="card">
       <h2>1. Зачем вы хотите стать продактом</h2>
       <p>На собеседованиях этот вопрос прозвучит одним из первых. Ответ «хочу много зарабатывать» — плохая мотивация (точнее, хорошая, но только вместе с другими мотивами). Лучше, когда новая роль соответствует вашим ценностям и двигает к долгосрочным целям: ответственность, влияние на бизнес, создание ценности.</p>
@@ -187,6 +174,7 @@
       <p><a class="btn" href="https://t.me/levlevitsky_channel" target="_blank" rel="noopener noreferrer" onclick="ym(104666081,'reachGoal','click_telegram_channel');">📣 Подписаться на Telegram-канал</a></p>
     </section>
 
+    </main>
     <footer>
       © <span id="y"></span> Лев Левицкий • <a href="/">главная</a>
     </footer>

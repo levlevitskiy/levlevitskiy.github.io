@@ -1,0 +1,278 @@
+/* Global design tokens */
+:root {
+  --font-main: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Inter, Arial, sans-serif;
+  --radius-card: 16px;
+  --radius-btn: 14px;
+  --shadow-focus: 0 0 0 2px rgba(122,162,255,.6);
+}
+
+/* Themes */
+body.theme-dark {
+  --bg: #0b0b10;
+  --fg: #e9ecf1;
+  --muted: #a8b0bd;
+  --card: #13131a;
+  --acc: #7aa2ff;
+  --bd: #1b1f2a;
+}
+
+body.theme-light {
+  --bg: #ffffff;
+  --fg: #1b1b1f;
+  --muted: #555555;
+  --card: #f6f6f8;
+  --acc: #0056ff;
+  --bd: #e2e2e6;
+}
+
+/* Base layout and typography */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: var(--font-main);
+}
+
+a {
+  color: var(--acc);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Wrappers */
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px 20px;
+}
+
+.wrap--wide {
+  max-width: 1080px;
+  padding-inline: 24px;
+}
+
+/* Headings */
+h1 {
+  font-size: 32px;
+  margin: 8px 0 10px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 18px 0 8px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 14px 0 6px;
+  font-weight: 600;
+}
+
+/* Header / navigation */
+.header-nav,
+header.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--bd);
+}
+
+.header-nav--no-border {
+  border-bottom: none;
+}
+
+.back,
+.nav-link {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.nav-link--primary {
+  color: var(--acc);
+}
+
+@media (max-width: 480px) {
+  .header-nav,
+  header.site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* Cards and layout blocks */
+.card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.card--spacious {
+  padding: 26px 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 10px 0 34px;
+}
+
+.tag {
+  display: inline-block;
+  border-radius: 999px;
+  border: 1px solid #243047;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.section-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+/* Buttons */
+.btn,
+.btn-top,
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: var(--radius-btn);
+  border: 1px solid #243047;
+  background: #0f1522;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn--secondary {
+  background: transparent;
+  border-color: var(--acc);
+  color: var(--acc);
+}
+
+.btn--secondary:hover,
+.cta-button:hover {
+  background: var(--acc);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Light-theme CTA block */
+.cta-block {
+  margin-top: 50px;
+  padding: 32px;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--bd);
+}
+
+.cta-title {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cta-text {
+  margin: 0 0 24px;
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 700px;
+}
+
+/* TOC / related lists */
+.toc {
+  margin: 32px 0;
+}
+
+.toc-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  margin: 6px 0;
+}
+
+.related {
+  margin-top: 50px;
+}
+
+.related ul {
+  margin-left: 20px;
+}
+
+/* Footer */
+footer {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--bd);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+

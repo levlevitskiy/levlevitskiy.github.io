@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Прогресс года</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+    <style>
+        /* ----- Стили (полностью из предыдущей версии, но адаптированы под динамический год) ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #080c1a;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(108, 99, 255, 0.10) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 100%, rgba(255, 101, 132, 0.06) 0%, transparent 50%),
+                #080c1a;
+        }
+
+        .bg-stars {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            animation: twinkle var(--dur, 4s) ease-in-out infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.15; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .dashboard {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px 36px 48px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .year {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            color: rgba(255, 255, 255, 0.25);
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            font-variant-numeric: tabular-nums;
+        }
+        .year span {
+            background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .circle-wrapper {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 32px;
+        }
+        .circle-wrapper svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+        .circle-bg {
+            fill: none;
+            stroke: rgba(255,255,255,0.04);
+            stroke-width: 6;
+        }
+        .circle-progress {
+            fill: none;
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke: url(#progressGrad);
+            transition: stroke-dashoffset 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 0 20px rgba(108, 99, 255, 0.25));
+        }
+        .circle-progress.glow {
+            filter: drop-shadow(0 0 40px rgba(108, 99, 255, 0.35)) drop-shadow(0 0 80px rgba(0, 212, 255, 0.10));
+        }
+
+        .circle-center {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+        .circle-percent {
+            font-size: 56px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #c8c4ff, #a8b4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+        .circle-percent .pct-symbol {
+            font-size: 28px;
+            font-weight: 600;
+            -webkit-text-fill-color: rgba(255,255,255,0.3);
+        }
+        .circle-days {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 0.5px;
+        }
+        .circle-days strong {
+            font-weight: 600;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        .info-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 18px 14px 16px;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: background 0.2s ease;
+        }
+        .info-card:hover {
+            background: rgba(255,255,255,0.06);
+        }
+        .info-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.2);
+            margin-bottom: 6px;
+        }
+        .info-number {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: white;
+            line-height: 1.2;
+        }
+        .info-number .num-suffix {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.3);
+            margin-left: 2px;
+        }
+        .info-percent {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.25);
+            margin-top: 2px;
+        }
+        .info-percent strong {
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+        }
+        .info-card.passed .info-number {
+            background: linear-gradient(135deg, #a78bfa, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .info-card.remaining .info-number {
+            background: linear-gradient(135deg, #f472b6, #fb7185);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #6C63FF, #00D4FF);
+            transition: width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 0 20px rgba(108, 99, 255, 0.2);
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.08);
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 500px) {
+            .dashboard { padding: 28px 20px 32px; border-radius: 32px; }
+            .circle-wrapper { width: 200px; height: 200px; margin-bottom: 24px; }
+            .circle-percent { font-size: 40px; }
+            .circle-percent .pct-symbol { font-size: 20px; }
+            .circle-days { font-size: 12px; }
+            .info-number { font-size: 22px; }
+            .info-card { padding: 14px 10px 12px; }
+            .year { font-size: 16px; letter-spacing: 4px; margin-bottom: 20px; }
+            .info-grid { gap: 8px; }
+        }
+        @media (max-width: 380px) {
+            .dashboard { padding: 20px 14px 24px; border-radius: 24px; }
+            .circle-wrapper { width: 160px; height: 160px; margin-bottom: 18px; }
+            .circle-percent { font-size: 32px; }
+            .circle-percent .pct-symbol { font-size: 16px; }
+            .circle-days { font-size: 10px; }
+            .info-number { font-size: 18px; }
+            .info-label { font-size: 9px; letter-spacing: 1px; }
+            .info-card { padding: 10px 8px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-stars" id="stars"></div>
+
+    <div class="dashboard">
+        <div class="year"><span id="yearDisplay">2026</span></div>
+
+        <div class="circle-wrapper">
+            <svg viewBox="0 0 260 260">
+                <defs>
+                    <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%"   stop-color="#6C63FF" />
+                        <stop offset="50%"  stop-color="#818cf8" />
+                        <stop offset="100%" stop-color="#00D4FF" />
+                    </linearGradient>
+                </defs>
+                <circle class="circle-bg" cx="130" cy="130" r="115" />
+                <circle class="circle-progress glow" id="progressRing" cx="130" cy="130" r="115"
+                        stroke-dasharray="722.566" stroke-dashoffset="722.566" />
+            </svg>
+            <div class="circle-center">
+                <div class="circle-percent">
+                    <span id="percentDisplay">0</span><span class="pct-symbol">%</span>
+                </div>
+                <div class="circle-days">
+                    <strong id="daysPassedCenter">0</strong> дней прошло
+                </div>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card passed">
+                <div class="info-label">Прошло</div>
+                <div class="info-number">
+                    <span id="daysPassed">0</span><span class="num-suffix">дн</span>
+                </div>
+                <div class="info-percent"><strong id="percentPassed">0</strong>% года</div>
+            </div>
+            <div class="info-card remaining">
+                <div class="info-label">Осталось</div>
+                <div class="info-number">
+                    <span id="daysRemaining">0</span><span class="num-suffix">дн</span>
+                </div>
+                <div class="info-percent"><strong id="percentRemaining">0</strong>% года</div>
+            </div>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+
+        <div class="footer">✦ день за днём ✦</div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ---------- Звёзды ----------
+            (function createStars() {
+                const container = document.getElementById('stars');
+                for (let i = 0; i < 120; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'star';
+                    const size = 1 + Math.random() * 2.5;
+                    star.style.cssText = `
+                        width:${size}px; height:${size}px;
+                        left:${Math.random()*100}%; top:${Math.random()*100}%;
+                        --dur:${3+Math.random()*5}s;
+                        animation-delay:${Math.random()*6}s;
+                        opacity:${0.15+Math.random()*0.5};
+                    `;
+                    container.appendChild(star);
+                }
+            })();
+
+            // ---------- DOM-элементы ----------
+            const yearDisplay = document.getElementById('yearDisplay');
+            const ring = document.getElementById('progressRing');
+            const bar = document.getElementById('progressBar');
+            const percentDisplay = document.getElementById('percentDisplay');
+            const daysPassedCenter = document.getElementById('daysPassedCenter');
+            const daysPassedEl = document.getElementById('daysPassed');
+            const daysRemainingEl = document.getElementById('daysRemaining');
+            const percentPassedEl = document.getElementById('percentPassed');
+            const percentRemainingEl = document.getElementById('percentRemaining');
+
+            const radius = 115;
+            const circumference = 2 * Math.PI * radius; // ~722.566
+            ring.style.strokeDasharray = circumference;
+
+            // ---------- Основная функция обновления ----------
+            function updateDashboard() {
+                // Текущая дата
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = now.getMonth();
+                const day = now.getDate();
+
+                // Количество дней в году (високосный?)
+                const isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+                const totalDays = isLeap ? 366 : 365;
+
+                // Начало года
+                const startOfYear = new Date(year, 0, 1);
+                // Текущая дата (с тем же годом)
+                const today = new Date(year, month, day);
+                // Дней прошло (1‑индексация)
+                let daysPassed = Math.floor((today - startOfYear) / (1000 * 60 * 60 * 24)) + 1;
+                // Защита от выхода за пределы (может быть 366 для 31 декабря високосного)
+                if (daysPassed > totalDays) daysPassed = totalDays;
+                if (daysPassed < 1) daysPassed = 1;
+
+                const daysRemaining = totalDays - daysPassed;
+                const percentPassed = (daysPassed / totalDays) * 100;
+                const percentRemaining = 100 - percentPassed;
+
+                // Обновляем год в шапке
+                yearDisplay.textContent = year;
+
+                // Обновляем круговой индикатор и прогресс‑бар
+                const offset = circumference * (1 - percentPassed / 100);
+                ring.style.strokeDashoffset = offset;
+                bar.style.width = percentPassed + '%';
+
+                // Обновляем текстовые поля (без анимации, чтобы не перебивать плавность)
+                percentDisplay.textContent = percentPassed.toFixed(1) + '%';
+                daysPassedCenter.textContent = daysPassed;
+                daysPassedEl.textContent = daysPassed;
+                daysRemainingEl.textContent = daysRemaining;
+                percentPassedEl.textContent = percentPassed.toFixed(1);
+                percentRemainingEl.textContent = percentRemaining.toFixed(1);
+
+                // Сохраняем текущий день и год для сравнения при следующей проверке
+                window._lastDay = day;
+                window._lastMonth = month;
+                window._lastYear = year;
+            }
+
+            // ---------- Проверка смены дня (вызывается по таймеру) ----------
+            function checkAndUpdate() {
+                const now = new Date();
+                const currentDay = now.getDate();
+                const currentMonth = now.getMonth();
+                const currentYear = now.getFullYear();
+
+                // Если изменился день, месяц или год — обновляем
+                if (currentDay !== window._lastDay ||
+                    currentMonth !== window._lastMonth ||
+                    currentYear !== window._lastYear) {
+                    updateDashboard();
+                }
+            }
+
+            // ---------- Первый запуск ----------
+            updateDashboard();
+
+            // ---------- Таймер: проверяем каждые 10 секунд ----------
+            setInterval(checkAndUpdate, 10000);
+
+            // ---------- Событие видимости — при возврате на вкладку обновляем сразу ----------
+            document.addEventListener('visibilitychange', function() {
+                if (!document.hidden) {
+                    // Проверяем, не изменилась ли дата (заодно и год)
+                    const now = new Date();
+                    if (now.getDate() !== window._lastDay ||
+                        now.getMonth() !== window._lastMonth ||
+                        now.getFullYear() !== window._lastYear) {
+                        updateDashboard();
+                    } else {
+                        // Если дата та же, но могли обновить проценты из‑за перехода через полночь?
+                        // Но таймер уже сработает, а здесь можно просто перерисовать, чтобы гарантировать
+                        // актуальность после долгого отсутствия
+                        updateDashboard();
+                    }
+                }
+            });
+
+            // ---------- Дополнительно: обновляем при перезагрузке страницы (очевидно) ----------
+
+            // Для теста: если вдруг нужно принудительно обновить, можно вызвать updateDashboard() из консоли
+
+        })();
+    </script>
+</body>
+</html>

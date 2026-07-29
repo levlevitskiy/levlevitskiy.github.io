@@ -177,6 +177,42 @@
     .theme-toggle:hover { transform: translateY(-1px); }
     .theme-toggle:active { transform: translateY(0); }
 
+
+    .orientation-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      background: var(--card-bg);
+      color: var(--text);
+      font-size: 21px;
+      cursor: pointer;
+      z-index: 10;
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .orientation-toggle:hover { transform: translateY(-1px); }
+    .orientation-toggle:active { transform: translateY(0); }
+
+    .year-grid.horizontal-fill {
+      grid-template-rows: none;
+      grid-template-columns: repeat(31, var(--cell-size));
+      grid-auto-flow: row;
+      grid-auto-rows: var(--cell-size);
+    }
+
+    .year-grid.vertical-fill {
+      grid-template-rows: repeat(12, var(--cell-size));
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: var(--cell-size);
+    }
+
     @media (max-width: 560px) {
       body { padding: 18px 12px; }
       .stats { grid-template-columns: 1fr; gap: 10px; }
@@ -209,8 +245,12 @@
     </section>
 
     <div class="grid-wrap">
-      <div class="year-grid" id="yearGrid" aria-label="Прогресс года по дням"></div>
+      <div class="year-grid vertical-fill" id="yearGrid" aria-label="Прогресс года по дням"></div>
     </div>
+
+    <button class="orientation-toggle" id="orientationToggle" type="button" aria-label="Переключить направление заполнения" title="Переключить направление заполнения">
+    <span id="orientationIcon" aria-hidden="true">↕️</span>
+  </button>
 
     <div class="legend" aria-hidden="true">
       <span class="legend-item"><span class="legend-dot past"></span>Прошедшие дни</span>
@@ -244,8 +284,8 @@
       const passedPercent = (passedDays / totalDays * 100).toFixed(1).replace('.', ',');
       const remainingPercent = (remainingDays / totalDays * 100).toFixed(1).replace('.', ',');
 
-      document.getElementById('title').textContent = year;
-      document.title = String(year);
+      document.getElementById('title').textContent = `Прогресс года: ${year}`;
+      document.title = `Прогресс года: ${year}`;
       const weekday = now.toLocaleDateString('ru-RU', { weekday: 'long' }).toLowerCase();
       const fullDate = now.toLocaleDateString('ru-RU', {
         day: 'numeric',
@@ -304,6 +344,40 @@
       const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
       localStorage.setItem('year-progress-theme', nextTheme);
       applyTheme(nextTheme);
+    });
+
+
+    const grid = document.getElementById('yearGrid');
+    const orientationToggle = document.getElementById('orientationToggle');
+    const orientationIcon = document.getElementById('orientationIcon');
+        const savedOrientation = localStorage.getItem('year-progress-orientation') || 'vertical';
+
+    function applyOrientation(orientation) {
+      grid.classList.remove('vertical-fill', 'horizontal-fill');
+      grid.classList.add(orientation === 'horizontal' ? 'horizontal-fill' : 'vertical-fill');
+
+      const isHorizontal = orientation === 'horizontal';
+      orientationIcon.textContent = isHorizontal ? '↔️' : '↕️';
+      
+      orientationToggle.title = isHorizontal
+        ? 'Переключить на вертикальное заполнение'
+        : 'Переключить на горизонтальное заполнение';
+      orientationToggle.setAttribute(
+        'aria-label',
+        isHorizontal
+          ? 'Переключить на вертикальное заполнение'
+          : 'Переключить на горизонтальное заполнение'
+      );
+    }
+
+    applyOrientation(savedOrientation);
+
+    orientationToggle.addEventListener('click', () => {
+      const nextOrientation = grid.classList.contains('horizontal-fill')
+        ? 'vertical'
+        : 'horizontal';
+      localStorage.setItem('year-progress-orientation', nextOrientation);
+      applyOrientation(nextOrientation);
     });
 
     renderYearProgress();

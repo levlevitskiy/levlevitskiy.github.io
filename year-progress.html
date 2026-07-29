@@ -6,13 +6,26 @@
   <title>Year Progress</title>
   <style>
     :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #666666;
+      --future: #e6e6e6;
+      --today: #3b82f6;
+      --card-bg: #fafafa;
+      --card-border: #dddddd;
+      --past: #111111;
+      --cell-size: 12px;
+      --gap: 4px;
+    }
+
+    html[data-theme="dark"] {
       --bg: #050505;
       --text: #ffffff;
       --muted: #8b8b8b;
       --future: #252525;
-      --today: #3b82f6;
-      --cell-size: 12px;
-      --gap: 4px;
+      --card-bg: #0d0d0d;
+      --card-border: #1d1d1d;
+      --past: #ffffff;
     }
 
     * { box-sizing: border-box; }
@@ -58,9 +71,9 @@
 
     .stat {
       padding: 18px 16px;
-      border: 1px solid #1d1d1d;
+      border: 1px solid var(--card-border);
       border-radius: 18px;
-      background: #0d0d0d;
+      background: var(--card-bg);
     }
 
     .stat-label {
@@ -103,7 +116,7 @@
     }
 
     .day:hover { transform: scale(1.35); }
-    .day.past { background: #fff; }
+    .day.past { background: var(--past); }
     .day.today {
       background: var(--today);
       box-shadow: 0 0 0 2px rgba(59, 130, 246, .2), 0 0 18px rgba(59, 130, 246, .5);
@@ -132,8 +145,37 @@
       background: var(--future);
     }
 
-    .legend-dot.past { background: #fff; }
+    .legend-dot.past { background: var(--past); }
     .legend-dot.today { background: var(--today); }
+
+
+    body,
+    .stat,
+    .day,
+    .legend-dot,
+    .theme-toggle {
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      background: var(--card-bg);
+      color: var(--text);
+      font-size: 21px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .theme-toggle:hover { transform: translateY(-1px); }
+    .theme-toggle:active { transform: translateY(0); }
 
     @media (max-width: 560px) {
       body { padding: 18px 12px; }
@@ -148,6 +190,9 @@
   </style>
 </head>
 <body>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему" title="Переключить тему">
+    <span id="themeIcon" aria-hidden="true">🌙</span>
+  </button>
   <main class="app">
     <h1 id="title"></h1>
     <div class="date" id="currentDate"></div>
@@ -201,12 +246,13 @@
 
       document.getElementById('title').textContent = year;
       document.title = String(year);
-      document.getElementById('currentDate').textContent = now.toLocaleDateString('ru-RU', {
-        weekday: 'long',
+      const weekday = now.toLocaleDateString('ru-RU', { weekday: 'long' }).toLowerCase();
+      const fullDate = now.toLocaleDateString('ru-RU', {
         day: 'numeric',
         month: 'long',
         year: 'numeric'
-      });
+      }).replace(/\s*г\.$/, '');
+      document.getElementById('currentDate').textContent = `${weekday}, ${fullDate}`;
       document.getElementById('passedStat').textContent = `${passedDays} ${getDayWord(passedDays)} (${passedPercent}%)`;
       document.getElementById('remainingStat').textContent = `${remainingDays} ${getDayWord(remainingDays)} (${remainingPercent}%)`;
 
@@ -234,6 +280,31 @@
         grid.appendChild(cell);
       }
     }
+
+
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const savedTheme = localStorage.getItem('year-progress-theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      themeToggle.setAttribute(
+        'aria-label',
+        theme === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему'
+      );
+      themeToggle.title = theme === 'dark' ? 'Светлая тема' : 'Тёмная тема';
+    }
+
+    applyTheme(savedTheme || (systemPrefersDark ? 'dark' : 'light'));
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('year-progress-theme', nextTheme);
+      applyTheme(nextTheme);
+    });
 
     renderYearProgress();
 

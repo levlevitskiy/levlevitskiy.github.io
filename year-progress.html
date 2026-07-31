@@ -62,6 +62,13 @@
       text-transform: capitalize;
     }
 
+    .intro {
+      max-width: 620px;
+      margin: 12px auto 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
     .stats {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -149,6 +156,16 @@
     .legend-dot.past { background: var(--past); }
     .legend-dot.today { background: var(--today); }
 
+    .site-link {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .site-link:hover { color: var(--text); }
+
 
     body,
     .stat,
@@ -231,8 +248,9 @@
     <span id="themeIcon" aria-hidden="true">🌙</span>
   </button>
   <main class="app">
-    <h1 id="title"></h1>
-    <div class="date" id="currentDate"></div>
+    <h1 id="title">Прогресс года</h1>
+    <p class="date" id="currentDate">Календарь текущего года</p>
+    <p class="intro">Узнайте, сколько дней и процентов года уже прошло, сколько осталось, и оцените прогресс на наглядной шкале.</p>
 
     <section class="stats" aria-label="Статистика года">
       <div class="stat">
@@ -258,6 +276,8 @@
       <span class="legend-item"><span class="legend-dot today"></span>Сегодня</span>
       <span class="legend-item"><span class="legend-dot"></span>Будущие дни</span>
     </div>
+
+    <a class="site-link" href="/">← На главную</a>
   </main>
 
   <script>
@@ -286,7 +306,6 @@
       const remainingPercent = (remainingDays / totalDays * 100).toFixed(1).replace('.', ',');
 
       document.getElementById('title').textContent = `Прогресс года: ${year}`;
-      document.title = `Прогресс года: ${year}`;
       const weekday = now.toLocaleDateString('ru-RU', { weekday: 'long' }).toLowerCase();
       const fullDate = now.toLocaleDateString('ru-RU', {
         day: 'numeric',

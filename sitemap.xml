@@ -159,4 +159,11 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://levlevitsky.ru/year-progress.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

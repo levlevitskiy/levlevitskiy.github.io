@@ -3,7 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Year Progress</title>
+  <title>Прогресс года — сколько дней прошло и осталось</title>
+  <meta name="description" content="Интерактивный календарь прогресса года: узнайте, сколько дней и процентов уже прошло, сколько осталось, и посмотрите весь год на одной шкале." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://levlevitsky.ru/year-progress.html" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <meta property="og:title" content="Прогресс года — сколько дней прошло и осталось" />
+  <meta property="og:description" content="Интерактивный календарь показывает прошедшие и оставшиеся дни года, проценты и наглядную шкалу прогресса." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://levlevitsky.ru/year-progress.html" />
+  <meta property="og:site_name" content="Лев Левицкий" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:image" content="https://levlevitsky.ru/avatar-400.jpg" />
+  <meta property="og:image:secure_url" content="https://levlevitsky.ru/avatar-400.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+  <meta property="og:image:alt" content="Прогресс года — интерактивный календарь" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Прогресс года — сколько дней прошло и осталось" />
+  <meta name="twitter:description" content="Посмотрите, сколько дней и процентов года уже прошло и сколько осталось." />
+  <meta name="twitter:image" content="https://levlevitsky.ru/avatar-400.jpg" />
+  <meta name="twitter:image:alt" content="Прогресс года — интерактивный календарь" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Прогресс года",
+    "description": "Интерактивный календарь, который показывает количество и долю прошедших и оставшихся дней текущего года.",
+    "url": "https://levlevitsky.ru/year-progress.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Любая",
+    "browserRequirements": "Требуется браузер с поддержкой JavaScript",
+    "inLanguage": "ru-RU",
+    "isAccessibleForFree": true,
+    "author": {
+      "@type": "Person",
+      "name": "Лев Левицкий",
+      "url": "https://levlevitsky.ru/"
+    }
+  }
+  </script>
   <style>
     :root {
       --bg: #ffffff;
@@ -59,6 +105,13 @@
       color: var(--muted);
       font-size: clamp(15px, 3.5vw, 18px);
       text-transform: capitalize;
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: 12px auto 0;
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .stats {
@@ -148,6 +201,16 @@
     .legend-dot.past { background: var(--past); }
     .legend-dot.today { background: var(--today); }
 
+    .site-link {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .site-link:hover { color: var(--text); }
+
 
     body,
     .stat,
@@ -230,8 +293,9 @@
     <span id="themeIcon" aria-hidden="true">🌙</span>
   </button>
   <main class="app">
-    <h1 id="title"></h1>
-    <div class="date" id="currentDate"></div>
+    <h1 id="title">Прогресс года</h1>
+    <p class="date" id="currentDate">Календарь текущего года</p>
+    <p class="intro">Узнайте, сколько дней и процентов года уже прошло, сколько осталось, и оцените прогресс на наглядной шкале.</p>
 
     <section class="stats" aria-label="Статистика года">
       <div class="stat">
@@ -257,6 +321,8 @@
       <span class="legend-item"><span class="legend-dot today"></span>Сегодня</span>
       <span class="legend-item"><span class="legend-dot"></span>Будущие дни</span>
     </div>
+
+    <a class="site-link" href="/">← На главную</a>
   </main>
 
   <script>
@@ -285,7 +351,6 @@
       const remainingPercent = (remainingDays / totalDays * 100).toFixed(1).replace('.', ',');
 
       document.getElementById('title').textContent = `Прогресс года: ${year}`;
-      document.title = `Прогресс года: ${year}`;
       const weekday = now.toLocaleDateString('ru-RU', { weekday: 'long' }).toLowerCase();
       const fullDate = now.toLocaleDateString('ru-RU', {
         day: 'numeric',

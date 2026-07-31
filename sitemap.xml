@@ -57,6 +57,15 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Product Map — хаб раздела -->
+  <url>
+    <loc>https://levlevitsky.ru/product-map/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Product Map — подразделы -->
 
   <url>
@@ -139,6 +148,13 @@
   <url>
     <loc>https://levlevitsky.ru/product-map/ab-testy-validaciya-rezultatov/</loc>
     <lastmod>2025-12-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://levlevitsky.ru/product-map/produktovyj-dizain/</loc>
+    <lastmod>2025-12-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
